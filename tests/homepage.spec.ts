@@ -9,7 +9,7 @@ test('homepage controls select real dated evidence and preserve honest search co
  await expect(page.locator('.home-rate-card')).toHaveAttribute('href',/emi20240803t190415p13004-C/);
  await page.getByLabel('Show enhancement imagery').check();await expect(page.locator('.home-legend')).toContainText('Column enhancement');
  await page.getByRole('button',{name:'Close layers'}).click();await page.getByRole('button',{name:'Methane',exact:true}).click();await expect(page.getByRole('button',{name:'Methane',exact:true})).toHaveAttribute('aria-pressed','false');
- await page.locator('.home-search').click();await page.getByRole('textbox',{name:'City, region, or US ZIP code'}).fill('Denver');await page.getByRole('button',{name:/Denver.*United States/}).click();await expect(page.getByRole('heading',{name:'No included observations nearby'})).toBeVisible();expect(errors).toEqual([]);
+ await page.locator('.home-search').click();await page.getByRole('textbox',{name:'City, region, or US ZIP code'}).fill('Denver');await page.getByRole('button',{name:/Denver.*United States/}).click();await expect(page).toHaveURL(/\/places\//);await expect(page.getByRole('heading',{name:'No included observations nearby'})).toBeVisible();await expect(page.locator('.place-map-canvas canvas')).toBeVisible();expect(errors).toEqual([]);
 });
 
 test('homepage fits desktop and mobile widths',async({page})=>{

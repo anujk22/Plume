@@ -9,3 +9,4 @@ export type Snapshot = {id:string;schemaVersion:string;rulesVersion:string;retri
 export type Claim = {id:string;kind:'established'|'unresolved'|'next';text:string;evidenceIds:string[];rule:string;scope:string};
 export type Assessment = {id:string;label:string;status:'satisfied'|'failed'|'unknown'|'not_assessed';reason:string}[];
 export type EvidenceInput = {snapshotId:string;schemaVersion:string;rulesVersion:string;caseId:string;selectedIds:string[];includeNotes:boolean;notes:string};
+export type Place = {id:string;name:string;ascii?:string;postal?:string;country:string;admin:string;location:[number,number];population:number;type:string};
