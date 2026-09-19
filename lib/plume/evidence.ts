@@ -1,0 +1,27 @@
+import type {Assessment, Case, Claim, EvidenceInput, Observation, Snapshot} from './types';
+
+export function dateLabel(date:string,short=false){return new Intl.DateTimeFormat('en-GB',{day:'numeric',month:short?'short':'long',year:'numeric',timeZone:'UTC'}).format(new Date(date));}
+export function dateCounts(observations:Observation[]){return {acquisitions:new Set(observations.map(o=>o.acquisitionId)).size,days:new Set(observations.map(o=>o.date.slice(0,10))).size,observations:observations.length};}
+export function selectObservations(snapshot:Snapshot,caseId:string,ids?:string[]){const c=snapshot.cases.find(c=>c.id===caseId);if(!c)throw new Error('Investigation not found in this snapshot.');return snapshot.observations.filter(o=>c.observationIds.includes(o.id)&&(!ids||ids.includes(o.id))).sort((a,b)=>a.date.localeCompare(b.date)||a.id.localeCompare(b.id));}
+export function findings(c:Case,observations:Observation[]):Claim[]{
+ const ids=observations.map(o=>o.id);const dates=[...new Set(observations.map(o=>o.date.slice(0,10)))].sort();const scope='Selected evidence within the investigation area';
+ const established=dates.length===0?'No observations are selected for this brief.':dates.length===1?`The selected evidence contains a detection on ${dateLabel(dates[0])}. It does not establish repeated detections.`:`Methane was detected in this investigation area on ${dates.length} dates between ${dateLabel(dates[0],true)} and ${dateLabel(dates.at(-1)!,true)}.`;
+ return [{id:'detection-dates',kind:'established',text:established,evidenceIds:ids,rule:'distinct-utc-detection-days-v1',scope},
+ {id:'continuity',kind:'unresolved',text:dates.length===0?'No selected evidence supports a statement about recurrence, continuity, or source attribution.':c.attributionContext?(dates.length>1?'Repeated observations do not':'A satellite observation does not')+' distinguish the site’s permitted landfill and composting processes. Continuous emissions remain unproven.':dates.length>1?'Repeated detections do not establish continuous emissions. The emitting source is not verified by proximity alone.':'A detection describes one moment. Continuous emissions and the emitting source remain unresolved.',evidenceIds:ids,rule:'no-continuity-or-attribution-inference-v1',scope},
+ {id:'next-step',kind:'next',text:c.facilities?.length?'Review source-location evidence and operational boundaries before naming an emitting process.':'Review the original acquisitions and source-location evidence before associating these observations with a facility.',evidenceIds:ids,rule:'source-location-review-v1',scope}];
+}
+export function assess(c:Case,observations:Observation[]):Assessment{
+ const hasInventory=!!c.inventory;return [
+ {id:'identity',label:'Source association',status:'unknown',reason:'Geographic proximity does not establish that the selected observations represent the reporting facility.'},
+ {id:'boundary',label:'Spatial boundary',status:'unknown',reason:'A plume footprint and a reported facility boundary have not been reconciled.'},
+ {id:'gas',label:'Gas',status:hasInventory?'satisfied':'not_assessed',reason:hasInventory?'The included reporting quantity and observations describe methane (CH₄).':'No annual reporting record is included for this case.'},
+ {id:'quantity',label:'Physical quantity',status:hasInventory?'failed':'not_assessed',reason:hasInventory?'A mass over a year and a rate at an acquisition are different quantities.':'An annual methane quantity is unavailable in this case.'},
+ {id:'period',label:'Time represented',status:observations.length?'failed':'not_assessed',reason:observations.length?'Individual acquisitions do not establish the time-integrated emissions over an entire year.':'Select observations to inspect their time support.'},
+ {id:'method',label:'Estimation method',status:'not_assessed',reason:'Plume supplies no estimator that converts episodic observations into annual mass.'},
+ {id:'uncertainty',label:'Uncertainty',status:'unknown',reason:'Compatible uncertainty definitions across reporting and observations have not been established.'},
+ {id:'permissions',label:'Display permissions',status:'satisfied',reason:'Included published records are attributed and shared under their applicable data terms.'}];
+}
+export function canonicalize(value:unknown):string{if(Array.isArray(value))return '['+value.map(canonicalize).join(',')+']';if(value&&typeof value==='object')return '{'+Object.entries(value).sort(([a],[b])=>a.localeCompare(b)).map(([k,v])=>JSON.stringify(k)+':'+canonicalize(v)).join(',')+'}';return JSON.stringify(value);}
+export async function sha256(value:string|Uint8Array){const bytes=typeof value==='string'?new TextEncoder().encode(value):value;const hash=await crypto.subtle.digest('SHA-256',new Uint8Array(bytes));return [...new Uint8Array(hash)].map(x=>x.toString(16).padStart(2,'0')).join('');}
+export function canonicalInput(snapshot:Snapshot,c:Case,ids:string[],notes='',includeNotes=false):EvidenceInput{return {snapshotId:snapshot.id,schemaVersion:snapshot.schemaVersion,rulesVersion:snapshot.rulesVersion,caseId:c.id,selectedIds:selectObservations(snapshot,c.id,ids).map(o=>o.id).sort(),includeNotes,notes:includeNotes?notes.slice(0,20000):''};}
+export function distanceKm(a:[number,number],b:[number,number]){const r=Math.PI/180;const dlat=(b[1]-a[1])*r;const dlon=(b[0]-a[0])*r;const x=Math.sin(dlat/2)**2+Math.cos(a[1]*r)*Math.cos(b[1]*r)*Math.sin(dlon/2)**2;return 6371.0088*2*Math.atan2(Math.sqrt(x),Math.sqrt(1-x));}

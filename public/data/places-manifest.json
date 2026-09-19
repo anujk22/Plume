@@ -1,0 +1,19 @@
+{
+  "retrievedAt": "2026-09-19",
+  "provider": "GeoNames",
+  "license": "CC BY 4.0",
+  "sourceUrls": [
+    "https://download.geonames.org/export/dump/cities15000.zip",
+    "https://download.geonames.org/export/zip/US.zip",
+    "https://download.geonames.org/export/dump/admin1CodesASCII.txt",
+    "https://download.geonames.org/export/dump/countryInfo.txt"
+  ],
+  "inputs": {
+    "cities15000.zip": "d5d1af069a3abea2aec57f522db11b079b6b9ca71dbf2dee76d9da272329fd08",
+    "US.zip": "e93aeb5619b64bf75850198dd912e6be12dbae53ace9d686f2038485bd08cecf",
+    "admin1CodesASCII.txt": "1da92a6323a5fec3176f3f743bf4cf4040fd56a876da55e46fbca23c863aa60a",
+    "countryInfo.txt": "93bafc525813f22e4711ff9ed6d626343094ce48c26388dc7c49189b3d7d5512"
+  },
+  "cityCount": 34146,
+  "postalCount": 41490
+}

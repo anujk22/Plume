@@ -1,0 +1,5 @@
+Source: Carbon Mapper
+Data and derived imagery are distributed under Carbon Mapper Terms of Use, effective January 13, 2026.
+Noncommercial use, attribution, and the same downstream conditions apply. Data are not MIT licensed.
+https://carbonmapper.org/terms
+Plume is an independent project and is not endorsed by Carbon Mapper.

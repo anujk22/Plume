@@ -1,0 +1,6 @@
+/// <reference lib="webworker" />
+type Place={id:string;name:string;ascii?:string;postal?:string;country:string;admin:string;population:number;location:[number,number];type:string};
+export {};
+const placeCache=new Map<string,Place[]>();
+const normalize=(s:string)=>s.normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+self.onmessage=async(e:MessageEvent<{query:string;request:number;origin:string}>)=>{const {request,origin}=e.data;const query=normalize(e.data.query.trim().slice(0,120));const file=/^\d{2,5}$/.test(query)?'places-us.json':'places-cities.json';try{let places=placeCache.get(file);if(!places){const response=await fetch(new URL('/data/'+file,origin));if(!response.ok)throw new Error('Place index unavailable.');places=await response.json() as Place[];placeCache.set(file,places);}const matches=places.filter(p=>normalize([p.name,p.ascii,p.postal,p.admin,p.country].filter(Boolean).join(' ')).includes(query));matches.sort((a,b)=>Number(normalize(b.name)===query)-Number(normalize(a.name)===query)||b.population-a.population);self.postMessage({request,results:matches.slice(0,12)});}catch{self.postMessage({request,error:'The place index could not be loaded. Try again or open an included investigation.'});}};

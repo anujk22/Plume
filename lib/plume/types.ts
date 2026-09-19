@@ -1,0 +1,11 @@
+import type {FeatureCollection} from 'geojson';
+export type RasterAsset = {url:string;bounds:[number,number,number,number];coordinates:[number,number][];crs:string;nativeCrs:string;resampling:string;scale:[number,number];unit:string;quantity:string;max:number;nodata:string;validZeroCount:number};
+export type Observation = {id:string;caseId:string;acquisitionId:string;date:string;provider:string;instrument:string;location:[number,number];locationRole:string;rate:number|null;uncertainty:number|null;uncertaintyDefinition:string;rateStatus:string;rateUnit:string;rateKind:string;quality:string|null;processing:string;sourceUrl:string;asset:RasterAsset;outline:FeatureCollection};
+export type Facility = {id:string;name:string;location:[number,number];role:string;sourceUrl:string;relationship:string};
+export type Inventory = {id:string;facility:string;year:number;value:number;unit:string;gas:string;sourceUrl:string;field:string;boundary:string;method:string};
+export type Case = {id:string;title:string;place:string;country:string;subtitle:string;location:[number,number];scope:string;observationIds:string[];description:string;attributionStatus:string;featured:boolean;facilities?:Facility[];inventory?:Inventory;contextSource?:string;attributionContext?:string};
+export type Relationship = {id:string;observationId:string;collection:string;role:string;sourceUrl:string;relationship:string;status:string};
+export type Snapshot = {id:string;schemaVersion:string;rulesVersion:string;retrievedAt:string;attribution:string;termsUrl:string;cases:Case[];observations:Observation[];relationships:Relationship[];files:{path:string;sha256:string;role:string;sourceRecord:string;license:string}[];limitations:string[]};
+export type Claim = {id:string;kind:'established'|'unresolved'|'next';text:string;evidenceIds:string[];rule:string;scope:string};
+export type Assessment = {id:string;label:string;status:'satisfied'|'failed'|'unknown'|'not_assessed';reason:string}[];
+export type EvidenceInput = {snapshotId:string;schemaVersion:string;rulesVersion:string;caseId:string;selectedIds:string[];includeNotes:boolean;notes:string};

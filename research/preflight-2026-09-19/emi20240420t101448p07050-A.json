@@ -1,0 +1,58 @@
+{
+  "bbox_count": 1,
+  "total_count": 1,
+  "limit": 10,
+  "offset": 0,
+  "items": [
+    {
+      "id": "6c8a1b1e-b87a-4385-9419-09f9fbf02fc6",
+      "plume_id": "emi20240420t101448p07050-A",
+      "gas": "CH4",
+      "geometry_json": {
+        "bbox": null,
+        "type": "Point",
+        "coordinates": [
+          46.036003399263535,
+          15.586459832180779
+        ]
+      },
+      "scene_id": "35cda215-47b6-4e58-9610-8719f25801e0",
+      "scene_timestamp": "2024-04-20T10:14:48Z",
+      "instrument": "emi",
+      "mission_phase": "production",
+      "platform": "ISS",
+      "emission_auto": 3056.005915823478,
+      "emission_uncertainty_auto": 444.13146723218654,
+      "emission_cmf_type": "mfa",
+      "gsd": null,
+      "sensitivity_mode": null,
+      "off_nadir": null,
+      "plume_png": "https://catalog.carbonmapper.org/l3a-vis-ch4-mfa-v3/2024/04/20/emi20240420t101448p07050-A/emi20240420t101448p07050-A_l3a-vis-ch4-mfa-v3_plume.png",
+      "plume_rgb_png": "https://catalog.carbonmapper.org/l3a-vis-ch4-mfa-v3/2024/04/20/emi20240420t101448p07050-A/emi20240420t101448p07050-A_l3a-vis-ch4-mfa-v3_plume-rgb.png",
+      "plume_tif": "https://catalog.carbonmapper.org/l3a-vis-ch4-mfa-v3/2024/04/20/emi20240420t101448p07050-A/emi20240420t101448p07050-A_l3a-vis-ch4-mfa-v3_plume.tif",
+      "con_tif": "https://catalog.carbonmapper.org/l3a-ime-ch4-mfa-v3/2024/04/20/emi20240420t101448p07050-A/emi20240420t101448p07050-A_l3a-ime-ch4-mfa-v3_ime-cmf-concentrations.tif",
+      "rgb_png": "https://catalog.carbonmapper.org/l3a-vis-ch4-mfa-v3/2024/04/20/emi20240420t101448p07050-A/emi20240420t101448p07050-A_l3a-vis-ch4-mfa-v3_rgb.png",
+      "plume_bounds": [
+        45.97534059782272,
+        15.534042877673699,
+        46.04725754692901,
+        15.603853966219182
+      ],
+      "plume_quality": null,
+      "wind_speed_avg_auto": 1.8888888888888886,
+      "wind_direction_avg_auto": 97.29934710031175,
+      "emission_version": "v3",
+      "processing_software": "3.18.1",
+      "publication_sources": [],
+      "is_offshore": false,
+      "collection": "l2c-ch4-v0",
+      "cmf_type": "mfa",
+      "sector": "1B2",
+      "status": "published",
+      "hide_emission": false,
+      "published_at": "2024-05-08T22:57:42.324Z",
+      "modified": "2025-03-25T23:15:47.060Z"
+    }
+  ],
+  "nearby_items": []
+}

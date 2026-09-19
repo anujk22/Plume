@@ -1,0 +1,1068 @@
+{
+  "msv": {
+    "mission": "EMIT",
+    "site": "ert",
+    "masterdb": false,
+    "view": [
+      "0",
+      "0",
+      "3"
+    ],
+    "radius": {
+      "major": "6371008",
+      "minor": "6371008"
+    },
+    "mapscale": "",
+    "missionFolderName": "EMIT"
+  },
+  "projection": {
+    "custom": false,
+    "epsg": "",
+    "proj": "",
+    "xmlpath": "",
+    "bounds": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "origin": [
+      "",
+      ""
+    ],
+    "reszoomlevel": "",
+    "resunitsperpixel": ""
+  },
+  "coordinates": {
+    "coordll": true,
+    "coorden": true,
+    "coordrxy": true,
+    "coordsite": false,
+    "coordlngoffset": "",
+    "coordlatoffset": "",
+    "coordeastoffset": "",
+    "coordnorthoffset": "",
+    "coordeastmult": "",
+    "coordnorthmult": "",
+    "coordcustomproj": false,
+    "coordcustomprojname": "",
+    "coordcustomprojnamex": "",
+    "coordcustomprojnamey": "",
+    "coordcustomprojnamez": "",
+    "coordsecondaryproj": false,
+    "coordsecondaryprojname": "",
+    "coordsecondaryprojnamex": "",
+    "coordsecondaryprojnamey": "",
+    "coordsecondaryprojnamez": "",
+    "coordsecondaryprojstr": "",
+    "coordelev": false,
+    "coordelevurl": "",
+    "coordmain": "ll",
+    "variables": {}
+  },
+  "look": {
+    "pagename": "VISIONS",
+    "minimalist": true,
+    "topbar": true,
+    "toolbar": true,
+    "scalebar": true,
+    "coordinates": true,
+    "zoomcontrol": true,
+    "graticule": false,
+    "miscellaneous": true,
+    "settings": false,
+    "primarycolor": "",
+    "secondarycolor": "",
+    "tertiarycolor": "",
+    "accentcolor": "",
+    "bodycolor": "",
+    "topbarcolor": "",
+    "toolbarcolor": "",
+    "mapcolor": "",
+    "highlightcolor": "",
+    "copylink": true,
+    "screenshot": true,
+    "fullscreen": true,
+    "info": false,
+    "infourl": "",
+    "help": false,
+    "logourl": "",
+    "helpurl": ""
+  },
+  "panels": {
+    "viewer": false,
+    "map": true,
+    "globe": false
+  },
+  "panelSettings": {
+    "demFallbackPath": "",
+    "demFallbackFormat": null,
+    "demFallbackType": null
+  },
+  "tools": [
+    {
+      "name": "Layers",
+      "icon": "layers",
+      "js": "LayersTool",
+      "variables": {
+        "expanded": true
+      }
+    },
+    {
+      "name": "Legend",
+      "icon": "map-legend",
+      "js": "LegendTool",
+      "separatedTool": true,
+      "variables": {
+        "displayOnStart": true
+      }
+    },
+    {
+      "name": "Info",
+      "icon": "information-variant",
+      "js": "InfoTool",
+      "variables": {
+        "sortAlphabetically": false
+      }
+    },
+    {
+      "name": "Sites",
+      "icon": "pin",
+      "js": "SitesTool"
+    },
+    {
+      "name": "Measure",
+      "icon": "chart-areaspline",
+      "js": "MeasureTool"
+    }
+  ],
+  "layers": [
+    {
+      "name": "FORECAST",
+      "uuid": "f1abfa31-457c-4cf1-a9f6-efe8e7db6034",
+      "description": "",
+      "type": "header",
+      "sublayers": [
+        {
+          "name": "Forecasted Coverage",
+          "uuid": "3d9e9b7f-9c7c-4c92-94d8-dec04c300168",
+          "description": "Forecasted EMIT coverage.  Typically updated every week on ~Tuesday with an 8 day forecast.  Operational considerations may change the upload time and forecast duration.",
+          "kind": "none",
+          "shape": "none",
+          "type": "vector",
+          "url": "Layers/forecasts/latest_forecast.json",
+          "demparser": "",
+          "controlled": false,
+          "layer3dType": "clamped",
+          "visibility": false,
+          "initialOpacity": 1,
+          "togglesWithHeader": true,
+          "minZoom": 0,
+          "maxZoom": 18,
+          "style": {
+            "className": "forecastedcoverage",
+            "color": "",
+            "fillColor": "",
+            "weight": 1,
+            "fillOpacity": 0.5,
+            "opacity": 1
+          },
+          "variables": {
+            "useKeyAsName": "date",
+            "legend": [
+              {
+                "color": "#1C1",
+                "strokecolor": "#1C1",
+                "shape": "square",
+                "value": "Forecasted Coverage"
+              },
+              {
+                "color": "#F00",
+                "strokecolor": "#F00",
+                "shape": "square",
+                "value": "Forecasted Coverage; Will be Updated"
+              }
+            ]
+          },
+          "radius": 1,
+          "time": {
+            "enabled": true,
+            "type": "local",
+            "isRelative": true,
+            "current": "2024-11-07T05:22:02Z",
+            "start": "",
+            "end": "",
+            "startProp": "start_time_iso8601",
+            "endProp": "end_time_iso8601",
+            "format": "%Y-%m-%dT%H:%M:%SZ",
+            "compositeTile": false,
+            "refresh": "1 hours",
+            "increment": "5 minutes"
+          }
+        },
+        {
+          "name": "Potential Longterm Coverage",
+          "uuid": "f9a7c0c0-9c1b-4012-96f0-8b04a0d7ee71",
+          "description": "Potential 8-week EMIT coverage.  The uncertainty in this product is very high - regular ISS altitude adjustments will modify this, and this does not include constraints on the onboard storage systems that are used to create the actual forecasts.  The indended use is mainly to highlight **regions** that will may have more or less coverage.  In particular, dark periods (where there is not favorable solar geometry for aquisitions) are well covered.",
+          "kind": "none",
+          "shape": "none",
+          "type": "vector",
+          "url": "Layers/forecasts/longterm_trajectory.json",
+          "demparser": "",
+          "controlled": false,
+          "layer3dType": "clamped",
+          "visibility": false,
+          "initialOpacity": 1,
+          "togglesWithHeader": true,
+          "minZoom": 0,
+          "maxZoom": 18,
+          "style": {
+            "className": "potentiallongtermcoverage",
+            "color": "",
+            "fillColor": "",
+            "weight": 1,
+            "fillOpacity": 0.5,
+            "opacity": 1
+          },
+          "variables": {
+            "useKeyAsName": "date",
+            "legend": [
+              {
+                "color": "#808",
+                "strokecolor": "#808",
+                "shape": "square",
+                "value": "Potential Coverage < 45 Solar Zenith"
+              },
+              {
+                "color": "#FF0",
+                "strokecolor": "#FF0",
+                "shape": "square",
+                "value": "Potential Coverage 45-60 Solar Zenith"
+              }
+            ]
+          },
+          "radius": 1,
+          "time": {
+            "enabled": true,
+            "type": "local",
+            "isRelative": true,
+            "current": "2024-11-07T05:22:02Z",
+            "start": "",
+            "end": "",
+            "startProp": "start_time_iso8601",
+            "endProp": "end_time_iso8601",
+            "format": "%Y-%m-%dT%H:%M:%SZ",
+            "compositeTile": false,
+            "refresh": "1 hours",
+            "increment": "5 minutes"
+          }
+        },
+        {
+          "name": "Target Mask",
+          "uuid": "4c9e9692-87ec-4895-baf3-6de3e92c3e5c",
+          "description": "Arid region dust source mask for the EMIT prime mission.  Includes a wide variety of calibration and validation targets.  The EMIT planning sequence will aim to collect data anytime the ISS passes over the target mask and solar geometry is favorable.",
+          "kind": "none",
+          "shape": "none",
+          "type": "vector",
+          "url": "Layers/coverage/20221109_combined_formated_sza.json",
+          "demparser": "",
+          "controlled": false,
+          "layer3dType": "clamped",
+          "visibility": false,
+          "initialOpacity": 0.5,
+          "togglesWithHeader": true,
+          "minZoom": 0,
+          "maxZoom": 18,
+          "style": {
+            "className": "targetmask",
+            "color": "#F00",
+            "fillColor": "#F00",
+            "weight": 0,
+            "fillOpacity": 1,
+            "opacity": 1
+          },
+          "variables": {
+            "useKeyAsName": "date",
+            "legend": [
+              {
+                "color": "red",
+                "strokecolor": "red",
+                "shape": "square",
+                "value": "Target Mask"
+              }
+            ]
+          },
+          "radius": 1,
+          "time": {
+            "enabled": false,
+            "type": "requery",
+            "isRelative": true,
+            "current": "2024-11-07T05:22:02Z",
+            "start": "",
+            "end": "",
+            "startProp": "",
+            "endProp": "",
+            "format": "%Y-%m-%dT%H:%M:%SZ",
+            "compositeTile": false,
+            "refresh": "1 hours",
+            "increment": "5 minutes"
+          }
+        }
+      ]
+    },
+    {
+      "name": "COVERAGE",
+      "uuid": "06b9550a-0e1e-4145-91bc-16417ed88485",
+      "description": "",
+      "type": "header",
+      "sublayers": [
+        {
+          "name": "Methane Metadata",
+          "uuid": "8fed617c-0c4e-4841-87d1-f4ffd1a56d4e",
+          "sublayers": [],
+          "type": "vector",
+          "kind": "none",
+          "visibility": false,
+          "sourceType": "url",
+          "url": "Layers/coverage/combined_plume_metadata.json",
+          "layer3dType": "clamped",
+          "initialOpacity": 1,
+          "controlled": false,
+          "style": {
+            "color": "",
+            "opacity": 1,
+            "fillColor": "",
+            "fillOpacity": 0.8,
+            "weight": 2,
+            "radius": 6,
+            "animation": "none",
+            "className": "methanemetadata"
+          },
+          "shape": "none",
+          "time": {
+            "enabled": true,
+            "type": "local",
+            "format": "%Y-%m-%dT%H:%M:%SZ",
+            "startProp": "UTC Time Observed",
+            "endProp": "UTC Time Observed",
+            "refreshIntervalEnabled": false
+          },
+          "variables": {
+            "legendOrientation": "vertical",
+            "legend": [
+              {
+                "color": "black",
+                "strokecolor": "red",
+                "shape": "circle",
+                "value": "Methane Detection"
+              }
+            ],
+            "useKeyAsName": [
+              "Max Plume Concentration (ppm m)",
+              "Concentration Uncertainty (ppm m)",
+              "Scene FIDs",
+              "UTC Time Observed"
+            ],
+            "links": [
+              {
+                "name": "Plume Complex Download",
+                "link": "{Data Download}"
+              }
+            ],
+            "info": [
+              {
+                "which": "last",
+                "value": "CH4 Plume Complexes: {plume_complex_count}"
+              }
+            ],
+            "dynamicExtent": false,
+            "noDuplicates": false,
+            "getFeaturePropertiesOnClick": false,
+            "style": {
+              "nointeraction": false
+            },
+            "layerAttachments": {
+              "labels": {
+                "enabled": false,
+                "initialVisibility": false,
+                "theme": "default",
+                "size": "default"
+              },
+              "pairings": {
+                "enabled": false,
+                "initialVisibility": false,
+                "style": {
+                  "color": "#FFFFFF"
+                }
+              }
+            },
+            "coordinateAttachments": {
+              "marker": {
+                "enabled": false,
+                "initialVisibility": false,
+                "color": "#FFFFFF",
+                "fillColor": "#FFFFFF"
+              }
+            },
+            "markerAttachments": {
+              "bearing": {
+                "enabled": false,
+                "angleUnit": "deg",
+                "color": "#FFFFFF",
+                "useCustomShape": false
+              },
+              "image": {
+                "enabled": false,
+                "initialVisibility": false,
+                "angleUnit": "deg",
+                "show": "click"
+              },
+              "model": {
+                "enabled": false,
+                "yawUnit": "deg",
+                "invertYaw": false,
+                "pitchUnit": "deg",
+                "invertPitch": false,
+                "rollUnit": "deg",
+                "invertRoll": false,
+                "show": "click"
+              },
+              "uncertainty": {
+                "enabled": false,
+                "initialVisibility": false,
+                "strokeColor": "#FFFFFF",
+                "color": "#FFFFFF",
+                "axisUnit": "meters",
+                "angleUnit": "deg"
+              }
+            },
+            "pathAttachments": {
+              "gradient": {
+                "enabled": false,
+                "connectAllPoints": false
+              }
+            },
+            "hideMainFeature": false
+          },
+          "description": "Methane plume complex identifications, and associated metadata."
+        },
+        {
+          "name": "CO2 Metadata",
+          "uuid": "c42e69ac-a25f-4800-a9e5-940feb8e76da",
+          "sublayers": [],
+          "type": "vector",
+          "kind": "none",
+          "visibility": false,
+          "sourceType": "url",
+          "url": "Layers/coverage/co2_plume_metadata.json",
+          "layer3dType": "clamped",
+          "initialOpacity": 1,
+          "controlled": false,
+          "style": {
+            "color": "#00F",
+            "opacity": 1,
+            "fillColor": "",
+            "fillOpacity": 0.8,
+            "weight": 2,
+            "radius": 6,
+            "animation": "none",
+            "className": "co2metadata"
+          },
+          "shape": "none",
+          "time": {
+            "enabled": true,
+            "type": "local",
+            "format": "%Y-%m-%dT%H:%M:%SZ",
+            "startProp": "UTC Time Observed",
+            "endProp": "UTC Time Observed",
+            "refreshIntervalEnabled": false
+          },
+          "variables": {
+            "legendOrientation": "vertical",
+            "legend": [
+              {
+                "color": "black",
+                "strokecolor": "blue",
+                "strokeweight": 3,
+                "shape": "circle",
+                "value": "CO2 Detection"
+              }
+            ],
+            "useKeyAsName": [
+              "Max Plume Concentration (ppm m)",
+              "Concentration Uncertainty (ppm m)",
+              "Scene FID",
+              "UTC Time Observed"
+            ],
+            "links": [
+              {
+                "name": "L1B Radiance Download",
+                "link": "{L1B Radiance Download}"
+              }
+            ],
+            "info": [
+              {
+                "which": "last",
+                "value": "CO2 Plume Complexes: {plume_complex_count}"
+              }
+            ],
+            "dynamicExtent": false,
+            "noDuplicates": false,
+            "getFeaturePropertiesOnClick": false,
+            "style": {
+              "nointeraction": false
+            },
+            "layerAttachments": {
+              "labels": {
+                "enabled": false,
+                "initialVisibility": false,
+                "theme": "default",
+                "size": "default"
+              },
+              "pairings": {
+                "enabled": false,
+                "initialVisibility": false,
+                "style": {
+                  "color": "#FFFFFF"
+                }
+              }
+            },
+            "coordinateAttachments": {
+              "marker": {
+                "enabled": false,
+                "initialVisibility": false,
+                "color": "#FFFFFF",
+                "fillColor": "#FFFFFF"
+              }
+            },
+            "markerAttachments": {
+              "bearing": {
+                "enabled": false,
+                "angleUnit": "deg",
+                "color": "#FFFFFF",
+                "useCustomShape": false
+              },
+              "image": {
+                "enabled": false,
+                "initialVisibility": false,
+                "angleUnit": "deg",
+                "show": "click"
+              },
+              "model": {
+                "enabled": false,
+                "yawUnit": "deg",
+                "invertYaw": false,
+                "pitchUnit": "deg",
+                "invertPitch": false,
+                "rollUnit": "deg",
+                "invertRoll": false,
+                "show": "click"
+              },
+              "uncertainty": {
+                "enabled": false,
+                "initialVisibility": false,
+                "strokeColor": "#FFFFFF",
+                "color": "#FFFFFF",
+                "axisUnit": "meters",
+                "angleUnit": "deg"
+              }
+            },
+            "pathAttachments": {
+              "gradient": {
+                "enabled": false,
+                "connectAllPoints": false
+              }
+            },
+            "hideMainFeature": false
+          },
+          "description": "Carbon dioxide plume complex identifications, and associated metadata."
+        },
+        {
+          "name": "Coverage",
+          "uuid": "cc4ed2d0-7fa4-49bd-9b0b-be947ff88115",
+          "sublayers": [],
+          "type": "vector",
+          "kind": "none",
+          "visibility": true,
+          "sourceType": "url",
+          "url": "geodatasets:coverage",
+          "minZoom": 0,
+          "maxZoom": 18,
+          "layer3dType": "clamped",
+          "initialOpacity": 1,
+          "controlled": false,
+          "style": {
+            "color": "#00F",
+            "opacity": 1,
+            "fillColor": "#00F",
+            "fillOpacity": 0.2,
+            "weight": 1,
+            "radius": 6,
+            "animation": "none",
+            "className": "coverage"
+          },
+          "shape": "none",
+          "time": {
+            "enabled": true,
+            "type": "requery",
+            "format": "%Y-%m-%dT%H:%M:%S",
+            "startProp": "",
+            "endProp": "",
+            "refreshIntervalEnabled": false
+          },
+          "variables": {
+            "legendOrientation": "vertical",
+            "legend": [
+              {
+                "color": "#CCF",
+                "strokecolor": "#03F",
+                "shape": "square",
+                "value": "Available on the LP DAAC"
+              },
+              {
+                "color": "#FEC",
+                "strokecolor": "#FD8",
+                "shape": "square",
+                "value": "Coming soon to the LP DAAC"
+              }
+            ],
+            "useKeyAsName": [
+              "fid"
+            ],
+            "links": [
+              {
+                "name": "L1B Radiance",
+                "link": "{L1B Radiance Download}"
+              },
+              {
+                "name": "L1B Obs",
+                "link": "{L1B Observation Download}"
+              },
+              {
+                "name": "L2A Reflectance",
+                "link": "{L2A Reflectance Download}"
+              },
+              {
+                "name": "L2A Reflectance Unc.",
+                "link": "{L2A Reflectance Uncertainty Download}"
+              }
+            ],
+            "info": [
+              {
+                "which": "last",
+                "value": "Scenes Available on the LP DAAC: {DAAC_index} / {FID_index} Total"
+              },
+              {
+                "which": "last",
+                "value": "Latest Data: {end_time}"
+              }
+            ],
+            "dynamicExtent": true,
+            "noDuplicates": false,
+            "getFeaturePropertiesOnClick": false,
+            "style": {
+              "nointeraction": false
+            },
+            "layerAttachments": {
+              "labels": {
+                "enabled": false,
+                "initialVisibility": false,
+                "theme": "default",
+                "size": "default"
+              },
+              "pairings": {
+                "enabled": false,
+                "initialVisibility": false,
+                "style": {
+                  "color": "#FFFFFF"
+                }
+              }
+            },
+            "coordinateAttachments": {
+              "marker": {
+                "enabled": false,
+                "initialVisibility": false,
+                "color": "#FFFFFF",
+                "fillColor": "#FFFFFF"
+              }
+            },
+            "markerAttachments": {
+              "bearing": {
+                "enabled": false,
+                "angleUnit": "deg",
+                "color": "#FFFFFF",
+                "useCustomShape": false
+              },
+              "image": {
+                "enabled": false,
+                "initialVisibility": false,
+                "angleUnit": "deg",
+                "show": "click"
+              },
+              "model": {
+                "enabled": false,
+                "yawUnit": "deg",
+                "invertYaw": false,
+                "pitchUnit": "deg",
+                "invertPitch": false,
+                "rollUnit": "deg",
+                "invertRoll": false,
+                "show": "click"
+              },
+              "uncertainty": {
+                "enabled": false,
+                "initialVisibility": false,
+                "strokeColor": "#FFFFFF",
+                "color": "#FFFFFF",
+                "axisUnit": "meters",
+                "angleUnit": "deg"
+              }
+            },
+            "pathAttachments": {
+              "gradient": {
+                "enabled": false,
+                "connectAllPoints": false
+              }
+            },
+            "hideMainFeature": false
+          },
+          "description": "Total EMIT coverage.  Each tile indicates an EMIT scene.  Blue tiles have been delivered to the LP DAAC (at least through L1B), while yellow tiles are still being processed."
+        },
+        {
+          "name": "Cloud Free Coverage",
+          "uuid": "b25181c4-c5eb-45ad-bf7b-db28aa9ca3c8",
+          "sublayers": [],
+          "type": "tile",
+          "visibility": false,
+          "sourceType": "url",
+          "url": "Layers/mosaics/coverage_tiled_temporal/{t}/{z}/{x}/{y}.png",
+          "tileformat": "tms",
+          "controlled": false,
+          "initialOpacity": 1,
+          "minZoom": 2,
+          "maxNativeZoom": 7,
+          "maxZoom": 22,
+          "throughTileServer": false,
+          "cogResampling": "nearest",
+          "cogTransform": false,
+          "cogColormap": "viridis",
+          "demtileurl": "",
+          "demparser": "",
+          "style": {
+            "brightness": 1,
+            "contrast": 1,
+            "saturation": 1,
+            "blend": "none"
+          },
+          "time": {
+            "enabled": true,
+            "type": "requery",
+            "format": "%Y-%m-%dT%H:%M:%SZ",
+            "compositeTile": true,
+            "refreshIntervalEnabled": false
+          },
+          "variables": {
+            "legendOrientation": "vertical",
+            "legend": [
+              {
+                "color": "#FFF",
+                "strokecolor": "#FFF",
+                "shape": "square",
+                "value": "Cloud Free Coverage"
+              }
+            ]
+          },
+          "description": "Cloud free observations in monthly intervals."
+        }
+      ]
+    },
+    {
+      "name": "Mosaics",
+      "uuid": "a818b33e-2e96-4795-97af-ba895b85463d",
+      "description": "",
+      "type": "header",
+      "sublayers": [
+        {
+          "name": "Methane Plumes",
+          "uuid": "37414e25-e3d3-4b78-ade5-75edfe4e5da0",
+          "sublayers": [],
+          "type": "tile",
+          "visibility": false,
+          "sourceType": "url",
+          "url": "Layers/mosaics/ch4_plume_tiles/{t}/{z}/{x}/{y}.png",
+          "tileformat": "tms",
+          "controlled": false,
+          "initialOpacity": 1,
+          "minZoom": 2,
+          "maxNativeZoom": 12,
+          "maxZoom": 22,
+          "demtileurl": "",
+          "demparser": "",
+          "throughTileServer": false,
+          "cogResampling": "nearest",
+          "cogExpressionEditable": false,
+          "cogTransform": false,
+          "cogColormap": "viridis",
+          "style": {
+            "brightness": 1,
+            "contrast": 1,
+            "saturation": 1,
+            "blend": "none"
+          },
+          "time": {
+            "enabled": true,
+            "type": "requery",
+            "format": "%Y-%m-%dT%H:%M:%SZ",
+            "compositeTile": true,
+            "refreshIntervalEnabled": false
+          },
+          "legend": "Layers/mosaics/ch4_cmap.csv",
+          "variables": {
+            "legendOrientation": "vertical"
+          },
+          "description": "Methance concentration in ppm m."
+        },
+        {
+          "name": "CO2 Plumes",
+          "uuid": "617302a1-0ec7-4d04-881f-46259f3c92e4",
+          "description": "CO2 concentration in ppm m.",
+          "type": "tile",
+          "url": "Layers/mosaics/co2_plume_tiles/{t}/{z}/{x}/{y}.png",
+          "demtileurl": "",
+          "demparser": "",
+          "controlled": false,
+          "legend": "Layers/mosaics/co2_cmap.csv",
+          "visibility": false,
+          "initialOpacity": 1,
+          "togglesWithHeader": true,
+          "minZoom": 2,
+          "maxNativeZoom": 12,
+          "maxZoom": 22,
+          "variables": {},
+          "tileformat": "tms",
+          "time": {
+            "enabled": true,
+            "type": "requery",
+            "isRelative": true,
+            "current": "2024-11-07T05:22:02Z",
+            "start": "",
+            "end": "",
+            "startProp": "",
+            "endProp": "",
+            "format": "%Y-%m-%dT%H:%M:%SZ",
+            "compositeTile": true,
+            "refresh": "1 hours",
+            "increment": "5 minutes"
+          }
+        },
+        {
+          "name": "RGB Mosaic",
+          "uuid": "fc8cddbf-daec-434d-8d70-98ec9a093ba2",
+          "description": "RGB of EMIT L1B radiance data, stretched per scene.",
+          "type": "tile",
+          "url": "Layers/mosaics/mosaic_temporal_rgb/{t}/{z}/{x}/{y}.png",
+          "demtileurl": "",
+          "demparser": "",
+          "controlled": false,
+          "visibility": true,
+          "initialOpacity": 1,
+          "togglesWithHeader": true,
+          "minZoom": 4,
+          "maxNativeZoom": 12,
+          "maxZoom": 22,
+          "variables": {},
+          "tileformat": "tms",
+          "time": {
+            "enabled": true,
+            "type": "requery",
+            "isRelative": true,
+            "current": "2024-11-07T05:22:02Z",
+            "start": "",
+            "end": "",
+            "startProp": "",
+            "endProp": "",
+            "format": "%Y-%m-%dT%H:%M:%SZ",
+            "compositeTile": true,
+            "refresh": "1 hours",
+            "increment": "5 minutes"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Hybrid Basemap",
+      "uuid": "ba365157-1ba0-4c7e-9a3a-4bce7ad3ed13",
+      "sublayers": [],
+      "type": "tile",
+      "visibility": false,
+      "sourceType": "url",
+      "url": "https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}",
+      "tileformat": "wms",
+      "controlled": false,
+      "initialOpacity": 0.7,
+      "minZoom": 0,
+      "maxNativeZoom": 18,
+      "maxZoom": 30,
+      "throughTileServer": false,
+      "cogResampling": "nearest",
+      "cogTransform": false,
+      "cogColormap": "viridis",
+      "demtileurl": "",
+      "demparser": "",
+      "boundingBox": [
+        -180,
+        -85.05112878,
+        179.99654660733782,
+        85.05112878
+      ],
+      "style": {
+        "brightness": 1,
+        "contrast": 1,
+        "saturation": 1,
+        "blend": "none"
+      },
+      "time": {
+        "enabled": false,
+        "type": "requery",
+        "format": "%Y-%m-%dT%H:%M:%SZ",
+        "compositeTile": false,
+        "refreshIntervalEnabled": false
+      },
+      "variables": {
+        "legendOrientation": "vertical"
+      },
+      "description": "Hybrid (Google) basemap."
+    },
+    {
+      "name": "Satellite Basemap",
+      "uuid": "eb815af0-c76b-4d0f-b070-f8129c76ff5b",
+      "sublayers": [],
+      "type": "tile",
+      "visibility": true,
+      "sourceType": "url",
+      "url": "https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}",
+      "tileformat": "wms",
+      "controlled": false,
+      "initialOpacity": 0.2,
+      "minZoom": 0,
+      "maxNativeZoom": 18,
+      "maxZoom": 30,
+      "throughTileServer": false,
+      "cogResampling": "nearest",
+      "cogTransform": false,
+      "cogColormap": "viridis",
+      "demtileurl": "",
+      "demparser": "",
+      "boundingBox": [
+        -180,
+        -85.05112878,
+        179.99654660733782,
+        85.05112878
+      ],
+      "style": {
+        "brightness": 1,
+        "contrast": 1,
+        "saturation": 1,
+        "blend": "none"
+      },
+      "time": {
+        "enabled": false,
+        "type": "requery",
+        "format": "%Y-%m-%dT%H:%M:%SZ",
+        "compositeTile": false,
+        "refreshIntervalEnabled": false
+      },
+      "variables": {
+        "legendOrientation": "vertical"
+      },
+      "description": "Satellite (google) basemap."
+    },
+    {
+      "name": "Dark Basemap",
+      "uuid": "c07628ff-4fc5-4f84-bd4f-09d641cbc2b8",
+      "sublayers": [],
+      "type": "tile",
+      "visibility": true,
+      "sourceType": "url",
+      "url": "https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",
+      "tileformat": "wms",
+      "controlled": false,
+      "initialOpacity": 1,
+      "minZoom": 0,
+      "maxNativeZoom": 22,
+      "maxZoom": 30,
+      "throughTileServer": false,
+      "cogResampling": "nearest",
+      "cogTransform": false,
+      "cogColormap": "viridis",
+      "demtileurl": "",
+      "demparser": "",
+      "style": {
+        "brightness": 1.5,
+        "contrast": 1,
+        "saturation": 1,
+        "blend": "none"
+      },
+      "time": {
+        "enabled": false,
+        "type": "requery",
+        "format": "%Y-%m-%dT%H:%M:%SZ",
+        "compositeTile": false,
+        "refreshIntervalEnabled": false
+      },
+      "variables": {
+        "legendOrientation": "vertical"
+      },
+      "description": "Open street map basemap."
+    },
+    {
+      "name": "Light Basemap",
+      "uuid": "4997fa89-9cc6-4223-be68-6807f7bb1398",
+      "sublayers": [],
+      "type": "tile",
+      "visibility": false,
+      "sourceType": "url",
+      "url": "https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
+      "tileformat": "wms",
+      "controlled": false,
+      "initialOpacity": 1,
+      "minZoom": 0,
+      "maxNativeZoom": 22,
+      "maxZoom": 30,
+      "throughTileServer": false,
+      "cogResampling": "nearest",
+      "cogTransform": false,
+      "cogColormap": "viridis",
+      "demtileurl": "",
+      "demparser": "",
+      "style": {
+        "brightness": 1,
+        "contrast": 1,
+        "saturation": 1,
+        "blend": "none"
+      },
+      "time": {
+        "enabled": false,
+        "type": "requery",
+        "format": "%Y-%m-%dT%H:%M:%SZ",
+        "compositeTile": false,
+        "refreshIntervalEnabled": false
+      },
+      "variables": {
+        "legendOrientation": "vertical"
+      },
+      "description": "Open street map basemap."
+    }
+  ],
+  "time": {
+    "enabled": true,
+    "visible": true,
+    "initiallyOpen": true,
+    "startInPointMode": false,
+    "format": "",
+    "initialstart": "2025-01-01T00:00:00Z",
+    "initialend": "now + 2592000",
+    "initialwindowstart": "2026-02-01T00:00:00Z",
+    "initialwindowend": "now + 2592000"
+  }
+}

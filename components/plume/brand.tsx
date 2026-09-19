@@ -1,0 +1,3 @@
+import Link from 'next/link';
+export function Mark(){return <svg viewBox="0 0 72 60" aria-hidden="true" className="brand-mark"><path d="M4 39 21 23 29 9Q35-1 43 10L54 26 68 39Q53 58 36 56 15 56 4 39" fill="#90b7a7"/><path d="M4 39 23 30 31 18Q36 10 43 22L55 35 68 39Q50 62 29 53Z" fill="#467f7d"/><path d="M4 41Q15 31 28 38T52 36L68 41Q50 61 30 54Z" fill="#1e626e"/><path d="M7 41Q18 36 30 42T60 40M12 46Q24 40 35 47T60 45M23 51Q31 48 41 52" stroke="#d5e7dc" fill="none" strokeWidth="1.5"/></svg>}
+export function Brand(){return <Link href="/" className="brand" aria-label="Plume home"><Mark/><span>Plume</span></Link>}

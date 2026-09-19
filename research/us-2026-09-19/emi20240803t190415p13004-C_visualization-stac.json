@@ -1,0 +1,257 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/version/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/processing/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+  ],
+  "id": "emi20240803t190415p13004-C",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -121.91959475431999,
+          37.4236602329828
+        ],
+        [
+          -121.92138032381322,
+          37.42367654012088
+        ],
+        [
+          -121.92255709903752,
+          37.424636771700854
+        ],
+        [
+          -121.9452969478857,
+          37.458549053350744
+        ],
+        [
+          -121.94528361281986,
+          37.45949842989855
+        ],
+        [
+          -121.94462808498552,
+          37.46376530492828
+        ],
+        [
+          -121.94402589614333,
+          37.46423467211538
+        ],
+        [
+          -121.94342369977377,
+          37.46470403608131
+        ],
+        [
+          -121.9404461045736,
+          37.46467737269803
+        ],
+        [
+          -121.92199873450977,
+          37.463561016949704
+        ],
+        [
+          -121.91962354180961,
+          37.463064576971455
+        ],
+        [
+          -121.91137600355593,
+          37.4568171761283
+        ],
+        [
+          -121.91078743803612,
+          37.456337005821325
+        ],
+        [
+          -121.91019888004037,
+          37.4558568326628
+        ],
+        [
+          -121.9043344867865,
+          37.44963089651775
+        ],
+        [
+          -121.90435525824603,
+          37.44820684840595
+        ],
+        [
+          -121.9165914470068,
+          37.42553174089968
+        ],
+        [
+          -121.91779552093243,
+          37.42459327253144
+        ],
+        [
+          -121.91959475431999,
+          37.4236602329828
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    -121.95953606807093,
+    37.416962841394614,
+    -121.89031900946944,
+    37.471443683290715
+  ],
+  "properties": {
+    "cm:gas": "ch4",
+    "created": "2025-06-09T20:46:21.567320Z",
+    "version": "v3",
+    "datetime": "2024-08-03T19:04:15Z",
+    "platform": "iss",
+    "cm:cmf_type": "mfa",
+    "cm:scene_id": "emi20240803t190415p13004",
+    "instruments": [
+      "emit"
+    ],
+    "cm:elevation": 31.9979,
+    "processing:level": "L3",
+    "cm:plume_latitude": 37.461355262065496,
+    "cm:elevation_units": "meters",
+    "cm:plume_longitude": -121.94001327259812,
+    "processing:lineage": "CH4 MFA Plume Visualization generation",
+    "cm:elevation_method": "point",
+    "cm:elevation_source": "cop-dem-glo-30",
+    "processing:software": {
+      "cmpro": "3.18.1"
+    },
+    "cm:created": "2025-06-09T20:46:21.567Z",
+    "cm:modified": "2025-08-26T00:40:11.418Z",
+    "cm:published_at": "2025-08-26T00:40:11.418Z",
+    "cm:visibility": "public",
+    "cm:mission_phase": "production",
+    "cm:plume:longitude": -121.94001327259812,
+    "cm:plume:latitude": 37.461355262065496,
+    "cm:plume:cmf_type": "mfa",
+    "cm:plume:gas": "CH4",
+    "cm:plume:sector": "6A",
+    "cm:plume:phme_candidate": false,
+    "cm:plume:published_at": "2024-11-26T22:09:34.408Z",
+    "cm:plume:publications": null,
+    "cm:plume:modified": "2025-03-25T22:56:04.988Z",
+    "cm:plume:created": "2024-11-07T22:10:57.476Z"
+  },
+  "links": [
+    {
+      "rel": "collection",
+      "href": "https://api.carbonmapper.org/api/v1/stac/collections/l3a-vis-ch4-mfa-v3",
+      "type": "application/json",
+      "title": "l3a-vis-ch4-mfa-v3"
+    },
+    {
+      "rel": "self",
+      "href": "https://api.carbonmapper.org/api/v1/stac/collections/l3a-vis-ch4-mfa-v3/items/emi20240803t190415p13004-C",
+      "type": "application/json",
+      "title": "HTTP link"
+    },
+    {
+      "rel": "root",
+      "href": "https://api.carbonmapper.org/api/v1/stac/",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "https://api.carbonmapper.org/api/v1/stac/collections/l3a-vis-ch4-mfa-v3",
+      "type": "application/json"
+    },
+    {
+      "rel": "collection",
+      "href": "https://api.carbonmapper.org/api/v1/stac/collections/l3a-vis-ch4-mfa-v3",
+      "type": "application/json"
+    }
+  ],
+  "assets": {
+    "rgb.png": {
+      "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l3a-vis-ch4-mfa-v3/2024/08/03/emi20240803t190415p13004-C/emi20240803t190415p13004-C_l3a-vis-ch4-mfa-v3_rgb.png",
+      "type": "image/png",
+      "title": "rgb.png",
+      "file:size": 30812,
+      "file:checksum": "11146cbd5a431d25ddff699aab0879be8f28b645a031",
+      "cm:asset_uuid": "1c80417b-f261-446b-9d31-03f5013a5c17",
+      "roles": [
+        "visual"
+      ]
+    },
+    "rgb.tif": {
+      "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l3a-vis-ch4-mfa-v3/2024/08/03/emi20240803t190415p13004-C/emi20240803t190415p13004-C_l3a-vis-ch4-mfa-v3_rgb.tif",
+      "type": "image/tiff; application=geotiff",
+      "title": "rgb.tif",
+      "file:size": 24731,
+      "file:checksum": "111406657ecd8209ba72356584348bdc5df008419d95",
+      "cm:asset_uuid": "b700ae68-cb01-4978-ae4a-e898aa1f560f",
+      "roles": [
+        "data"
+      ]
+    },
+    "plume.png": {
+      "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l3a-vis-ch4-mfa-v3/2024/08/03/emi20240803t190415p13004-C/emi20240803t190415p13004-C_l3a-vis-ch4-mfa-v3_plume.png",
+      "type": "image/png",
+      "title": "plume.png",
+      "file:size": 5693,
+      "file:checksum": "1114769ea400710f199dea3baecf04a87be26a8be278",
+      "cm:asset_uuid": "032fb63c-28d8-4735-8e37-be600d132270",
+      "roles": [
+        "visual"
+      ]
+    },
+    "plume.tif": {
+      "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l3a-vis-ch4-mfa-v3/2024/08/03/emi20240803t190415p13004-C/emi20240803t190415p13004-C_l3a-vis-ch4-mfa-v3_plume.tif",
+      "type": "image/tiff; application=geotiff",
+      "title": "plume.tif",
+      "file:size": 8818,
+      "file:checksum": "11143c5db5da2acf99d55cec97da058733eb81725e26",
+      "cm:asset_uuid": "4f512e0e-e398-4850-86bd-eba15af4c2f5",
+      "roles": [
+        "data"
+      ]
+    },
+    "plume-rgb.png": {
+      "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l3a-vis-ch4-mfa-v3/2024/08/03/emi20240803t190415p13004-C/emi20240803t190415p13004-C_l3a-vis-ch4-mfa-v3_plume-rgb.png",
+      "type": "image/png",
+      "title": "plume-rgb.png",
+      "file:size": 31857,
+      "file:checksum": "11149bf0597dc794acdf950c79d9f269ed8b3127a758",
+      "cm:asset_uuid": "127e4d4c-01ab-4c4d-a1d3-b59527c0da92",
+      "roles": [
+        "visual"
+      ]
+    },
+    "plume-confidence.tif": {
+      "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l3a-vis-ch4-mfa-v3/2024/08/03/emi20240803t190415p13004-C/emi20240803t190415p13004-C_l3a-vis-ch4-mfa-v3_plume-confidence.tif",
+      "type": "image/tiff; application=geotiff",
+      "title": "plume-confidence.tif",
+      "file:size": 3696,
+      "file:checksum": "1114e0530644f4b5ccdd01a0c3e5d5e7d028f93912d4",
+      "cm:asset_uuid": "2646edfd-794d-4a13-b0e0-d46c5e162880",
+      "roles": [
+        "data"
+      ]
+    },
+    "plume-outline.geojson": {
+      "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l3a-vis-ch4-mfa-v3/2024/08/03/emi20240803t190415p13004-C/emi20240803t190415p13004-C_l3a-vis-ch4-mfa-v3_plume-outline.geojson",
+      "type": "application/geo+json",
+      "title": "plume-outline.geojson",
+      "file:size": 16281,
+      "file:checksum": "1114f6ee22539b432433f6315b46b4201dcbf94e9f7a",
+      "cm:asset_uuid": "b1c91c50-cee4-455b-aacd-54f28bfb81f4",
+      "roles": [
+        "data"
+      ]
+    },
+    "plume-concentrations.tif": {
+      "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l3a-vis-ch4-mfa-v3/2024/08/03/emi20240803t190415p13004-C/emi20240803t190415p13004-C_l3a-vis-ch4-mfa-v3_plume-concentrations.tif",
+      "type": "image/tiff; application=geotiff",
+      "title": "plume-concentrations.tif",
+      "file:size": 28298,
+      "file:checksum": "111457d5f76eb1ac3ee06a3d42aaf04972a54acc582c",
+      "cm:asset_uuid": "f4506e88-53da-4dd7-a2d1-97a697057ded",
+      "roles": [
+        "data"
+      ]
+    }
+  },
+  "collection": "l3a-vis-ch4-mfa-v3"
+}

@@ -1,0 +1,5165 @@
+{
+  "type": "FeatureCollection",
+  "stac_version": "1.0.0",
+  "stac_extensions": [],
+  "context": {
+    "limit": 30,
+    "offset": 0,
+    "matched": 9
+  },
+  "numberMatched": 9,
+  "numberReturned": 9,
+  "features": [
+    {
+      "type": "Feature",
+      "stac_version": "1.0.0",
+      "stac_extensions": [
+        "https://stac-extensions.github.io/version/v1.2.0/schema.json",
+        "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+        "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/processing/v1.2.0/schema.json",
+        "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+      ],
+      "id": "emi20240420t101448p07050",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              46.3679445,
+              16.2763068
+            ],
+            [
+              46.4036063,
+              16.2333165
+            ],
+            [
+              46.4151049,
+              16.2166719
+            ],
+            [
+              46.4967609,
+              16.1151018
+            ],
+            [
+              46.8192169,
+              15.7027262
+            ],
+            [
+              46.6803195,
+              15.5830579
+            ],
+            [
+              46.5465247,
+              15.4611125
+            ],
+            [
+              46.4411288,
+              15.3613388
+            ],
+            [
+              46.4411177,
+              15.3597354
+            ],
+            [
+              46.3923374,
+              15.3135436
+            ],
+            [
+              46.2748688,
+              15.1955789
+            ],
+            [
+              45.812558,
+              15.7841648
+            ],
+            [
+              45.9867554,
+              15.9587757
+            ],
+            [
+              46.1178304,
+              16.0810751
+            ],
+            [
+              46.1233977,
+              16.0879946
+            ],
+            [
+              46.2078856,
+              16.1628987
+            ],
+            [
+              46.2123457,
+              16.1687529
+            ],
+            [
+              46.2963302,
+              16.2409475
+            ],
+            [
+              46.2996813,
+              16.2457373
+            ],
+            [
+              46.3564386,
+              16.2929494
+            ],
+            [
+              46.3679445,
+              16.2763068
+            ]
+          ]
+        ]
+      },
+      "bbox": [
+        45.812558,
+        15.1955789,
+        46.8192169,
+        16.2929494
+      ],
+      "properties": {
+        "gsd": 59.1354095981216,
+        "cm:gas": "co2",
+        "version": "v3e",
+        "datetime": "2024-04-20T10:14:48Z",
+        "platform": "iss",
+        "proj:bbox": [
+          586811.5254388948,
+          1680120.3005688493,
+          695429.0204276636,
+          1802206.2176278972
+        ],
+        "proj:epsg": 32638,
+        "proj:shape": [
+          2064,
+          1837
+        ],
+        "cm:cmf_type": "mfa",
+        "instruments": [
+          "emit"
+        ],
+        "cm:elevation": 881.5449,
+        "cm:water_vapor": 32.076881408691406,
+        "proj:transform": [
+          59.1354095981216,
+          0.0,
+          586795.5326006459,
+          0.0,
+          -59.1354095981216,
+          1802176.4060488923,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "processing:level": "L2",
+        "cm:elevation_units": "meters",
+        "processing:lineage": "CO2 MFA Matched Filter generation",
+        "view:sun_elevation": 69.88271850169806,
+        "cm:elevation_method": "average",
+        "cm:elevation_source": "radiance_data",
+        "processing:datetime": "2026-07-18T02:21:49.352266+00:00",
+        "processing:software": {
+          "cmpro": "3.91.0"
+        },
+        "cm:active_wavelengths": [
+          1952.41,
+          1959.83,
+          1967.25,
+          1974.67,
+          1982.09,
+          1989.52,
+          1996.94,
+          2004.35,
+          2011.77,
+          2019.19,
+          2026.61,
+          2034.03,
+          2041.45,
+          2048.86,
+          2056.28,
+          2063.7,
+          2071.11,
+          2078.53,
+          2085.94,
+          2093.36,
+          2100.77,
+          2108.18,
+          2115.59,
+          2123.01,
+          2130.42,
+          2137.83,
+          2145.24,
+          2152.65,
+          2160.06,
+          2167.47,
+          2174.88,
+          2182.28,
+          2189.69,
+          2197.1,
+          2204.5,
+          2211.91,
+          2219.31,
+          2226.72,
+          2234.12,
+          2241.53,
+          2248.93,
+          2256.33,
+          2263.73,
+          2271.14,
+          2278.54,
+          2285.94,
+          2293.34,
+          2300.74,
+          2308.14,
+          2315.53,
+          2322.93,
+          2330.33,
+          2337.73,
+          2345.12,
+          2352.52,
+          2359.91,
+          2367.31,
+          2374.7,
+          2382.09,
+          2389.49,
+          2396.88,
+          2404.27,
+          2411.66,
+          2419.05
+        ],
+        "cm:water_vapor_source": "ecmwf_ifs",
+        "cm:created": "2026-07-18T02:21:50.642Z",
+        "cm:modified": "2026-08-26T15:50:39.663Z",
+        "cm:published_at": "2026-08-26T15:50:39.663Z",
+        "cm:visibility": "public",
+        "cm:mission_phase": "production",
+        "cm:scene:name": "emi20240420t101448p07050",
+        "cm:scene:instrument": "emi",
+        "cm:scene:platform": null,
+        "cm:scene:mission_phase": "production",
+        "cm:scene:created": "2024-05-05T20:47:09.506Z",
+        "cm:scene:modified": "2026-07-17T04:06:45.698Z",
+        "cm:scene:published_at": "2024-05-08T22:57:42.413Z",
+        "cm:scene:cloud_cover_pct": null,
+        "cm:scene:cloud_cover_pct_assessed": 25
+      },
+      "links": [
+        {
+          "rel": "collection",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-co2-mfa-v3e",
+          "type": "application/json",
+          "title": "l2b-co2-mfa-v3e"
+        },
+        {
+          "rel": "self",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-co2-mfa-v3e/items/emi20240420t101448p07050",
+          "type": "application/json",
+          "title": "HTTP link"
+        },
+        {
+          "rel": "root",
+          "href": "https://api.carbonmapper.org/api/v1/stac/",
+          "type": "application/json"
+        },
+        {
+          "rel": "parent",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-co2-mfa-v3e",
+          "type": "application/json"
+        },
+        {
+          "rel": "collection",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-co2-mfa-v3e",
+          "type": "application/json"
+        }
+      ],
+      "assets": {
+        "cmf.tif": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-co2-mfa-v3e/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-co2-mfa-v3e_cmf.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "cmf.tif",
+          "file:size": 8986507,
+          "file:checksum": "1114d6e6d1951bd3f917ebb4cf228df19d8d8fada12f",
+          "cm:asset_uuid": "0888aeac-d4a4-4e72-9c64-ff62dcf7a548",
+          "roles": [
+            "data"
+          ]
+        },
+        "uas.txt": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-co2-mfa-v3e/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-co2-mfa-v3e_uas.txt",
+          "type": "text/plain",
+          "title": "uas.txt",
+          "file:size": 10419,
+          "proj:epsg": null,
+          "file:checksum": "1114b105ae343cd2cfa3758480fb37dd7cae402c9dec",
+          "cm:asset_uuid": "e117696c-23d4-4664-8ca7-639f8f85361f",
+          "roles": [
+            "data"
+          ]
+        },
+        "cmf-unortho.tif": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-co2-mfa-v3e/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-co2-mfa-v3e_cmf-unortho.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "cmf-unortho.tif",
+          "file:size": 5740402,
+          "proj:epsg": null,
+          "file:checksum": "111457c5a2eb0fa088db4e3948ccd97f261d89605483",
+          "cm:asset_uuid": "c9f40c1d-cc12-4e1b-8671-3ae693adb04e",
+          "roles": [
+            "data"
+          ]
+        },
+        "uncertainty.tif": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-co2-mfa-v3e/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-co2-mfa-v3e_uncertainty.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "uncertainty.tif",
+          "file:size": 7060838,
+          "file:checksum": "11145bc7b3e5315555bf14514658e907c81be3726cf3",
+          "cm:asset_uuid": "36db25f0-a6c9-4688-b3f4-979f9b691a57",
+          "roles": [
+            "data"
+          ]
+        },
+        "uncertainty-unortho.tif": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-co2-mfa-v3e/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-co2-mfa-v3e_uncertainty-unortho.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "uncertainty-unortho.tif",
+          "file:size": 4430350,
+          "proj:epsg": null,
+          "file:checksum": "1114a27f4e3d8bf0e59e16598531358c2b6c660d5070",
+          "cm:asset_uuid": "44fa1c09-bce4-49bd-a0be-5e2b104b0863",
+          "roles": [
+            "data"
+          ]
+        }
+      },
+      "collection": "l2b-co2-mfa-v3e",
+      "cmpro_version": "3.91.0"
+    },
+    {
+      "type": "Feature",
+      "stac_version": "1.0.0",
+      "stac_extensions": [
+        "https://stac-extensions.github.io/version/v1.2.0/schema.json",
+        "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+        "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/processing/v1.2.0/schema.json",
+        "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+      ],
+      "id": "emi20240420t101448p07050",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              46.3679445,
+              16.2763068
+            ],
+            [
+              46.4036063,
+              16.2333165
+            ],
+            [
+              46.4151049,
+              16.2166719
+            ],
+            [
+              46.4967609,
+              16.1151018
+            ],
+            [
+              46.8192169,
+              15.7027262
+            ],
+            [
+              46.6803195,
+              15.5830579
+            ],
+            [
+              46.5465247,
+              15.4611125
+            ],
+            [
+              46.4411288,
+              15.3613388
+            ],
+            [
+              46.4411177,
+              15.3597354
+            ],
+            [
+              46.3923374,
+              15.3135436
+            ],
+            [
+              46.2748688,
+              15.1955789
+            ],
+            [
+              45.812558,
+              15.7841648
+            ],
+            [
+              45.9867554,
+              15.9587757
+            ],
+            [
+              46.1178304,
+              16.0810751
+            ],
+            [
+              46.1233977,
+              16.0879946
+            ],
+            [
+              46.2078856,
+              16.1628987
+            ],
+            [
+              46.2123457,
+              16.1687529
+            ],
+            [
+              46.2963302,
+              16.2409475
+            ],
+            [
+              46.2996813,
+              16.2457373
+            ],
+            [
+              46.3564386,
+              16.2929494
+            ],
+            [
+              46.3679445,
+              16.2763068
+            ]
+          ]
+        ]
+      },
+      "bbox": [
+        45.812558,
+        15.1955789,
+        46.8192169,
+        16.2929494
+      ],
+      "properties": {
+        "gsd": 59.1354095981216,
+        "cm:gas": "ch4",
+        "version": "v3e",
+        "datetime": "2024-04-20T10:14:48Z",
+        "platform": "iss",
+        "proj:bbox": [
+          586811.5254388948,
+          1680120.3005688493,
+          695429.0204276636,
+          1802206.2176278972
+        ],
+        "proj:epsg": 32638,
+        "proj:shape": [
+          2064,
+          1837
+        ],
+        "cm:cmf_type": "mfa",
+        "instruments": [
+          "emit"
+        ],
+        "cm:elevation": 881.5449,
+        "cm:water_vapor": 32.076881408691406,
+        "proj:transform": [
+          59.1354095981216,
+          0.0,
+          586795.5326006459,
+          0.0,
+          -59.1354095981216,
+          1802176.4060488923,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "processing:level": "L2",
+        "cm:elevation_units": "meters",
+        "processing:lineage": "CH4 MFA Matched Filter generation",
+        "view:sun_elevation": 69.88271850169806,
+        "cm:elevation_method": "average",
+        "cm:elevation_source": "radiance_data",
+        "processing:datetime": "2026-07-18T02:21:42.863034+00:00",
+        "processing:software": {
+          "cmpro": "3.91.0"
+        },
+        "cm:active_wavelengths": [
+          2093.36,
+          2100.77,
+          2108.18,
+          2115.59,
+          2123.01,
+          2130.42,
+          2137.83,
+          2145.24,
+          2152.65,
+          2160.06,
+          2167.47,
+          2174.88,
+          2182.28,
+          2189.69,
+          2197.1,
+          2204.5,
+          2211.91,
+          2219.31,
+          2226.72,
+          2234.12,
+          2241.53,
+          2248.93,
+          2256.33,
+          2263.73,
+          2271.14,
+          2278.54,
+          2285.94,
+          2293.34,
+          2300.74,
+          2308.14,
+          2315.53,
+          2322.93,
+          2330.33,
+          2337.73,
+          2345.12,
+          2352.52,
+          2359.91,
+          2367.31,
+          2374.7,
+          2382.09,
+          2389.49,
+          2396.88,
+          2404.27,
+          2411.66,
+          2419.05,
+          2426.44,
+          2433.83,
+          2441.22,
+          2448.61,
+          2455.99,
+          2463.38,
+          2470.77
+        ],
+        "cm:water_vapor_source": "ecmwf_ifs",
+        "cm:created": "2026-07-18T02:21:44.097Z",
+        "cm:modified": "2026-08-26T15:50:39.663Z",
+        "cm:published_at": "2026-08-26T15:50:39.663Z",
+        "cm:visibility": "public",
+        "cm:mission_phase": "production",
+        "cm:scene:name": "emi20240420t101448p07050",
+        "cm:scene:instrument": "emi",
+        "cm:scene:platform": null,
+        "cm:scene:mission_phase": "production",
+        "cm:scene:created": "2024-05-05T20:47:09.506Z",
+        "cm:scene:modified": "2026-07-17T04:06:45.698Z",
+        "cm:scene:published_at": "2024-05-08T22:57:42.413Z",
+        "cm:scene:cloud_cover_pct": null,
+        "cm:scene:cloud_cover_pct_assessed": 25
+      },
+      "links": [
+        {
+          "rel": "collection",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-ch4-mfa-v3e",
+          "type": "application/json",
+          "title": "l2b-ch4-mfa-v3e"
+        },
+        {
+          "rel": "self",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-ch4-mfa-v3e/items/emi20240420t101448p07050",
+          "type": "application/json",
+          "title": "HTTP link"
+        },
+        {
+          "rel": "root",
+          "href": "https://api.carbonmapper.org/api/v1/stac/",
+          "type": "application/json"
+        },
+        {
+          "rel": "parent",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-ch4-mfa-v3e",
+          "type": "application/json"
+        },
+        {
+          "rel": "collection",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-ch4-mfa-v3e",
+          "type": "application/json"
+        }
+      ],
+      "assets": {
+        "cmf.tif": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-ch4-mfa-v3e/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-ch4-mfa-v3e_cmf.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "cmf.tif",
+          "file:size": 9073384,
+          "file:checksum": "11148028729548de4836b9d41f1301d9d4d95dbc796f",
+          "cm:asset_uuid": "a5717bc6-a914-4052-9281-925c6d3695f3",
+          "roles": [
+            "data"
+          ]
+        },
+        "uas.txt": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-ch4-mfa-v3e/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-ch4-mfa-v3e_uas.txt",
+          "type": "text/plain",
+          "title": "uas.txt",
+          "file:size": 10425,
+          "proj:epsg": null,
+          "file:checksum": "11140e2519d107a1aadc647ec2a630a42fba7147026d",
+          "cm:asset_uuid": "6c81d2ef-3f02-4281-8c9f-9b27976bed4e",
+          "roles": [
+            "data"
+          ]
+        },
+        "cmf-unortho.tif": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-ch4-mfa-v3e/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-ch4-mfa-v3e_cmf-unortho.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "cmf-unortho.tif",
+          "file:size": 5779432,
+          "proj:epsg": null,
+          "file:checksum": "1114d721a4a713d6377599d0e28155d9c50f5119c66c",
+          "cm:asset_uuid": "5546afa8-56a2-4d6a-a565-4ef7ab12033c",
+          "roles": [
+            "data"
+          ]
+        },
+        "uncertainty.tif": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-ch4-mfa-v3e/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-ch4-mfa-v3e_uncertainty.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "uncertainty.tif",
+          "file:size": 6874715,
+          "file:checksum": "11142caae17bc760567e835d7b88441e548bb1630be8",
+          "cm:asset_uuid": "d18fb7f0-8448-4f99-8f8f-3fde21b64c45",
+          "roles": [
+            "data"
+          ]
+        },
+        "uncertainty-unortho.tif": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-ch4-mfa-v3e/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-ch4-mfa-v3e_uncertainty-unortho.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "uncertainty-unortho.tif",
+          "file:size": 4349860,
+          "proj:epsg": null,
+          "file:checksum": "111437ecab156d7547e0687d2727dd168354b2321b66",
+          "cm:asset_uuid": "a75fc9c9-4387-453e-8258-9de7b02b306d",
+          "roles": [
+            "data"
+          ]
+        }
+      },
+      "collection": "l2b-ch4-mfa-v3e",
+      "cmpro_version": "3.91.0"
+    },
+    {
+      "type": "Feature",
+      "stac_version": "1.0.0",
+      "stac_extensions": [
+        "https://stac-extensions.github.io/version/v1.2.0/schema.json",
+        "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+        "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/processing/v1.1.0/schema.json",
+        "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+      ],
+      "id": "emi20240420t101448p07050",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              46.2748592,
+              15.1939754
+            ],
+            [
+              46.2735862,
+              15.1945689
+            ],
+            [
+              46.267029,
+              15.2026239
+            ],
+            [
+              45.8233501,
+              15.7660005
+            ],
+            [
+              45.8111731,
+              15.7822099
+            ],
+            [
+              45.8109104,
+              15.7843281
+            ],
+            [
+              45.8168282,
+              15.7915811
+            ],
+            [
+              45.8413333,
+              15.816729
+            ],
+            [
+              45.9855889,
+              15.959915
+            ],
+            [
+              46.1222313,
+              16.0891346
+            ],
+            [
+              46.2111794,
+              16.1698933
+            ],
+            [
+              46.2985151,
+              16.2468783
+            ],
+            [
+              46.3542872,
+              16.2942026
+            ],
+            [
+              46.3566123,
+              16.2945439
+            ],
+            [
+              46.4048964,
+              16.2343252
+            ],
+            [
+              46.7910584,
+              15.7429869
+            ],
+            [
+              46.8200634,
+              15.705213
+            ],
+            [
+              46.8208624,
+              15.7025553
+            ],
+            [
+              46.2771304,
+              15.1944322
+            ],
+            [
+              46.2748592,
+              15.1939754
+            ]
+          ]
+        ]
+      },
+      "bbox": [
+        45.8109104,
+        15.1939754,
+        46.8208624,
+        16.2945439
+      ],
+      "properties": {
+        "gsd": 59.1354095981216,
+        "cm:gas": "co2",
+        "created": "2025-03-29T01:34:35.624104Z",
+        "version": "v3",
+        "datetime": "2024-04-20T10:14:48Z",
+        "platform": "iss",
+        "proj:bbox": [
+          586634.7898000998,
+          1679942.270612129,
+          695607.3180808439,
+          1802384.2406289242
+        ],
+        "proj:epsg": 32638,
+        "proj:shape": [
+          2064,
+          1837
+        ],
+        "cm:cmf_type": "mfa",
+        "instruments": [
+          "emit"
+        ],
+        "cm:elevation": 881.5449,
+        "cm:water_vapor": 33.5831413269043,
+        "proj:transform": [
+          59.1354095981216,
+          0.0,
+          586795.5326006459,
+          0.0,
+          -59.1354095981216,
+          1802176.4060488923,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "processing:level": "L2",
+        "cm:elevation_units": "meters",
+        "processing:lineage": "CO2 MFA Matched Filter generation",
+        "view:sun_elevation": 69.88159594074847,
+        "cm:elevation_method": "average",
+        "cm:elevation_source": "radiance_data",
+        "processing:software": {
+          "cmpro": "3.6.3"
+        },
+        "cm:active_wavelengths": [
+          1959.83,
+          1967.25,
+          1974.67,
+          1982.09,
+          1989.52,
+          1996.94,
+          2004.35,
+          2011.77,
+          2019.19,
+          2026.61,
+          2034.03,
+          2041.45,
+          2048.86,
+          2056.28,
+          2063.7,
+          2071.11,
+          2078.53,
+          2085.94,
+          2093.36,
+          2100.77,
+          2108.18,
+          2115.59,
+          2123.01,
+          2130.42,
+          2137.83,
+          2145.24,
+          2152.65,
+          2160.06,
+          2167.47,
+          2174.88,
+          2182.28,
+          2189.69,
+          2197.1,
+          2204.5,
+          2211.91,
+          2219.31,
+          2226.72,
+          2234.12,
+          2241.53,
+          2248.93,
+          2256.33,
+          2263.73,
+          2271.14,
+          2278.54,
+          2285.94,
+          2293.34,
+          2300.74,
+          2308.14,
+          2315.53,
+          2322.93,
+          2330.33,
+          2337.73,
+          2345.12,
+          2352.52,
+          2359.91,
+          2367.31,
+          2374.7,
+          2382.09,
+          2389.49,
+          2396.88,
+          2404.27,
+          2411.66,
+          2419.05
+        ],
+        "cm:water_vapor_source": "merra2",
+        "cm:created": "2025-03-29T01:36:54.811Z",
+        "cm:modified": "2026-08-26T15:50:39.663Z",
+        "cm:published_at": "2025-08-26T00:41:01.017Z",
+        "cm:visibility": "public_archive",
+        "cm:mission_phase": "production",
+        "cm:scene:name": "emi20240420t101448p07050",
+        "cm:scene:instrument": "emi",
+        "cm:scene:platform": null,
+        "cm:scene:mission_phase": "production",
+        "cm:scene:created": "2024-05-05T20:47:09.506Z",
+        "cm:scene:modified": "2026-07-17T04:06:45.698Z",
+        "cm:scene:published_at": "2024-05-08T22:57:42.413Z",
+        "cm:scene:cloud_cover_pct": null,
+        "cm:scene:cloud_cover_pct_assessed": 25
+      },
+      "links": [
+        {
+          "rel": "collection",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-co2-mfa-v3",
+          "type": "application/json",
+          "title": "l2b-co2-mfa-v3"
+        },
+        {
+          "rel": "self",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-co2-mfa-v3/items/emi20240420t101448p07050",
+          "type": "application/json",
+          "title": "HTTP link"
+        },
+        {
+          "rel": "root",
+          "href": "https://api.carbonmapper.org/api/v1/stac/",
+          "type": "application/json"
+        },
+        {
+          "rel": "parent",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-co2-mfa-v3",
+          "type": "application/json"
+        },
+        {
+          "rel": "collection",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-co2-mfa-v3",
+          "type": "application/json"
+        }
+      ],
+      "assets": {
+        "cmf.tif": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-co2-mfa-v3/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-co2-mfa-v3_cmf.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "cmf.tif",
+          "file:size": 9048586,
+          "file:checksum": "111440454565032515ee481911e2ae95eec305af307b",
+          "cm:asset_uuid": "a361b125-0b0c-49e8-857a-2234f54c21d8",
+          "roles": [
+            "data"
+          ]
+        },
+        "uas.txt": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-co2-mfa-v3/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-co2-mfa-v3_uas.txt",
+          "type": "text/plain",
+          "title": "uas.txt",
+          "file:size": 10421,
+          "proj:epsg": null,
+          "file:checksum": "11148c7a95cada0c05951601bdd5608795f08fb0f9e5",
+          "cm:asset_uuid": "4e3aedec-b234-4936-b73f-5f63e12e26d0",
+          "roles": [
+            "data"
+          ]
+        },
+        "cmf-unortho.tif": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-co2-mfa-v3/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-co2-mfa-v3_cmf-unortho.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "cmf-unortho.tif",
+          "file:size": 7830793,
+          "proj:epsg": null,
+          "file:checksum": "11143ba51187ed35850ccf4322e32f4e4cf5df72c8d6",
+          "cm:asset_uuid": "6e70d7f3-14c8-42de-bd2b-cff81e761847",
+          "roles": [
+            "data"
+          ]
+        },
+        "uncertainty.tif": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-co2-mfa-v3/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-co2-mfa-v3_uncertainty.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "uncertainty.tif",
+          "file:size": 7890074,
+          "file:checksum": "1114c447f77565ae7920ad27a88e61d66d92da1214a9",
+          "cm:asset_uuid": "b4e2b6ec-cd11-4c7d-bdf7-1b25bdad89c2",
+          "roles": [
+            "data"
+          ]
+        },
+        "artifact-mask.tif": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-co2-mfa-v3/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-co2-mfa-v3_artifact-mask.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "artifact-mask.tif",
+          "file:size": 4984,
+          "proj:epsg": null,
+          "file:checksum": "1114bd616f4414e24d73c2775bfe37bc1e2831613513",
+          "cm:asset_uuid": "6945a3a7-3c7d-4698-a439-edf604fbc466",
+          "roles": [
+            "data"
+          ]
+        },
+        "uncertainty-unortho.tif": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-co2-mfa-v3/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-co2-mfa-v3_uncertainty-unortho.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "uncertainty-unortho.tif",
+          "file:size": 6839590,
+          "proj:epsg": null,
+          "file:checksum": "11143d82b829c78a5b08367965f362d5a08a826be88e",
+          "cm:asset_uuid": "5e745e02-06c4-4b2c-86f9-2777c43d7d48",
+          "roles": [
+            "data"
+          ]
+        }
+      },
+      "collection": "l2b-co2-mfa-v3"
+    },
+    {
+      "type": "Feature",
+      "stac_version": "1.0.0",
+      "stac_extensions": [
+        "https://stac-extensions.github.io/version/v1.2.0/schema.json",
+        "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+        "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/processing/v1.1.0/schema.json",
+        "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+      ],
+      "id": "emi20240420t101448p07050",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              46.2748592,
+              15.1939754
+            ],
+            [
+              46.2735862,
+              15.1945689
+            ],
+            [
+              46.267029,
+              15.2026239
+            ],
+            [
+              45.8233501,
+              15.7660005
+            ],
+            [
+              45.8111731,
+              15.7822099
+            ],
+            [
+              45.8109104,
+              15.7843281
+            ],
+            [
+              45.8168282,
+              15.7915811
+            ],
+            [
+              45.8413333,
+              15.816729
+            ],
+            [
+              45.9855889,
+              15.959915
+            ],
+            [
+              46.1222313,
+              16.0891346
+            ],
+            [
+              46.2111794,
+              16.1698933
+            ],
+            [
+              46.2985151,
+              16.2468783
+            ],
+            [
+              46.3542872,
+              16.2942026
+            ],
+            [
+              46.3566123,
+              16.2945439
+            ],
+            [
+              46.4048964,
+              16.2343252
+            ],
+            [
+              46.7910584,
+              15.7429869
+            ],
+            [
+              46.8200634,
+              15.705213
+            ],
+            [
+              46.8208624,
+              15.7025553
+            ],
+            [
+              46.2771304,
+              15.1944322
+            ],
+            [
+              46.2748592,
+              15.1939754
+            ]
+          ]
+        ]
+      },
+      "bbox": [
+        45.8109104,
+        15.1939754,
+        46.8208624,
+        16.2945439
+      ],
+      "properties": {
+        "gsd": 59.1354095981216,
+        "cm:gas": "ch4",
+        "created": "2025-03-29T01:34:36.821890Z",
+        "version": "v3",
+        "datetime": "2024-04-20T10:14:48Z",
+        "platform": "iss",
+        "proj:bbox": [
+          586634.7898000998,
+          1679942.270612129,
+          695607.3180808439,
+          1802384.2406289242
+        ],
+        "proj:epsg": 32638,
+        "proj:shape": [
+          2064,
+          1837
+        ],
+        "cm:cmf_type": "mfa",
+        "instruments": [
+          "emit"
+        ],
+        "cm:elevation": 881.5449,
+        "cm:water_vapor": 33.5831413269043,
+        "proj:transform": [
+          59.1354095981216,
+          0.0,
+          586795.5326006459,
+          0.0,
+          -59.1354095981216,
+          1802176.4060488923,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "processing:level": "L2",
+        "cm:elevation_units": "meters",
+        "processing:lineage": "CH4 MFA Matched Filter generation",
+        "view:sun_elevation": 69.88159594074847,
+        "cm:elevation_method": "average",
+        "cm:elevation_source": "radiance_data",
+        "processing:software": {
+          "cmpro": "3.6.3"
+        },
+        "cm:active_wavelengths": [
+          2100.77,
+          2108.18,
+          2115.59,
+          2123.01,
+          2130.42,
+          2137.83,
+          2145.24,
+          2152.65,
+          2160.06,
+          2167.47,
+          2174.88,
+          2182.28,
+          2189.69,
+          2197.1,
+          2204.5,
+          2211.91,
+          2219.31,
+          2226.72,
+          2234.12,
+          2241.53,
+          2248.93,
+          2256.33,
+          2263.73,
+          2271.14,
+          2278.54,
+          2285.94,
+          2293.34,
+          2300.74,
+          2308.14,
+          2315.53,
+          2322.93,
+          2330.33,
+          2337.73,
+          2345.12,
+          2352.52,
+          2359.91,
+          2367.31,
+          2374.7,
+          2382.09,
+          2389.49,
+          2396.88,
+          2404.27,
+          2411.66,
+          2419.05,
+          2426.44,
+          2433.83,
+          2441.22,
+          2448.61,
+          2455.99,
+          2463.38,
+          2470.77
+        ],
+        "cm:water_vapor_source": "merra2",
+        "cm:created": "2025-03-29T01:36:34.584Z",
+        "cm:modified": "2026-08-26T15:50:39.663Z",
+        "cm:published_at": "2025-04-04T19:44:32.132Z",
+        "cm:visibility": "public_archive",
+        "cm:mission_phase": "production",
+        "cm:scene:name": "emi20240420t101448p07050",
+        "cm:scene:instrument": "emi",
+        "cm:scene:platform": null,
+        "cm:scene:mission_phase": "production",
+        "cm:scene:created": "2024-05-05T20:47:09.506Z",
+        "cm:scene:modified": "2026-07-17T04:06:45.698Z",
+        "cm:scene:published_at": "2024-05-08T22:57:42.413Z",
+        "cm:scene:cloud_cover_pct": null,
+        "cm:scene:cloud_cover_pct_assessed": 25
+      },
+      "links": [
+        {
+          "rel": "collection",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-ch4-mfa-v3",
+          "type": "application/json",
+          "title": "l2b-ch4-mfa-v3"
+        },
+        {
+          "rel": "self",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-ch4-mfa-v3/items/emi20240420t101448p07050",
+          "type": "application/json",
+          "title": "HTTP link"
+        },
+        {
+          "rel": "root",
+          "href": "https://api.carbonmapper.org/api/v1/stac/",
+          "type": "application/json"
+        },
+        {
+          "rel": "parent",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-ch4-mfa-v3",
+          "type": "application/json"
+        },
+        {
+          "rel": "collection",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-ch4-mfa-v3",
+          "type": "application/json"
+        }
+      ],
+      "assets": {
+        "cmf.tif": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-ch4-mfa-v3/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-ch4-mfa-v3_cmf.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "cmf.tif",
+          "file:size": 9092153,
+          "file:checksum": "111480e8d745af73d3dc9b69a7a31c8b75e973965c5a",
+          "cm:asset_uuid": "18d11a18-682b-4cc1-bd48-11a9855ee356",
+          "roles": [
+            "data"
+          ]
+        },
+        "uas.txt": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-ch4-mfa-v3/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-ch4-mfa-v3_uas.txt",
+          "type": "text/plain",
+          "title": "uas.txt",
+          "file:size": 10425,
+          "proj:epsg": null,
+          "file:checksum": "111459acf005a2088e95ce980405b5078061346bbb2d",
+          "cm:asset_uuid": "4d826a07-2608-40de-a03e-886a0ea108d8",
+          "roles": [
+            "data"
+          ]
+        },
+        "cmf-unortho.tif": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-ch4-mfa-v3/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-ch4-mfa-v3_cmf-unortho.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "cmf-unortho.tif",
+          "file:size": 7870108,
+          "proj:epsg": null,
+          "file:checksum": "11143dc0fa39ac9945336778be80946787d49c46e191",
+          "cm:asset_uuid": "223a36b1-6095-4103-b684-aa1f6e29cb44",
+          "roles": [
+            "data"
+          ]
+        },
+        "uncertainty.tif": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-ch4-mfa-v3/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-ch4-mfa-v3_uncertainty.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "uncertainty.tif",
+          "file:size": 7705050,
+          "file:checksum": "11140fbfcaf1b312fc0a65b7a03564702c68a26e3e88",
+          "cm:asset_uuid": "512e9e7a-bb29-4886-859a-442e4a4fb634",
+          "roles": [
+            "data"
+          ]
+        },
+        "artifact-mask.tif": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-ch4-mfa-v3/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-ch4-mfa-v3_artifact-mask.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "artifact-mask.tif",
+          "file:size": 4984,
+          "proj:epsg": null,
+          "file:checksum": "1114bd616f4414e24d73c2775bfe37bc1e2831613513",
+          "cm:asset_uuid": "60f9a486-265e-4834-9bc1-22a6bff65329",
+          "roles": [
+            "data"
+          ]
+        },
+        "uncertainty-unortho.tif": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-ch4-mfa-v3/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-ch4-mfa-v3_uncertainty-unortho.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "uncertainty-unortho.tif",
+          "file:size": 6638015,
+          "proj:epsg": null,
+          "file:checksum": "1114a8401bfcfac10725ac2c91a2eb877866729e45de",
+          "cm:asset_uuid": "69b1d550-26b5-4c4e-b224-da16f1ac80f1",
+          "roles": [
+            "data"
+          ]
+        }
+      },
+      "collection": "l2b-ch4-mfa-v3"
+    },
+    {
+      "type": "Feature",
+      "stac_version": "1.0.0",
+      "stac_extensions": [
+        "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+        "https://stac-extensions.github.io/processing/v1.1.0/schema.json",
+        "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+        "https://stac-extensions.github.io/version/v1.2.0/schema.json"
+      ],
+      "id": "emi20240420t101448p07050",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              46.273322,
+              15.196146
+            ],
+            [
+              46.267184,
+              15.203374
+            ],
+            [
+              46.259784,
+              15.213481
+            ],
+            [
+              46.251585,
+              15.223301
+            ],
+            [
+              46.244077,
+              15.233527
+            ],
+            [
+              46.235773,
+              15.243463
+            ],
+            [
+              46.232162,
+              15.248696
+            ],
+            [
+              46.220066,
+              15.26351
+            ],
+            [
+              46.216457,
+              15.268741
+            ],
+            [
+              46.208151,
+              15.278679
+            ],
+            [
+              46.202374,
+              15.28662
+            ],
+            [
+              46.196236,
+              15.293848
+            ],
+            [
+              46.188835,
+              15.303956
+            ],
+            [
+              46.184428,
+              15.3089
+            ],
+            [
+              46.174754,
+              15.321834
+            ],
+            [
+              46.168722,
+              15.328945
+            ],
+            [
+              46.150924,
+              15.352173
+            ],
+            [
+              46.142525,
+              15.362238
+            ],
+            [
+              46.139009,
+              15.367342
+            ],
+            [
+              46.135037,
+              15.371862
+            ],
+            [
+              46.123304,
+              15.387387
+            ],
+            [
+              46.121063,
+              15.389622
+            ],
+            [
+              46.113014,
+              15.400389
+            ],
+            [
+              46.109148,
+              15.404791
+            ],
+            [
+              46.105432,
+              15.410141
+            ],
+            [
+              46.092793,
+              15.425496
+            ],
+            [
+              46.083225,
+              15.438314
+            ],
+            [
+              46.078819,
+              15.443257
+            ],
+            [
+              46.075103,
+              15.448606
+            ],
+            [
+              46.064631,
+              15.461253
+            ],
+            [
+              46.06102,
+              15.466485
+            ],
+            [
+              46.048925,
+              15.481298
+            ],
+            [
+              46.042608,
+              15.48978
+            ],
+            [
+              46.038742,
+              15.494182
+            ],
+            [
+              46.028525,
+              15.507659
+            ],
+            [
+              46.024661,
+              15.51206
+            ],
+            [
+              46.006863,
+              15.535288
+            ],
+            [
+              45.996391,
+              15.547935
+            ],
+            [
+              45.988991,
+              15.558042
+            ],
+            [
+              45.970396,
+              15.580981
+            ],
+            [
+              45.964078,
+              15.589464
+            ],
+            [
+              45.959929,
+              15.594248
+            ],
+            [
+              45.956494,
+              15.599217
+            ],
+            [
+              45.951981,
+              15.604278
+            ],
+            [
+              45.946204,
+              15.612219
+            ],
+            [
+              45.938007,
+              15.622038
+            ],
+            [
+              45.931581,
+              15.630639
+            ],
+            [
+              45.927717,
+              15.63504
+            ],
+            [
+              45.921833,
+              15.643099
+            ],
+            [
+              45.903238,
+              15.666039
+            ],
+            [
+              45.901254,
+              15.669103
+            ],
+            [
+              45.893055,
+              15.678923
+            ],
+            [
+              45.887171,
+              15.686982
+            ],
+            [
+              45.878974,
+              15.696801
+            ],
+            [
+              45.876881,
+              15.699985
+            ],
+            [
+              45.866411,
+              15.71263
+            ],
+            [
+              45.8628,
+              15.717862
+            ],
+            [
+              45.852329,
+              15.730508
+            ],
+            [
+              45.850344,
+              15.733573
+            ],
+            [
+              45.842146,
+              15.743393
+            ],
+            [
+              45.834096,
+              15.75416
+            ],
+            [
+              45.831856,
+              15.756395
+            ],
+            [
+              45.825972,
+              15.764454
+            ],
+            [
+              45.81171,
+              15.781976
+            ],
+            [
+              45.811612,
+              15.784983
+            ],
+            [
+              45.817776,
+              15.791737
+            ],
+            [
+              45.840595,
+              15.814558
+            ],
+            [
+              45.840952,
+              15.815451
+            ],
+            [
+              45.899318,
+              15.87378
+            ],
+            [
+              45.944633,
+              15.919165
+            ],
+            [
+              45.945525,
+              15.919522
+            ],
+            [
+              45.96431,
+              15.938251
+            ],
+            [
+              45.970267,
+              15.943669
+            ],
+            [
+              45.983622,
+              15.957085
+            ],
+            [
+              45.987228,
+              15.960155
+            ],
+            [
+              46.000952,
+              15.973878
+            ],
+            [
+              46.00185,
+              15.974239
+            ],
+            [
+              46.011428,
+              15.983759
+            ],
+            [
+              46.013224,
+              15.985076
+            ],
+            [
+              46.025871,
+              15.997721
+            ],
+            [
+              46.027675,
+              15.998929
+            ],
+            [
+              46.037244,
+              16.008556
+            ],
+            [
+              46.038136,
+              16.008913
+            ],
+            [
+              46.04731,
+              16.018087
+            ],
+            [
+              46.057092,
+              16.026791
+            ],
+            [
+              46.066373,
+              16.036081
+            ],
+            [
+              46.067382,
+              16.036543
+            ],
+            [
+              46.084362,
+              16.052981
+            ],
+            [
+              46.10042,
+              16.067424
+            ],
+            [
+              46.108616,
+              16.07563
+            ],
+            [
+              46.123707,
+              16.089094
+            ],
+            [
+              46.129855,
+              16.095238
+            ],
+            [
+              46.143395,
+              16.107699
+            ],
+            [
+              46.149161,
+              16.11239
+            ],
+            [
+              46.155438,
+              16.118627
+            ],
+            [
+              46.16216,
+              16.124309
+            ],
+            [
+              46.167542,
+              16.12969
+            ],
+            [
+              46.173902,
+              16.13491
+            ],
+            [
+              46.185225,
+              16.145715
+            ],
+            [
+              46.196279,
+              16.155189
+            ],
+            [
+              46.201346,
+              16.160251
+            ],
+            [
+              46.206569,
+              16.164398
+            ],
+            [
+              46.216827,
+              16.174114
+            ],
+            [
+              46.222276,
+              16.178485
+            ],
+            [
+              46.236676,
+              16.191765
+            ],
+            [
+              46.245756,
+              16.199799
+            ],
+            [
+              46.250981,
+              16.203948
+            ],
+            [
+              46.254845,
+              16.20782
+            ],
+            [
+              46.268853,
+              16.219659
+            ],
+            [
+              46.273152,
+              16.223956
+            ],
+            [
+              46.286553,
+              16.235137
+            ],
+            [
+              46.290706,
+              16.239347
+            ],
+            [
+              46.294849,
+              16.242413
+            ],
+            [
+              46.298713,
+              16.246285
+            ],
+            [
+              46.306763,
+              16.252705
+            ],
+            [
+              46.310622,
+              16.256572
+            ],
+            [
+              46.314887,
+              16.259748
+            ],
+            [
+              46.318752,
+              16.263621
+            ],
+            [
+              46.334385,
+              16.276544
+            ],
+            [
+              46.345825,
+              16.286911
+            ],
+            [
+              46.354625,
+              16.293816
+            ],
+            [
+              46.35665,
+              16.293816
+            ],
+            [
+              46.366101,
+              16.282456
+            ],
+            [
+              46.369713,
+              16.277223
+            ],
+            [
+              46.376286,
+              16.269571
+            ],
+            [
+              46.380002,
+              16.264221
+            ],
+            [
+              46.3882,
+              16.254401
+            ],
+            [
+              46.390292,
+              16.251219
+            ],
+            [
+              46.402518,
+              16.235677
+            ],
+            [
+              46.406614,
+              16.231105
+            ],
+            [
+              46.412497,
+              16.223047
+            ],
+            [
+              46.418528,
+              16.215937
+            ],
+            [
+              46.420622,
+              16.212753
+            ],
+            [
+              46.428926,
+              16.202816
+            ],
+            [
+              46.432537,
+              16.197583
+            ],
+            [
+              46.43705,
+              16.192522
+            ],
+            [
+              46.442826,
+              16.184582
+            ],
+            [
+              46.448965,
+              16.177353
+            ],
+            [
+              46.450951,
+              16.174287
+            ],
+            [
+              46.459255,
+              16.164351
+            ],
+            [
+              46.462866,
+              16.159118
+            ],
+            [
+              46.479187,
+              16.139006
+            ],
+            [
+              46.48128,
+              16.135822
+            ],
+            [
+              46.487311,
+              16.128712
+            ],
+            [
+              46.501318,
+              16.11036
+            ],
+            [
+              46.509622,
+              16.100424
+            ],
+            [
+              46.521431,
+              16.085371
+            ],
+            [
+              46.523522,
+              16.082189
+            ],
+            [
+              46.529661,
+              16.07496
+            ],
+            [
+              46.533272,
+              16.069727
+            ],
+            [
+              46.537678,
+              16.064784
+            ],
+            [
+              46.543562,
+              16.056726
+            ],
+            [
+              46.549593,
+              16.049615
+            ],
+            [
+              46.553311,
+              16.044265
+            ],
+            [
+              46.561615,
+              16.034328
+            ],
+            [
+              46.565225,
+              16.029096
+            ],
+            [
+              46.573423,
+              16.019276
+            ],
+            [
+              46.585264,
+              16.003633
+            ],
+            [
+              46.593569,
+              15.993696
+            ],
+            [
+              46.615232,
+              15.966066
+            ],
+            [
+              46.632924,
+              15.942955
+            ],
+            [
+              46.636894,
+              15.938437
+            ],
+            [
+              46.642672,
+              15.930495
+            ],
+            [
+              46.648904,
+              15.923139
+            ],
+            [
+              46.652421,
+              15.918034
+            ],
+            [
+              46.656934,
+              15.912973
+            ],
+            [
+              46.662711,
+              15.905032
+            ],
+            [
+              46.668849,
+              15.897804
+            ],
+            [
+              46.672459,
+              15.892572
+            ],
+            [
+              46.67849,
+              15.885461
+            ],
+            [
+              46.682207,
+              15.880112
+            ],
+            [
+              46.688346,
+              15.872883
+            ],
+            [
+              46.694123,
+              15.864941
+            ],
+            [
+              46.700154,
+              15.857831
+            ],
+            [
+              46.70387,
+              15.852482
+            ],
+            [
+              46.709902,
+              15.845371
+            ],
+            [
+              46.715786,
+              15.837312
+            ],
+            [
+              46.719758,
+              15.832792
+            ],
+            [
+              46.725535,
+              15.824851
+            ],
+            [
+              46.731673,
+              15.817623
+            ],
+            [
+              46.735283,
+              15.812391
+            ],
+            [
+              46.741314,
+              15.80528
+            ],
+            [
+              46.745031,
+              15.799931
+            ],
+            [
+              46.751063,
+              15.79282
+            ],
+            [
+              46.756947,
+              15.784761
+            ],
+            [
+              46.762978,
+              15.777651
+            ],
+            [
+              46.782582,
+              15.752612
+            ],
+            [
+              46.79215,
+              15.739795
+            ],
+            [
+              46.798181,
+              15.732684
+            ],
+            [
+              46.801897,
+              15.727335
+            ],
+            [
+              46.808037,
+              15.720106
+            ],
+            [
+              46.815438,
+              15.709998
+            ],
+            [
+              46.819403,
+              15.705487
+            ],
+            [
+              46.82031,
+              15.702666
+            ],
+            [
+              46.815074,
+              15.697458
+            ],
+            [
+              46.807451,
+              15.691453
+            ],
+            [
+              46.804017,
+              15.688023
+            ],
+            [
+              46.788495,
+              15.6752
+            ],
+            [
+              46.78127,
+              15.668519
+            ],
+            [
+              46.776582,
+              15.664908
+            ],
+            [
+              46.769355,
+              15.658225
+            ],
+            [
+              46.765208,
+              15.655156
+            ],
+            [
+              46.735421,
+              15.629152
+            ],
+            [
+              46.731439,
+              15.625174
+            ],
+            [
+              46.726756,
+              15.621566
+            ],
+            [
+              46.709233,
+              15.605669
+            ],
+            [
+              46.704551,
+              15.602064
+            ],
+            [
+              46.695694,
+              15.593751
+            ],
+            [
+              46.690469,
+              15.589602
+            ],
+            [
+              46.686063,
+              15.585188
+            ],
+            [
+              46.681262,
+              15.581476
+            ],
+            [
+              46.676196,
+              15.576414
+            ],
+            [
+              46.670972,
+              15.572267
+            ],
+            [
+              46.665906,
+              15.567204
+            ],
+            [
+              46.660682,
+              15.563057
+            ],
+            [
+              46.649664,
+              15.552581
+            ],
+            [
+              46.644435,
+              15.548429
+            ],
+            [
+              46.638945,
+              15.542931
+            ],
+            [
+              46.633602,
+              15.538676
+            ],
+            [
+              46.621621,
+              15.527227
+            ],
+            [
+              46.615731,
+              15.522424
+            ],
+            [
+              46.602732,
+              15.510505
+            ],
+            [
+              46.59659,
+              15.504366
+            ],
+            [
+              46.590818,
+              15.49967
+            ],
+            [
+              46.577853,
+              15.487245
+            ],
+            [
+              46.569696,
+              15.480166
+            ],
+            [
+              46.563012,
+              15.473485
+            ],
+            [
+              46.547491,
+              15.459579
+            ],
+            [
+              46.530874,
+              15.444102
+            ],
+            [
+              46.522124,
+              15.435383
+            ],
+            [
+              46.513371,
+              15.427615
+            ],
+            [
+              46.50308,
+              15.417863
+            ],
+            [
+              46.492717,
+              15.40749
+            ],
+            [
+              46.491337,
+              15.406719
+            ],
+            [
+              46.481885,
+              15.397197
+            ],
+            [
+              46.479963,
+              15.395884
+            ],
+            [
+              46.469853,
+              15.385715
+            ],
+            [
+              46.468961,
+              15.385358
+            ],
+            [
+              46.458486,
+              15.374885
+            ],
+            [
+              46.457587,
+              15.374523
+            ],
+            [
+              46.441823,
+              15.358748
+            ],
+            [
+              46.440257,
+              15.357728
+            ],
+            [
+              46.423511,
+              15.340982
+            ],
+            [
+              46.421301,
+              15.339308
+            ],
+            [
+              46.400949,
+              15.318988
+            ],
+            [
+              46.400179,
+              15.318722
+            ],
+            [
+              46.349218,
+              15.267912
+            ],
+            [
+              46.33533,
+              15.253892
+            ],
+            [
+              46.292266,
+              15.210773
+            ],
+            [
+              46.273322,
+              15.196146
+            ]
+          ]
+        ]
+      },
+      "bbox": [
+        45.81296836298573,
+        15.196276526170879,
+        46.81869341496833,
+        16.29226102968709
+      ],
+      "properties": {
+        "cm:gas": "ch4",
+        "created": "2024-05-05T20:48:31.385230Z",
+        "datetime": "2024-04-20T10:14:48Z",
+        "platform": "iss",
+        "proj:bbox": [
+          45.81296836298573,
+          15.196276526170879,
+          46.81869341496833,
+          16.29226102968709
+        ],
+        "proj:epsg": 4326,
+        "cm:cmf_type": "mfa",
+        "instruments": [
+          "emit"
+        ],
+        "proj:transform": [
+          0.0005415859192151865,
+          0.0,
+          45.81296836298573,
+          0.0,
+          -0.0005417619888859177,
+          16.29226102968709,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "processing:level": "L2",
+        "processing:lineage": "CH4 MFA Matched Filter generation",
+        "view:sun_elevation": 69.88268881464305,
+        "processing:software": {
+          "cmpro": "0.4.0-dev.18"
+        },
+        "cm:created": "2024-05-05T20:51:38.022Z",
+        "cm:modified": "2024-05-08T22:57:42.437Z",
+        "cm:published_at": "2024-05-08T22:57:42.437Z",
+        "cm:visibility": "public_archive",
+        "cm:mission_phase": "production",
+        "cm:scene:name": "emi20240420t101448p07050",
+        "cm:scene:instrument": "emi",
+        "cm:scene:platform": null,
+        "cm:scene:mission_phase": "production",
+        "cm:scene:created": "2024-05-05T20:47:09.506Z",
+        "cm:scene:modified": "2026-07-17T04:06:45.698Z",
+        "cm:scene:published_at": "2024-05-08T22:57:42.413Z",
+        "cm:scene:cloud_cover_pct": null,
+        "cm:scene:cloud_cover_pct_assessed": 25,
+        "version": "v1"
+      },
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-ch4-mfa-v1/items/emi20240420t101448p07050",
+          "type": "application/json",
+          "title": "HTTP link"
+        },
+        {
+          "rel": "root",
+          "href": "https://api.carbonmapper.org/api/v1/stac/",
+          "type": "application/json"
+        },
+        {
+          "rel": "parent",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-ch4-mfa-v1",
+          "type": "application/json"
+        },
+        {
+          "rel": "collection",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-ch4-mfa-v1",
+          "type": "application/json"
+        }
+      ],
+      "assets": {
+        "cmf.tif": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-ch4-mfa-v1/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-ch4-mfa-v1_cmf.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "cmf.tif",
+          "file:size": 8228666,
+          "file:checksum": "1114de8c339b1277b8e3e3d85253a5d69195cbbae285",
+          "cm:asset_uuid": "c3228d72-c0c3-4175-9b25-45a72127d530",
+          "roles": [
+            "data"
+          ]
+        },
+        "uas.txt": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-ch4-mfa-v1/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-ch4-mfa-v1_uas.txt",
+          "type": "text/plain",
+          "title": "uas.txt",
+          "file:size": 10425,
+          "proj:epsg": null,
+          "file:checksum": "11148b6cf85fa18fc1d48cd62ca9b524d51688d124e8",
+          "cm:asset_uuid": "2e446db5-968f-498c-90d0-6fb385fc8a8f",
+          "roles": [
+            "data"
+          ]
+        },
+        "cmf-unortho.tif": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-ch4-mfa-v1/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-ch4-mfa-v1_cmf-unortho.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "cmf-unortho.tif",
+          "file:size": 7756486,
+          "proj:epsg": null,
+          "file:checksum": "11142ac566f87933407a43aa2f7ecb33a2657a111028",
+          "cm:asset_uuid": "fa1093d4-1a30-4186-ab8b-47e046f4f936",
+          "roles": [
+            "data"
+          ]
+        },
+        "artifact-mask.tif": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-ch4-mfa-v1/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-ch4-mfa-v1_artifact-mask.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "artifact-mask.tif",
+          "file:size": 4932,
+          "proj:epsg": null,
+          "file:checksum": "1114e57b8db524e471c2378f31389501e6620211aaaf",
+          "cm:asset_uuid": "b5f3fcd5-dcd4-4991-80c6-3049149d9626",
+          "roles": [
+            "data"
+          ]
+        }
+      },
+      "collection": "l2b-ch4-mfa-v1"
+    },
+    {
+      "type": "Feature",
+      "stac_version": "1.0.0",
+      "stac_extensions": [
+        "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+        "https://stac-extensions.github.io/processing/v1.1.0/schema.json",
+        "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+        "https://stac-extensions.github.io/version/v1.2.0/schema.json"
+      ],
+      "id": "emi20240420t101448p07050",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              46.273322,
+              15.196146
+            ],
+            [
+              46.267184,
+              15.203374
+            ],
+            [
+              46.259784,
+              15.213481
+            ],
+            [
+              46.251585,
+              15.223301
+            ],
+            [
+              46.244077,
+              15.233527
+            ],
+            [
+              46.235773,
+              15.243463
+            ],
+            [
+              46.232162,
+              15.248696
+            ],
+            [
+              46.220066,
+              15.26351
+            ],
+            [
+              46.216457,
+              15.268741
+            ],
+            [
+              46.208151,
+              15.278679
+            ],
+            [
+              46.202374,
+              15.28662
+            ],
+            [
+              46.196236,
+              15.293848
+            ],
+            [
+              46.188835,
+              15.303956
+            ],
+            [
+              46.184428,
+              15.3089
+            ],
+            [
+              46.174754,
+              15.321834
+            ],
+            [
+              46.168722,
+              15.328945
+            ],
+            [
+              46.150924,
+              15.352173
+            ],
+            [
+              46.142525,
+              15.362238
+            ],
+            [
+              46.139009,
+              15.367342
+            ],
+            [
+              46.135037,
+              15.371862
+            ],
+            [
+              46.123304,
+              15.387387
+            ],
+            [
+              46.121063,
+              15.389622
+            ],
+            [
+              46.113014,
+              15.400389
+            ],
+            [
+              46.109148,
+              15.404791
+            ],
+            [
+              46.105432,
+              15.410141
+            ],
+            [
+              46.092793,
+              15.425496
+            ],
+            [
+              46.083225,
+              15.438314
+            ],
+            [
+              46.078819,
+              15.443257
+            ],
+            [
+              46.075103,
+              15.448606
+            ],
+            [
+              46.064631,
+              15.461253
+            ],
+            [
+              46.06102,
+              15.466485
+            ],
+            [
+              46.048925,
+              15.481298
+            ],
+            [
+              46.042608,
+              15.48978
+            ],
+            [
+              46.038742,
+              15.494182
+            ],
+            [
+              46.028525,
+              15.507659
+            ],
+            [
+              46.024661,
+              15.51206
+            ],
+            [
+              46.006863,
+              15.535288
+            ],
+            [
+              45.996391,
+              15.547935
+            ],
+            [
+              45.988991,
+              15.558042
+            ],
+            [
+              45.970396,
+              15.580981
+            ],
+            [
+              45.964078,
+              15.589464
+            ],
+            [
+              45.959929,
+              15.594248
+            ],
+            [
+              45.956494,
+              15.599217
+            ],
+            [
+              45.951981,
+              15.604278
+            ],
+            [
+              45.946204,
+              15.612219
+            ],
+            [
+              45.938007,
+              15.622038
+            ],
+            [
+              45.931581,
+              15.630639
+            ],
+            [
+              45.927717,
+              15.63504
+            ],
+            [
+              45.921833,
+              15.643099
+            ],
+            [
+              45.903238,
+              15.666039
+            ],
+            [
+              45.901254,
+              15.669103
+            ],
+            [
+              45.893055,
+              15.678923
+            ],
+            [
+              45.887171,
+              15.686982
+            ],
+            [
+              45.878974,
+              15.696801
+            ],
+            [
+              45.876881,
+              15.699985
+            ],
+            [
+              45.866411,
+              15.71263
+            ],
+            [
+              45.8628,
+              15.717862
+            ],
+            [
+              45.852329,
+              15.730508
+            ],
+            [
+              45.850344,
+              15.733573
+            ],
+            [
+              45.842146,
+              15.743393
+            ],
+            [
+              45.834096,
+              15.75416
+            ],
+            [
+              45.831856,
+              15.756395
+            ],
+            [
+              45.825972,
+              15.764454
+            ],
+            [
+              45.81171,
+              15.781976
+            ],
+            [
+              45.811612,
+              15.784983
+            ],
+            [
+              45.817776,
+              15.791737
+            ],
+            [
+              45.840595,
+              15.814558
+            ],
+            [
+              45.840952,
+              15.815451
+            ],
+            [
+              45.899318,
+              15.87378
+            ],
+            [
+              45.944633,
+              15.919165
+            ],
+            [
+              45.945525,
+              15.919522
+            ],
+            [
+              45.96431,
+              15.938251
+            ],
+            [
+              45.970267,
+              15.943669
+            ],
+            [
+              45.983622,
+              15.957085
+            ],
+            [
+              45.987228,
+              15.960155
+            ],
+            [
+              46.000952,
+              15.973878
+            ],
+            [
+              46.00185,
+              15.974239
+            ],
+            [
+              46.011428,
+              15.983759
+            ],
+            [
+              46.013224,
+              15.985076
+            ],
+            [
+              46.025871,
+              15.997721
+            ],
+            [
+              46.027675,
+              15.998929
+            ],
+            [
+              46.037244,
+              16.008556
+            ],
+            [
+              46.038136,
+              16.008913
+            ],
+            [
+              46.04731,
+              16.018087
+            ],
+            [
+              46.057092,
+              16.026791
+            ],
+            [
+              46.066373,
+              16.036081
+            ],
+            [
+              46.067382,
+              16.036543
+            ],
+            [
+              46.084362,
+              16.052981
+            ],
+            [
+              46.10042,
+              16.067424
+            ],
+            [
+              46.108616,
+              16.07563
+            ],
+            [
+              46.123707,
+              16.089094
+            ],
+            [
+              46.129855,
+              16.095238
+            ],
+            [
+              46.143395,
+              16.107699
+            ],
+            [
+              46.149161,
+              16.11239
+            ],
+            [
+              46.155438,
+              16.118627
+            ],
+            [
+              46.16216,
+              16.124309
+            ],
+            [
+              46.167542,
+              16.12969
+            ],
+            [
+              46.173902,
+              16.13491
+            ],
+            [
+              46.185225,
+              16.145715
+            ],
+            [
+              46.196279,
+              16.155189
+            ],
+            [
+              46.201346,
+              16.160251
+            ],
+            [
+              46.206569,
+              16.164398
+            ],
+            [
+              46.216827,
+              16.174114
+            ],
+            [
+              46.222276,
+              16.178485
+            ],
+            [
+              46.236676,
+              16.191765
+            ],
+            [
+              46.245756,
+              16.199799
+            ],
+            [
+              46.250981,
+              16.203948
+            ],
+            [
+              46.254845,
+              16.20782
+            ],
+            [
+              46.268853,
+              16.219659
+            ],
+            [
+              46.273152,
+              16.223956
+            ],
+            [
+              46.286553,
+              16.235137
+            ],
+            [
+              46.290706,
+              16.239347
+            ],
+            [
+              46.294849,
+              16.242413
+            ],
+            [
+              46.298713,
+              16.246285
+            ],
+            [
+              46.306763,
+              16.252705
+            ],
+            [
+              46.310622,
+              16.256572
+            ],
+            [
+              46.314887,
+              16.259748
+            ],
+            [
+              46.318752,
+              16.263621
+            ],
+            [
+              46.334385,
+              16.276544
+            ],
+            [
+              46.345825,
+              16.286911
+            ],
+            [
+              46.354625,
+              16.293816
+            ],
+            [
+              46.35665,
+              16.293816
+            ],
+            [
+              46.366101,
+              16.282456
+            ],
+            [
+              46.369713,
+              16.277223
+            ],
+            [
+              46.376286,
+              16.269571
+            ],
+            [
+              46.380002,
+              16.264221
+            ],
+            [
+              46.3882,
+              16.254401
+            ],
+            [
+              46.390292,
+              16.251219
+            ],
+            [
+              46.402518,
+              16.235677
+            ],
+            [
+              46.406614,
+              16.231105
+            ],
+            [
+              46.412497,
+              16.223047
+            ],
+            [
+              46.418528,
+              16.215937
+            ],
+            [
+              46.420622,
+              16.212753
+            ],
+            [
+              46.428926,
+              16.202816
+            ],
+            [
+              46.432537,
+              16.197583
+            ],
+            [
+              46.43705,
+              16.192522
+            ],
+            [
+              46.442826,
+              16.184582
+            ],
+            [
+              46.448965,
+              16.177353
+            ],
+            [
+              46.450951,
+              16.174287
+            ],
+            [
+              46.459255,
+              16.164351
+            ],
+            [
+              46.462866,
+              16.159118
+            ],
+            [
+              46.479187,
+              16.139006
+            ],
+            [
+              46.48128,
+              16.135822
+            ],
+            [
+              46.487311,
+              16.128712
+            ],
+            [
+              46.501318,
+              16.11036
+            ],
+            [
+              46.509622,
+              16.100424
+            ],
+            [
+              46.521431,
+              16.085371
+            ],
+            [
+              46.523522,
+              16.082189
+            ],
+            [
+              46.529661,
+              16.07496
+            ],
+            [
+              46.533272,
+              16.069727
+            ],
+            [
+              46.537678,
+              16.064784
+            ],
+            [
+              46.543562,
+              16.056726
+            ],
+            [
+              46.549593,
+              16.049615
+            ],
+            [
+              46.553311,
+              16.044265
+            ],
+            [
+              46.561615,
+              16.034328
+            ],
+            [
+              46.565225,
+              16.029096
+            ],
+            [
+              46.573423,
+              16.019276
+            ],
+            [
+              46.585264,
+              16.003633
+            ],
+            [
+              46.593569,
+              15.993696
+            ],
+            [
+              46.615232,
+              15.966066
+            ],
+            [
+              46.632924,
+              15.942955
+            ],
+            [
+              46.636894,
+              15.938437
+            ],
+            [
+              46.642672,
+              15.930495
+            ],
+            [
+              46.648904,
+              15.923139
+            ],
+            [
+              46.652421,
+              15.918034
+            ],
+            [
+              46.656934,
+              15.912973
+            ],
+            [
+              46.662711,
+              15.905032
+            ],
+            [
+              46.668849,
+              15.897804
+            ],
+            [
+              46.672459,
+              15.892572
+            ],
+            [
+              46.67849,
+              15.885461
+            ],
+            [
+              46.682207,
+              15.880112
+            ],
+            [
+              46.688346,
+              15.872883
+            ],
+            [
+              46.694123,
+              15.864941
+            ],
+            [
+              46.700154,
+              15.857831
+            ],
+            [
+              46.70387,
+              15.852482
+            ],
+            [
+              46.709902,
+              15.845371
+            ],
+            [
+              46.715786,
+              15.837312
+            ],
+            [
+              46.719758,
+              15.832792
+            ],
+            [
+              46.725535,
+              15.824851
+            ],
+            [
+              46.731673,
+              15.817623
+            ],
+            [
+              46.735283,
+              15.812391
+            ],
+            [
+              46.741314,
+              15.80528
+            ],
+            [
+              46.745031,
+              15.799931
+            ],
+            [
+              46.751063,
+              15.79282
+            ],
+            [
+              46.756947,
+              15.784761
+            ],
+            [
+              46.762978,
+              15.777651
+            ],
+            [
+              46.782582,
+              15.752612
+            ],
+            [
+              46.79215,
+              15.739795
+            ],
+            [
+              46.798181,
+              15.732684
+            ],
+            [
+              46.801897,
+              15.727335
+            ],
+            [
+              46.808037,
+              15.720106
+            ],
+            [
+              46.815438,
+              15.709998
+            ],
+            [
+              46.819403,
+              15.705487
+            ],
+            [
+              46.82031,
+              15.702666
+            ],
+            [
+              46.815074,
+              15.697458
+            ],
+            [
+              46.807451,
+              15.691453
+            ],
+            [
+              46.804017,
+              15.688023
+            ],
+            [
+              46.788495,
+              15.6752
+            ],
+            [
+              46.78127,
+              15.668519
+            ],
+            [
+              46.776582,
+              15.664908
+            ],
+            [
+              46.769355,
+              15.658225
+            ],
+            [
+              46.765208,
+              15.655156
+            ],
+            [
+              46.735421,
+              15.629152
+            ],
+            [
+              46.731439,
+              15.625174
+            ],
+            [
+              46.726756,
+              15.621566
+            ],
+            [
+              46.709233,
+              15.605669
+            ],
+            [
+              46.704551,
+              15.602064
+            ],
+            [
+              46.695694,
+              15.593751
+            ],
+            [
+              46.690469,
+              15.589602
+            ],
+            [
+              46.686063,
+              15.585188
+            ],
+            [
+              46.681262,
+              15.581476
+            ],
+            [
+              46.676196,
+              15.576414
+            ],
+            [
+              46.670972,
+              15.572267
+            ],
+            [
+              46.665906,
+              15.567204
+            ],
+            [
+              46.660682,
+              15.563057
+            ],
+            [
+              46.649664,
+              15.552581
+            ],
+            [
+              46.644435,
+              15.548429
+            ],
+            [
+              46.638945,
+              15.542931
+            ],
+            [
+              46.633602,
+              15.538676
+            ],
+            [
+              46.621621,
+              15.527227
+            ],
+            [
+              46.615731,
+              15.522424
+            ],
+            [
+              46.602732,
+              15.510505
+            ],
+            [
+              46.59659,
+              15.504366
+            ],
+            [
+              46.590818,
+              15.49967
+            ],
+            [
+              46.577853,
+              15.487245
+            ],
+            [
+              46.569696,
+              15.480166
+            ],
+            [
+              46.563012,
+              15.473485
+            ],
+            [
+              46.547491,
+              15.459579
+            ],
+            [
+              46.530874,
+              15.444102
+            ],
+            [
+              46.522124,
+              15.435383
+            ],
+            [
+              46.513371,
+              15.427615
+            ],
+            [
+              46.50308,
+              15.417863
+            ],
+            [
+              46.492717,
+              15.40749
+            ],
+            [
+              46.491337,
+              15.406719
+            ],
+            [
+              46.481885,
+              15.397197
+            ],
+            [
+              46.479963,
+              15.395884
+            ],
+            [
+              46.469853,
+              15.385715
+            ],
+            [
+              46.468961,
+              15.385358
+            ],
+            [
+              46.458486,
+              15.374885
+            ],
+            [
+              46.457587,
+              15.374523
+            ],
+            [
+              46.441823,
+              15.358748
+            ],
+            [
+              46.440257,
+              15.357728
+            ],
+            [
+              46.423511,
+              15.340982
+            ],
+            [
+              46.421301,
+              15.339308
+            ],
+            [
+              46.400949,
+              15.318988
+            ],
+            [
+              46.400179,
+              15.318722
+            ],
+            [
+              46.349218,
+              15.267912
+            ],
+            [
+              46.33533,
+              15.253892
+            ],
+            [
+              46.292266,
+              15.210773
+            ],
+            [
+              46.273322,
+              15.196146
+            ]
+          ]
+        ]
+      },
+      "bbox": [
+        45.81296836298573,
+        15.196276526170879,
+        46.81869341496833,
+        16.29226102968709
+      ],
+      "properties": {
+        "cm:gas": "co2",
+        "created": "2024-05-05T20:48:31.320886Z",
+        "datetime": "2024-04-20T10:14:48Z",
+        "platform": "iss",
+        "proj:bbox": [
+          45.81296836298573,
+          15.196276526170879,
+          46.81869341496833,
+          16.29226102968709
+        ],
+        "proj:epsg": 4326,
+        "cm:cmf_type": "mfa",
+        "instruments": [
+          "emit"
+        ],
+        "proj:transform": [
+          0.0005415859192151865,
+          0.0,
+          45.81296836298573,
+          0.0,
+          -0.0005417619888859177,
+          16.29226102968709,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "processing:level": "L2",
+        "processing:lineage": "CO2 MFA Matched Filter generation",
+        "view:sun_elevation": 69.88268881464305,
+        "processing:software": {
+          "cmpro": "0.4.0-dev.18"
+        },
+        "cm:created": "2024-05-05T20:51:22.867Z",
+        "cm:modified": "2025-08-26T00:41:01.017Z",
+        "cm:published_at": "2024-05-08T22:57:42.454Z",
+        "cm:visibility": "public_archive",
+        "cm:mission_phase": "production",
+        "cm:scene:name": "emi20240420t101448p07050",
+        "cm:scene:instrument": "emi",
+        "cm:scene:platform": null,
+        "cm:scene:mission_phase": "production",
+        "cm:scene:created": "2024-05-05T20:47:09.506Z",
+        "cm:scene:modified": "2026-07-17T04:06:45.698Z",
+        "cm:scene:published_at": "2024-05-08T22:57:42.413Z",
+        "cm:scene:cloud_cover_pct": null,
+        "cm:scene:cloud_cover_pct_assessed": 25,
+        "version": "v1"
+      },
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-co2-mfa-v1/items/emi20240420t101448p07050",
+          "type": "application/json",
+          "title": "HTTP link"
+        },
+        {
+          "rel": "root",
+          "href": "https://api.carbonmapper.org/api/v1/stac/",
+          "type": "application/json"
+        },
+        {
+          "rel": "parent",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-co2-mfa-v1",
+          "type": "application/json"
+        },
+        {
+          "rel": "collection",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-co2-mfa-v1",
+          "type": "application/json"
+        }
+      ],
+      "assets": {
+        "cmf.tif": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-co2-mfa-v1/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-co2-mfa-v1_cmf.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "cmf.tif",
+          "file:size": 8053340,
+          "file:checksum": "1114d92dcd2de0479f98dc0769673bb4bf3af60f19b7",
+          "cm:asset_uuid": "7fea35a3-b357-4afb-818c-baed0f70b27c",
+          "roles": [
+            "data"
+          ]
+        },
+        "uas.txt": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-co2-mfa-v1/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-co2-mfa-v1_uas.txt",
+          "type": "text/plain",
+          "title": "uas.txt",
+          "file:size": 10409,
+          "proj:epsg": null,
+          "file:checksum": "1114e3be00aae91e7a18f38f485ea552a679d7938375",
+          "cm:asset_uuid": "facff8ad-c289-41d6-aac3-3ee7ed00bb40",
+          "roles": [
+            "data"
+          ]
+        },
+        "cmf-unortho.tif": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-co2-mfa-v1/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-co2-mfa-v1_cmf-unortho.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "cmf-unortho.tif",
+          "file:size": 7599316,
+          "proj:epsg": null,
+          "file:checksum": "11142d558aee74bd7abbadb5282c5653cd0dbcb8a0a0",
+          "cm:asset_uuid": "6761d63d-a866-4309-ac2c-74b29921d0a8",
+          "roles": [
+            "data"
+          ]
+        },
+        "artifact-mask.tif": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-co2-mfa-v1/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-co2-mfa-v1_artifact-mask.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "artifact-mask.tif",
+          "file:size": 4932,
+          "proj:epsg": null,
+          "file:checksum": "1114e57b8db524e471c2378f31389501e6620211aaaf",
+          "cm:asset_uuid": "f4170e4f-de8d-4c56-8269-7a1a56ccf0ef",
+          "roles": [
+            "data"
+          ]
+        }
+      },
+      "collection": "l2b-co2-mfa-v1"
+    },
+    {
+      "type": "Feature",
+      "stac_version": "1.0.0",
+      "stac_extensions": [
+        "https://stac-extensions.github.io/version/v1.2.0/schema.json",
+        "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+        "https://stac-extensions.github.io/processing/v1.2.0/schema.json",
+        "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+      ],
+      "id": "emi20240420t101448p07050",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              46.3679445,
+              16.2763068
+            ],
+            [
+              46.4036063,
+              16.2333165
+            ],
+            [
+              46.4151049,
+              16.2166719
+            ],
+            [
+              46.4967609,
+              16.1151018
+            ],
+            [
+              46.8192169,
+              15.7027262
+            ],
+            [
+              46.6803195,
+              15.5830579
+            ],
+            [
+              46.5465247,
+              15.4611125
+            ],
+            [
+              46.4411288,
+              15.3613388
+            ],
+            [
+              46.4411177,
+              15.3597354
+            ],
+            [
+              46.3923374,
+              15.3135436
+            ],
+            [
+              46.2748688,
+              15.1955789
+            ],
+            [
+              45.812558,
+              15.7841648
+            ],
+            [
+              45.9867554,
+              15.9587757
+            ],
+            [
+              46.1178304,
+              16.0810751
+            ],
+            [
+              46.1233977,
+              16.0879946
+            ],
+            [
+              46.2078856,
+              16.1628987
+            ],
+            [
+              46.2123457,
+              16.1687529
+            ],
+            [
+              46.2963302,
+              16.2409475
+            ],
+            [
+              46.2996813,
+              16.2457373
+            ],
+            [
+              46.3564386,
+              16.2929494
+            ],
+            [
+              46.3679445,
+              16.2763068
+            ]
+          ]
+        ]
+      },
+      "bbox": [
+        45.812558,
+        15.1955789,
+        46.8192169,
+        16.2929494
+      ],
+      "properties": {
+        "gsd": 59.1354095981216,
+        "bands": [
+          {
+            "name": "red",
+            "description": "red wavelength bands in um",
+            "center_wavelength": 0.66364111328125,
+            "full_width_half_max": 0.008463999748229981
+          },
+          {
+            "name": "green",
+            "description": "green wavelength bands in um",
+            "center_wavelength": 0.5667615966796875,
+            "full_width_half_max": 0.00844600009918213
+          },
+          {
+            "name": "blue",
+            "description": "blue wavelength bands in um",
+            "center_wavelength": 0.49233291625976566,
+            "full_width_half_max": 0.008432000160217286
+          }
+        ],
+        "version": "v3e",
+        "datetime": "2024-04-20T10:14:48Z",
+        "platform": "iss",
+        "proj:bbox": [
+          586811.5254388948,
+          1680120.3005688493,
+          695429.0204276636,
+          1802206.2176278972
+        ],
+        "proj:epsg": 32638,
+        "proj:shape": [
+          2064,
+          1837
+        ],
+        "instruments": [
+          "emit"
+        ],
+        "cm:elevation": 881.5449,
+        "proj:transform": [
+          59.1354095981216,
+          0.0,
+          586795.5326006459,
+          0.0,
+          -59.1354095981216,
+          1802176.4060488923,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "processing:level": "L2",
+        "cm:elevation_units": "meters",
+        "processing:lineage": "RGB generation",
+        "cm:elevation_method": "average",
+        "cm:elevation_source": "radiance_data",
+        "processing:datetime": "2026-07-17T04:08:11.776288+00:00",
+        "processing:software": {
+          "cmpro": "3.91.0"
+        },
+        "cm:created": "2026-07-17T04:08:12.565Z",
+        "cm:modified": "2026-08-26T15:50:39.663Z",
+        "cm:published_at": "2026-08-26T15:50:39.663Z",
+        "cm:visibility": "public",
+        "cm:mission_phase": "production",
+        "cm:scene:name": "emi20240420t101448p07050",
+        "cm:scene:instrument": "emi",
+        "cm:scene:platform": null,
+        "cm:scene:mission_phase": "production",
+        "cm:scene:created": "2024-05-05T20:47:09.506Z",
+        "cm:scene:modified": "2026-07-17T04:06:45.698Z",
+        "cm:scene:published_at": "2024-05-08T22:57:42.413Z",
+        "cm:scene:cloud_cover_pct": null,
+        "cm:scene:cloud_cover_pct_assessed": 25
+      },
+      "links": [
+        {
+          "rel": "collection",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-rgb-v3e",
+          "type": "application/json",
+          "title": "l2b-rgb-v3e"
+        },
+        {
+          "rel": "self",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-rgb-v3e/items/emi20240420t101448p07050",
+          "type": "application/json",
+          "title": "HTTP link"
+        },
+        {
+          "rel": "root",
+          "href": "https://api.carbonmapper.org/api/v1/stac/",
+          "type": "application/json"
+        },
+        {
+          "rel": "parent",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-rgb-v3e",
+          "type": "application/json"
+        },
+        {
+          "rel": "collection",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-rgb-v3e",
+          "type": "application/json"
+        }
+      ],
+      "assets": {
+        "rgb.tif": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-rgb-v3e/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-rgb-v3e_rgb.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "rgb.tif",
+          "file:size": 4284627,
+          "file:checksum": "111433d08d6a901ec9d6ea9e9165cd642dac4bf9723f",
+          "cm:asset_uuid": "27d93da5-4964-460a-873f-afd6d04eb4af",
+          "roles": [
+            "data"
+          ]
+        }
+      },
+      "collection": "l2b-rgb-v3e",
+      "cmpro_version": "3.91.0"
+    },
+    {
+      "type": "Feature",
+      "stac_version": "1.0.0",
+      "stac_extensions": [
+        "https://stac-extensions.github.io/version/v1.2.0/schema.json",
+        "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+        "https://stac-extensions.github.io/processing/v1.1.0/schema.json",
+        "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+      ],
+      "id": "emi20240420t101448p07050",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              46.2748592,
+              15.1939754
+            ],
+            [
+              46.2735862,
+              15.1945689
+            ],
+            [
+              46.267029,
+              15.2026239
+            ],
+            [
+              45.8233501,
+              15.7660005
+            ],
+            [
+              45.8111731,
+              15.7822099
+            ],
+            [
+              45.8109104,
+              15.7843281
+            ],
+            [
+              45.8168282,
+              15.7915811
+            ],
+            [
+              45.8413333,
+              15.816729
+            ],
+            [
+              45.9855889,
+              15.959915
+            ],
+            [
+              46.1222313,
+              16.0891346
+            ],
+            [
+              46.2111794,
+              16.1698933
+            ],
+            [
+              46.2985151,
+              16.2468783
+            ],
+            [
+              46.3542872,
+              16.2942026
+            ],
+            [
+              46.3566123,
+              16.2945439
+            ],
+            [
+              46.4048964,
+              16.2343252
+            ],
+            [
+              46.7910584,
+              15.7429869
+            ],
+            [
+              46.8200634,
+              15.705213
+            ],
+            [
+              46.8208624,
+              15.7025553
+            ],
+            [
+              46.2771304,
+              15.1944322
+            ],
+            [
+              46.2748592,
+              15.1939754
+            ]
+          ]
+        ]
+      },
+      "bbox": [
+        45.8109104,
+        15.1939754,
+        46.8208624,
+        16.2945439
+      ],
+      "properties": {
+        "gsd": 59.1354095981216,
+        "bands": [
+          {
+            "name": "red",
+            "description": "red wavelength bands in um",
+            "center_wavelength": 0.6487302856445313,
+            "full_width_half_max": 0.008461000442504883
+          },
+          {
+            "name": "green",
+            "description": "green wavelength bands in um",
+            "center_wavelength": 0.55186669921875,
+            "full_width_half_max": 0.008442999839782715
+          },
+          {
+            "name": "blue",
+            "description": "blue wavelength bands in um",
+            "center_wavelength": 0.4477427978515625,
+            "full_width_half_max": 0.008423999786376953
+          }
+        ],
+        "created": "2025-03-29T01:34:36.204119Z",
+        "version": "v3",
+        "datetime": "2024-04-20T10:14:48Z",
+        "platform": "iss",
+        "proj:bbox": [
+          586634.7898000998,
+          1679942.270612129,
+          695607.3180808439,
+          1802384.2406289242
+        ],
+        "proj:epsg": 32638,
+        "proj:shape": [
+          2064,
+          1837
+        ],
+        "instruments": [
+          "emit"
+        ],
+        "cm:elevation": 881.5449,
+        "proj:transform": [
+          59.1354095981216,
+          0.0,
+          586795.5326006459,
+          0.0,
+          -59.1354095981216,
+          1802176.4060488923,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "processing:level": "L2",
+        "cm:elevation_units": "meters",
+        "processing:lineage": "RGB generation",
+        "cm:elevation_method": "average",
+        "cm:elevation_source": "radiance_data",
+        "processing:software": {
+          "cmpro": "3.6.3"
+        },
+        "cm:created": "2025-03-29T01:35:04.404Z",
+        "cm:modified": "2026-08-26T15:50:39.663Z",
+        "cm:published_at": "2025-04-04T19:44:32.098Z",
+        "cm:visibility": "public_archive",
+        "cm:mission_phase": "production",
+        "cm:scene:name": "emi20240420t101448p07050",
+        "cm:scene:instrument": "emi",
+        "cm:scene:platform": null,
+        "cm:scene:mission_phase": "production",
+        "cm:scene:created": "2024-05-05T20:47:09.506Z",
+        "cm:scene:modified": "2026-07-17T04:06:45.698Z",
+        "cm:scene:published_at": "2024-05-08T22:57:42.413Z",
+        "cm:scene:cloud_cover_pct": null,
+        "cm:scene:cloud_cover_pct_assessed": 25
+      },
+      "links": [
+        {
+          "rel": "collection",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-rgb-v3",
+          "type": "application/json",
+          "title": "l2b-rgb-v3"
+        },
+        {
+          "rel": "self",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-rgb-v3/items/emi20240420t101448p07050",
+          "type": "application/json",
+          "title": "HTTP link"
+        },
+        {
+          "rel": "root",
+          "href": "https://api.carbonmapper.org/api/v1/stac/",
+          "type": "application/json"
+        },
+        {
+          "rel": "parent",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-rgb-v3",
+          "type": "application/json"
+        },
+        {
+          "rel": "collection",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-rgb-v3",
+          "type": "application/json"
+        }
+      ],
+      "assets": {
+        "rgb.tif": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-rgb-v3/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-rgb-v3_rgb.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "rgb.tif",
+          "file:size": 4472781,
+          "file:checksum": "11148ce74de0375d52cff6279aee29332e4ac0779fef",
+          "cm:asset_uuid": "3ad5deb6-9548-4b1c-a9d4-50ad2769e1b4",
+          "roles": [
+            "data"
+          ]
+        }
+      },
+      "collection": "l2b-rgb-v3"
+    },
+    {
+      "type": "Feature",
+      "stac_version": "1.0.0",
+      "stac_extensions": [
+        "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+        "https://stac-extensions.github.io/processing/v1.1.0/schema.json",
+        "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+        "https://stac-extensions.github.io/version/v1.2.0/schema.json"
+      ],
+      "id": "emi20240420t101448p07050",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              46.273322,
+              15.196146
+            ],
+            [
+              46.267184,
+              15.203374
+            ],
+            [
+              46.259784,
+              15.213481
+            ],
+            [
+              46.251585,
+              15.223301
+            ],
+            [
+              46.244077,
+              15.233527
+            ],
+            [
+              46.235773,
+              15.243463
+            ],
+            [
+              46.232162,
+              15.248696
+            ],
+            [
+              46.220066,
+              15.26351
+            ],
+            [
+              46.216457,
+              15.268741
+            ],
+            [
+              46.208151,
+              15.278679
+            ],
+            [
+              46.202374,
+              15.28662
+            ],
+            [
+              46.196236,
+              15.293848
+            ],
+            [
+              46.188835,
+              15.303956
+            ],
+            [
+              46.184428,
+              15.3089
+            ],
+            [
+              46.174754,
+              15.321834
+            ],
+            [
+              46.168722,
+              15.328945
+            ],
+            [
+              46.150924,
+              15.352173
+            ],
+            [
+              46.142525,
+              15.362238
+            ],
+            [
+              46.139009,
+              15.367342
+            ],
+            [
+              46.135037,
+              15.371862
+            ],
+            [
+              46.123304,
+              15.387387
+            ],
+            [
+              46.121063,
+              15.389622
+            ],
+            [
+              46.113014,
+              15.400389
+            ],
+            [
+              46.109148,
+              15.404791
+            ],
+            [
+              46.105432,
+              15.410141
+            ],
+            [
+              46.092793,
+              15.425496
+            ],
+            [
+              46.083225,
+              15.438314
+            ],
+            [
+              46.078819,
+              15.443257
+            ],
+            [
+              46.075103,
+              15.448606
+            ],
+            [
+              46.064631,
+              15.461253
+            ],
+            [
+              46.06102,
+              15.466485
+            ],
+            [
+              46.048925,
+              15.481298
+            ],
+            [
+              46.042608,
+              15.48978
+            ],
+            [
+              46.038742,
+              15.494182
+            ],
+            [
+              46.028525,
+              15.507659
+            ],
+            [
+              46.024661,
+              15.51206
+            ],
+            [
+              46.006863,
+              15.535288
+            ],
+            [
+              45.996391,
+              15.547935
+            ],
+            [
+              45.988991,
+              15.558042
+            ],
+            [
+              45.970396,
+              15.580981
+            ],
+            [
+              45.964078,
+              15.589464
+            ],
+            [
+              45.959929,
+              15.594248
+            ],
+            [
+              45.956494,
+              15.599217
+            ],
+            [
+              45.951981,
+              15.604278
+            ],
+            [
+              45.946204,
+              15.612219
+            ],
+            [
+              45.938007,
+              15.622038
+            ],
+            [
+              45.931581,
+              15.630639
+            ],
+            [
+              45.927717,
+              15.63504
+            ],
+            [
+              45.921833,
+              15.643099
+            ],
+            [
+              45.903238,
+              15.666039
+            ],
+            [
+              45.901254,
+              15.669103
+            ],
+            [
+              45.893055,
+              15.678923
+            ],
+            [
+              45.887171,
+              15.686982
+            ],
+            [
+              45.878974,
+              15.696801
+            ],
+            [
+              45.876881,
+              15.699985
+            ],
+            [
+              45.866411,
+              15.71263
+            ],
+            [
+              45.8628,
+              15.717862
+            ],
+            [
+              45.852329,
+              15.730508
+            ],
+            [
+              45.850344,
+              15.733573
+            ],
+            [
+              45.842146,
+              15.743393
+            ],
+            [
+              45.834096,
+              15.75416
+            ],
+            [
+              45.831856,
+              15.756395
+            ],
+            [
+              45.825972,
+              15.764454
+            ],
+            [
+              45.81171,
+              15.781976
+            ],
+            [
+              45.811612,
+              15.784983
+            ],
+            [
+              45.817776,
+              15.791737
+            ],
+            [
+              45.840595,
+              15.814558
+            ],
+            [
+              45.840952,
+              15.815451
+            ],
+            [
+              45.899318,
+              15.87378
+            ],
+            [
+              45.944633,
+              15.919165
+            ],
+            [
+              45.945525,
+              15.919522
+            ],
+            [
+              45.96431,
+              15.938251
+            ],
+            [
+              45.970267,
+              15.943669
+            ],
+            [
+              45.983622,
+              15.957085
+            ],
+            [
+              45.987228,
+              15.960155
+            ],
+            [
+              46.000952,
+              15.973878
+            ],
+            [
+              46.00185,
+              15.974239
+            ],
+            [
+              46.011428,
+              15.983759
+            ],
+            [
+              46.013224,
+              15.985076
+            ],
+            [
+              46.025871,
+              15.997721
+            ],
+            [
+              46.027675,
+              15.998929
+            ],
+            [
+              46.037244,
+              16.008556
+            ],
+            [
+              46.038136,
+              16.008913
+            ],
+            [
+              46.04731,
+              16.018087
+            ],
+            [
+              46.057092,
+              16.026791
+            ],
+            [
+              46.066373,
+              16.036081
+            ],
+            [
+              46.067382,
+              16.036543
+            ],
+            [
+              46.084362,
+              16.052981
+            ],
+            [
+              46.10042,
+              16.067424
+            ],
+            [
+              46.108616,
+              16.07563
+            ],
+            [
+              46.123707,
+              16.089094
+            ],
+            [
+              46.129855,
+              16.095238
+            ],
+            [
+              46.143395,
+              16.107699
+            ],
+            [
+              46.149161,
+              16.11239
+            ],
+            [
+              46.155438,
+              16.118627
+            ],
+            [
+              46.16216,
+              16.124309
+            ],
+            [
+              46.167542,
+              16.12969
+            ],
+            [
+              46.173902,
+              16.13491
+            ],
+            [
+              46.185225,
+              16.145715
+            ],
+            [
+              46.196279,
+              16.155189
+            ],
+            [
+              46.201346,
+              16.160251
+            ],
+            [
+              46.206569,
+              16.164398
+            ],
+            [
+              46.216827,
+              16.174114
+            ],
+            [
+              46.222276,
+              16.178485
+            ],
+            [
+              46.236676,
+              16.191765
+            ],
+            [
+              46.245756,
+              16.199799
+            ],
+            [
+              46.250981,
+              16.203948
+            ],
+            [
+              46.254845,
+              16.20782
+            ],
+            [
+              46.268853,
+              16.219659
+            ],
+            [
+              46.273152,
+              16.223956
+            ],
+            [
+              46.286553,
+              16.235137
+            ],
+            [
+              46.290706,
+              16.239347
+            ],
+            [
+              46.294849,
+              16.242413
+            ],
+            [
+              46.298713,
+              16.246285
+            ],
+            [
+              46.306763,
+              16.252705
+            ],
+            [
+              46.310622,
+              16.256572
+            ],
+            [
+              46.314887,
+              16.259748
+            ],
+            [
+              46.318752,
+              16.263621
+            ],
+            [
+              46.334385,
+              16.276544
+            ],
+            [
+              46.345825,
+              16.286911
+            ],
+            [
+              46.354625,
+              16.293816
+            ],
+            [
+              46.35665,
+              16.293816
+            ],
+            [
+              46.366101,
+              16.282456
+            ],
+            [
+              46.369713,
+              16.277223
+            ],
+            [
+              46.376286,
+              16.269571
+            ],
+            [
+              46.380002,
+              16.264221
+            ],
+            [
+              46.3882,
+              16.254401
+            ],
+            [
+              46.390292,
+              16.251219
+            ],
+            [
+              46.402518,
+              16.235677
+            ],
+            [
+              46.406614,
+              16.231105
+            ],
+            [
+              46.412497,
+              16.223047
+            ],
+            [
+              46.418528,
+              16.215937
+            ],
+            [
+              46.420622,
+              16.212753
+            ],
+            [
+              46.428926,
+              16.202816
+            ],
+            [
+              46.432537,
+              16.197583
+            ],
+            [
+              46.43705,
+              16.192522
+            ],
+            [
+              46.442826,
+              16.184582
+            ],
+            [
+              46.448965,
+              16.177353
+            ],
+            [
+              46.450951,
+              16.174287
+            ],
+            [
+              46.459255,
+              16.164351
+            ],
+            [
+              46.462866,
+              16.159118
+            ],
+            [
+              46.479187,
+              16.139006
+            ],
+            [
+              46.48128,
+              16.135822
+            ],
+            [
+              46.487311,
+              16.128712
+            ],
+            [
+              46.501318,
+              16.11036
+            ],
+            [
+              46.509622,
+              16.100424
+            ],
+            [
+              46.521431,
+              16.085371
+            ],
+            [
+              46.523522,
+              16.082189
+            ],
+            [
+              46.529661,
+              16.07496
+            ],
+            [
+              46.533272,
+              16.069727
+            ],
+            [
+              46.537678,
+              16.064784
+            ],
+            [
+              46.543562,
+              16.056726
+            ],
+            [
+              46.549593,
+              16.049615
+            ],
+            [
+              46.553311,
+              16.044265
+            ],
+            [
+              46.561615,
+              16.034328
+            ],
+            [
+              46.565225,
+              16.029096
+            ],
+            [
+              46.573423,
+              16.019276
+            ],
+            [
+              46.585264,
+              16.003633
+            ],
+            [
+              46.593569,
+              15.993696
+            ],
+            [
+              46.615232,
+              15.966066
+            ],
+            [
+              46.632924,
+              15.942955
+            ],
+            [
+              46.636894,
+              15.938437
+            ],
+            [
+              46.642672,
+              15.930495
+            ],
+            [
+              46.648904,
+              15.923139
+            ],
+            [
+              46.652421,
+              15.918034
+            ],
+            [
+              46.656934,
+              15.912973
+            ],
+            [
+              46.662711,
+              15.905032
+            ],
+            [
+              46.668849,
+              15.897804
+            ],
+            [
+              46.672459,
+              15.892572
+            ],
+            [
+              46.67849,
+              15.885461
+            ],
+            [
+              46.682207,
+              15.880112
+            ],
+            [
+              46.688346,
+              15.872883
+            ],
+            [
+              46.694123,
+              15.864941
+            ],
+            [
+              46.700154,
+              15.857831
+            ],
+            [
+              46.70387,
+              15.852482
+            ],
+            [
+              46.709902,
+              15.845371
+            ],
+            [
+              46.715786,
+              15.837312
+            ],
+            [
+              46.719758,
+              15.832792
+            ],
+            [
+              46.725535,
+              15.824851
+            ],
+            [
+              46.731673,
+              15.817623
+            ],
+            [
+              46.735283,
+              15.812391
+            ],
+            [
+              46.741314,
+              15.80528
+            ],
+            [
+              46.745031,
+              15.799931
+            ],
+            [
+              46.751063,
+              15.79282
+            ],
+            [
+              46.756947,
+              15.784761
+            ],
+            [
+              46.762978,
+              15.777651
+            ],
+            [
+              46.782582,
+              15.752612
+            ],
+            [
+              46.79215,
+              15.739795
+            ],
+            [
+              46.798181,
+              15.732684
+            ],
+            [
+              46.801897,
+              15.727335
+            ],
+            [
+              46.808037,
+              15.720106
+            ],
+            [
+              46.815438,
+              15.709998
+            ],
+            [
+              46.819403,
+              15.705487
+            ],
+            [
+              46.82031,
+              15.702666
+            ],
+            [
+              46.815074,
+              15.697458
+            ],
+            [
+              46.807451,
+              15.691453
+            ],
+            [
+              46.804017,
+              15.688023
+            ],
+            [
+              46.788495,
+              15.6752
+            ],
+            [
+              46.78127,
+              15.668519
+            ],
+            [
+              46.776582,
+              15.664908
+            ],
+            [
+              46.769355,
+              15.658225
+            ],
+            [
+              46.765208,
+              15.655156
+            ],
+            [
+              46.735421,
+              15.629152
+            ],
+            [
+              46.731439,
+              15.625174
+            ],
+            [
+              46.726756,
+              15.621566
+            ],
+            [
+              46.709233,
+              15.605669
+            ],
+            [
+              46.704551,
+              15.602064
+            ],
+            [
+              46.695694,
+              15.593751
+            ],
+            [
+              46.690469,
+              15.589602
+            ],
+            [
+              46.686063,
+              15.585188
+            ],
+            [
+              46.681262,
+              15.581476
+            ],
+            [
+              46.676196,
+              15.576414
+            ],
+            [
+              46.670972,
+              15.572267
+            ],
+            [
+              46.665906,
+              15.567204
+            ],
+            [
+              46.660682,
+              15.563057
+            ],
+            [
+              46.649664,
+              15.552581
+            ],
+            [
+              46.644435,
+              15.548429
+            ],
+            [
+              46.638945,
+              15.542931
+            ],
+            [
+              46.633602,
+              15.538676
+            ],
+            [
+              46.621621,
+              15.527227
+            ],
+            [
+              46.615731,
+              15.522424
+            ],
+            [
+              46.602732,
+              15.510505
+            ],
+            [
+              46.59659,
+              15.504366
+            ],
+            [
+              46.590818,
+              15.49967
+            ],
+            [
+              46.577853,
+              15.487245
+            ],
+            [
+              46.569696,
+              15.480166
+            ],
+            [
+              46.563012,
+              15.473485
+            ],
+            [
+              46.547491,
+              15.459579
+            ],
+            [
+              46.530874,
+              15.444102
+            ],
+            [
+              46.522124,
+              15.435383
+            ],
+            [
+              46.513371,
+              15.427615
+            ],
+            [
+              46.50308,
+              15.417863
+            ],
+            [
+              46.492717,
+              15.40749
+            ],
+            [
+              46.491337,
+              15.406719
+            ],
+            [
+              46.481885,
+              15.397197
+            ],
+            [
+              46.479963,
+              15.395884
+            ],
+            [
+              46.469853,
+              15.385715
+            ],
+            [
+              46.468961,
+              15.385358
+            ],
+            [
+              46.458486,
+              15.374885
+            ],
+            [
+              46.457587,
+              15.374523
+            ],
+            [
+              46.441823,
+              15.358748
+            ],
+            [
+              46.440257,
+              15.357728
+            ],
+            [
+              46.423511,
+              15.340982
+            ],
+            [
+              46.421301,
+              15.339308
+            ],
+            [
+              46.400949,
+              15.318988
+            ],
+            [
+              46.400179,
+              15.318722
+            ],
+            [
+              46.349218,
+              15.267912
+            ],
+            [
+              46.33533,
+              15.253892
+            ],
+            [
+              46.292266,
+              15.210773
+            ],
+            [
+              46.273322,
+              15.196146
+            ]
+          ]
+        ]
+      },
+      "bbox": [
+        45.81296836298573,
+        15.196276526170879,
+        46.81869341496833,
+        16.29226102968709
+      ],
+      "properties": {
+        "created": "2024-05-05T20:49:03.224009Z",
+        "datetime": "2024-04-20T10:14:48Z",
+        "platform": "iss",
+        "proj:bbox": [
+          45.81296836298573,
+          15.196276526170879,
+          46.81869341496833,
+          16.29226102968709
+        ],
+        "proj:epsg": 4326,
+        "instruments": [
+          "emit"
+        ],
+        "proj:transform": [
+          0.0005415859192151865,
+          0.0,
+          45.81296836298573,
+          0.0,
+          -0.0005417619888859177,
+          16.29226102968709,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "processing:level": "L2",
+        "processing:lineage": "RGB generation",
+        "view:sun_elevation": 69.88268881464305,
+        "processing:software": {
+          "cmpro": "0.4.0-dev.18"
+        },
+        "cm:created": "2024-05-05T20:49:09.609Z",
+        "cm:modified": "2024-05-08T22:57:42.420Z",
+        "cm:published_at": "2024-05-08T22:57:42.420Z",
+        "cm:visibility": "public_archive",
+        "cm:mission_phase": "production",
+        "cm:scene:name": "emi20240420t101448p07050",
+        "cm:scene:instrument": "emi",
+        "cm:scene:platform": null,
+        "cm:scene:mission_phase": "production",
+        "cm:scene:created": "2024-05-05T20:47:09.506Z",
+        "cm:scene:modified": "2026-07-17T04:06:45.698Z",
+        "cm:scene:published_at": "2024-05-08T22:57:42.413Z",
+        "cm:scene:cloud_cover_pct": null,
+        "cm:scene:cloud_cover_pct_assessed": 25,
+        "version": "v1"
+      },
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-rgb-v1/items/emi20240420t101448p07050",
+          "type": "application/json",
+          "title": "HTTP link"
+        },
+        {
+          "rel": "root",
+          "href": "https://api.carbonmapper.org/api/v1/stac/",
+          "type": "application/json"
+        },
+        {
+          "rel": "parent",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-rgb-v1",
+          "type": "application/json"
+        },
+        {
+          "rel": "collection",
+          "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2b-rgb-v1",
+          "type": "application/json"
+        }
+      ],
+      "assets": {
+        "rgb.tif": {
+          "href": "https://api.carbonmapper.org/api/v1/catalog/asset/l2b-rgb-v1/2024/04/20/emi20240420t101448p07050/emi20240420t101448p07050_l2b-rgb-v1_rgb.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "title": "rgb.tif",
+          "file:size": 5344776,
+          "file:checksum": "111410bb5bceaa141f26745bf5d013708fea9accc714",
+          "cm:asset_uuid": "619a3c13-6754-44df-b289-e79c2eae3ff6",
+          "roles": [
+            "data"
+          ]
+        }
+      },
+      "collection": "l2b-rgb-v1"
+    }
+  ],
+  "links": [
+    {
+      "rel": "root",
+      "type": "application/json",
+      "href": "https://api.carbonmapper.org/api/v1/stac/"
+    }
+  ]
+}

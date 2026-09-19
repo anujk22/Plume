@@ -1,0 +1,43 @@
+{
+  "snapshot": "plume-2026-09-19",
+  "cases": 2,
+  "observations": 5,
+  "rasters": [
+    {
+      "record": "emi20240420t101448p07050-A",
+      "native_crs": "EPSG:32638",
+      "matching_quantification_samples": 166,
+      "max_ppm_m": 4792.98583984375,
+      "valid_zero_samples": 303
+    },
+    {
+      "record": "emi20241023t083741p06026-A",
+      "native_crs": "EPSG:32638",
+      "matching_quantification_samples": 133,
+      "max_ppm_m": 5144.18310546875,
+      "valid_zero_samples": 205
+    },
+    {
+      "record": "emi20240803t190415p13004-C",
+      "native_crs": "EPSG:32610",
+      "matching_quantification_samples": 38,
+      "max_ppm_m": 5371.56640625,
+      "valid_zero_samples": 685
+    },
+    {
+      "record": "emi20240807t172838p12003-A",
+      "native_crs": "EPSG:32610",
+      "matching_quantification_samples": 101,
+      "max_ppm_m": 8453.21875,
+      "valid_zero_samples": 154
+    },
+    {
+      "record": "emi20240926t213956p14002-A",
+      "native_crs": "EPSG:32610",
+      "matching_quantification_samples": 57,
+      "max_ppm_m": 3385.512451171875,
+      "valid_zero_samples": 166
+    }
+  ],
+  "file_hashes_verified": 6
+}

@@ -1,0 +1,123 @@
+{
+  "retrievedAt": "2026-09-19",
+  "files": [
+    {
+      "path": "emi20240803t190415p13004-C.json",
+      "bytes": 2230,
+      "sha256": "6f937aef89776989c663461af5072ce52115c1265745e9da12cfe250a640454f"
+    },
+    {
+      "path": "emi20240803t190415p13004-C_con_tif.tif",
+      "bytes": 4568,
+      "sha256": "e88be6e040a09ea783b7e0d4a96bede51f5d1c3add72bea7a8d422a309d63a49"
+    },
+    {
+      "path": "emi20240803t190415p13004-C_plume-concentrations.tif",
+      "bytes": 28298,
+      "sha256": "cf579a73eba86ce7c21b7cea794f7e6504d608ab516f71641ae880e71768ede0"
+    },
+    {
+      "path": "emi20240803t190415p13004-C_plume-outline.geojson",
+      "bytes": 16281,
+      "sha256": "23d0a4b0cfd3c022baa7192940deada10e8eda14b1ca680891b5a597a6278fbb"
+    },
+    {
+      "path": "emi20240803t190415p13004-C_rgb.tif",
+      "bytes": 24731,
+      "sha256": "f240bc4a8140918f547c5b63c308c0f0cdab54defb7459c1733fdb2c1682d2b6"
+    },
+    {
+      "path": "emi20240803t190415p13004-C_search.json",
+      "bytes": 44138,
+      "sha256": "8baacb8849e1269d0d124dc705f28e06be5eba55e3e31d9e6ede88dbdcef6434"
+    },
+    {
+      "path": "emi20240803t190415p13004-C_visualization-stac.json",
+      "bytes": 8186,
+      "sha256": "0155bd0bafb32f4d4e1d781591f21a69929a7ff26e63f2ba256cb2d67b6cfb40"
+    },
+    {
+      "path": "emi20240807t172838p12003-A.json",
+      "bytes": 2230,
+      "sha256": "4f9fa1a7a5e9edfd9011e50f08597794a373550b04747d5a853229807b734723"
+    },
+    {
+      "path": "emi20240807t172838p12003-A_con_tif.tif",
+      "bytes": 7448,
+      "sha256": "efefcb695955b7835f3d6d7de6f39f367643c233cf93b1873281101052620023"
+    },
+    {
+      "path": "emi20240807t172838p12003-A_plume-concentrations.tif",
+      "bytes": 12871,
+      "sha256": "9ede6367a4c363847132b70544f5709738d251b533b24cecaccf607aca257059"
+    },
+    {
+      "path": "emi20240807t172838p12003-A_plume-outline.geojson",
+      "bytes": 5626,
+      "sha256": "b11e38cd1b36681d2e6183dd693899e20c507e145038bcf85b42c6b8eaa91422"
+    },
+    {
+      "path": "emi20240807t172838p12003-A_rgb.tif",
+      "bytes": 23466,
+      "sha256": "010e64665214fe6114d277e2aebdd50b5d8c8fc8a3ba830dc32f5b98081612a1"
+    },
+    {
+      "path": "emi20240807t172838p12003-A_search.json",
+      "bytes": 45259,
+      "sha256": "4e219109009e5b70323a5c332d34f52680be5d96d0cf87d265104cb7c4f8cce4"
+    },
+    {
+      "path": "emi20240807t172838p12003-A_visualization-stac.json",
+      "bytes": 8589,
+      "sha256": "0c51a3fe5663a5be1f2d31723b5ad43c013a4342f2d827fd8c1e9d74eacb11f6"
+    },
+    {
+      "path": "emi20240926t213956p14002-A.json",
+      "bytes": 2229,
+      "sha256": "46f63ce570dbab7fa3c2b6ac2dc0a84c27426bb06c11210ef66186c3716ad862"
+    },
+    {
+      "path": "emi20240926t213956p14002-A_con_tif.tif",
+      "bytes": 7448,
+      "sha256": "ada89035b5f43ce288d3a67f93a10c80081dd7a48990372b0a708b8db9b0f5ec"
+    },
+    {
+      "path": "emi20240926t213956p14002-A_plume-concentrations.tif",
+      "bytes": 10586,
+      "sha256": "67782613e59dbb41471c7ee94c38675ff3d4fccb5213e577e87e4b0607e4768c"
+    },
+    {
+      "path": "emi20240926t213956p14002-A_plume-outline.geojson",
+      "bytes": 6035,
+      "sha256": "6dfc03b535a43ef28ec0034d8539c9a32dddc363e92835702e3affbc219ddb74"
+    },
+    {
+      "path": "emi20240926t213956p14002-A_rgb.tif",
+      "bytes": 17147,
+      "sha256": "995ff4b4ac9fb1c55b2b63a3f67b31b46857da52276b970c46eb22d88986ad64"
+    },
+    {
+      "path": "emi20240926t213956p14002-A_search.json",
+      "bytes": 44944,
+      "sha256": "38c595113aeab75edb1e5f0092c9c545e53a563b809759a6c440aec7f4b05bb3"
+    },
+    {
+      "path": "emi20240926t213956p14002-A_visualization-stac.json",
+      "bytes": 8194,
+      "sha256": "e54fb60b6ee25e3c2847c025cb21372df05236032d385db0b889fd58f0debf59"
+    },
+    {
+      "path": "epa-newby-2023.json",
+      "bytes": 155,
+      "sha256": "81f0198e737c17c1c6a475167c05487230fde97dd13ff29bdca5ad8b3f68af4d"
+    }
+  ],
+  "sources": {
+    "carbonMapper": "https://api.carbonmapper.org/api/v1/catalog/plumes/annotated",
+    "epa": "https://data.epa.gov/dmapservice/ghg.hh_subpart_level_information/facility_id/equals/1006179/and/reporting_year/equals/2023/json",
+    "epaCoordinates": "https://www.epa.gov/system/files/other-files/2024-10/2023_data_summary_spreadsheets.zip",
+    "quantityDefinition": "https://www.epa.gov/ghgreporting/subpart-hh-municipal-solid-waste-landfills",
+    "processContext": "https://www.baaqmd.gov/~/media/files/engineering/title-v-permits/a9013-a5472old/a9013_11_2022_aa_final_permit_signed-pdf.pdf"
+  },
+  "terms": "Carbon Mapper noncommercial attribution and downstream terms. EPA federal public records retain original source attribution."
+}

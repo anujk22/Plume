@@ -1,0 +1,396 @@
+[
+  {
+    "file": "emi20240420t101448p07050-A_con_tif.tif",
+    "shape": [
+      59,
+      59
+    ],
+    "bands": 1,
+    "dtype": [
+      "float32"
+    ],
+    "crs": "EPSG:32638",
+    "transform": [
+      59.1354095981216,
+      0.0,
+      609385.2590671284,
+      0.0,
+      -59.1354095981216,
+      1725182.102752138,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "bounds_wgs84": [
+      46.020175567751565,
+      15.570385488944805,
+      46.05287220771862,
+      15.602076710680862
+    ],
+    "nodata": 0.0,
+    "valid_pixels_band1": 166,
+    "range_band1": [
+      1269.5286865234375,
+      4792.98583984375
+    ],
+    "tags": {
+      "AREA_OR_POINT": "Area"
+    },
+    "band_tags": {},
+    "units": [
+      null
+    ],
+    "descriptions": [
+      null
+    ]
+  },
+  {
+    "file": "emi20240420t101448p07050-A_plume-concentrations.tif",
+    "shape": [
+      125,
+      134
+    ],
+    "bands": 1,
+    "dtype": [
+      "float32"
+    ],
+    "crs": "EPSG:32638",
+    "transform": [
+      59.13540959812148,
+      0.0,
+      604477.0200704843,
+      0.0,
+      -59.13540959812235,
+      1725241.2381617362,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "bounds_wgs84": [
+      45.974240570419205,
+      15.535661409889732,
+      46.048462612591216,
+      15.602819017724295
+    ],
+    "nodata": NaN,
+    "valid_pixels_band1": 4858,
+    "range_band1": [
+      0.0,
+      4792.98583984375
+    ],
+    "tags": {
+      "AREA_OR_POINT": "Area"
+    },
+    "band_tags": {},
+    "units": [
+      null
+    ],
+    "descriptions": [
+      null
+    ]
+  },
+  {
+    "file": "emi20240420t101448p07050-A_plume_tif.tif",
+    "shape": [
+      116,
+      116
+    ],
+    "bands": 4,
+    "dtype": [
+      "uint8",
+      "uint8",
+      "uint8",
+      "uint8"
+    ],
+    "crs": "EPSG:32638",
+    "transform": [
+      59.13540959812235,
+      0.0,
+      605009.2387568671,
+      0.0,
+      -59.135409598005936,
+      1724945.5611137333,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "bounds_wgs84": [
+      45.979213048928685,
+      15.537823096506523,
+      46.04348523430392,
+      15.600124202427999
+    ],
+    "nodata": null,
+    "valid_pixels_band1": 4858,
+    "range_band1": [
+      23.0,
+      227.0
+    ],
+    "tags": {
+      "creation_time": "2025-06-09T20:45:50Z",
+      "AREA_OR_POINT": "Area"
+    },
+    "band_tags": {},
+    "units": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "descriptions": [
+      "Red",
+      "Green",
+      "Blue",
+      "Alpha"
+    ]
+  },
+  {
+    "file": "emi20240420t101448p07050-A_rgb.tif",
+    "shape": [
+      116,
+      116
+    ],
+    "bands": 3,
+    "dtype": [
+      "uint8",
+      "uint8",
+      "uint8"
+    ],
+    "crs": "EPSG:32638",
+    "transform": [
+      59.13540959812134,
+      0.0,
+      605009.2387568674,
+      0.0,
+      -59.13540959812134,
+      1724945.5611137454,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "bounds_wgs84": [
+      45.979213048928685,
+      15.537823096506514,
+      46.04348523430392,
+      15.60012420242811
+    ],
+    "nodata": 0.0,
+    "valid_pixels_band1": 11884,
+    "range_band1": [
+      7.0,
+      255.0
+    ],
+    "tags": {
+      "creation_date": "2025-06-09T20:45:50Z",
+      "AREA_OR_POINT": "Area"
+    },
+    "band_tags": {},
+    "units": [
+      null,
+      null,
+      null
+    ],
+    "descriptions": [
+      "Red",
+      "Green",
+      "Blue"
+    ]
+  },
+  {
+    "file": "emi20241023t083741p06026-A_con_tif.tif",
+    "shape": [
+      47,
+      47
+    ],
+    "bands": 1,
+    "dtype": [
+      "float32"
+    ],
+    "crs": "EPSG:32638",
+    "transform": [
+      59.137301691948345,
+      0.0,
+      609715.1036777052,
+      0.0,
+      -59.137301691948345,
+      1724660.9497031637,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "bounds_wgs84": [
+      46.02325991620127,
+      15.57210522818211,
+      46.04930699678637,
+      15.597351551430004
+    ],
+    "nodata": 0.0,
+    "valid_pixels_band1": 133,
+    "range_band1": [
+      646.6600952148438,
+      5144.18310546875
+    ],
+    "tags": {
+      "AREA_OR_POINT": "Area"
+    },
+    "band_tags": {},
+    "units": [
+      null
+    ],
+    "descriptions": [
+      null
+    ]
+  },
+  {
+    "file": "emi20241023t083741p06026-A_plume-concentrations.tif",
+    "shape": [
+      64,
+      101
+    ],
+    "bands": 1,
+    "dtype": [
+      "float32"
+    ],
+    "crs": "EPSG:32638",
+    "transform": [
+      59.137301691947506,
+      0.0,
+      606521.68938634,
+      0.0,
+      -59.137301691948245,
+      1724720.0870048557,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "bounds_wgs84": [
+      45.99343867990887,
+      15.563552321907032,
+      46.049309713010025,
+      15.598022744100671
+    ],
+    "nodata": NaN,
+    "valid_pixels_band1": 1232,
+    "range_band1": [
+      0.0,
+      5144.18310546875
+    ],
+    "tags": {
+      "AREA_OR_POINT": "Area"
+    },
+    "band_tags": {},
+    "units": [
+      null
+    ],
+    "descriptions": [
+      null
+    ]
+  },
+  {
+    "file": "emi20241023t083741p06026-A_plume_tif.tif",
+    "shape": [
+      102,
+      101
+    ],
+    "bands": 4,
+    "dtype": [
+      "uint8",
+      "uint8",
+      "uint8",
+      "uint8"
+    ],
+    "crs": "EPSG:32638",
+    "transform": [
+      59.13730169192422,
+      0.0,
+      606521.689386342,
+      0.0,
+      -59.13730169204064,
+      1725843.695737009,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "bounds_wgs84": [
+      45.99338994798651,
+      15.553395736940551,
+      46.04936134118065,
+      15.60817946431234
+    ],
+    "nodata": null,
+    "valid_pixels_band1": 1232,
+    "range_band1": [
+      23.0,
+      179.0
+    ],
+    "tags": {
+      "creation_time": "2025-06-09T20:52:00Z",
+      "AREA_OR_POINT": "Area"
+    },
+    "band_tags": {},
+    "units": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "descriptions": [
+      "Red",
+      "Green",
+      "Blue",
+      "Alpha"
+    ]
+  },
+  {
+    "file": "emi20241023t083741p06026-A_rgb.tif",
+    "shape": [
+      102,
+      101
+    ],
+    "bands": 3,
+    "dtype": [
+      "uint8",
+      "uint8",
+      "uint8"
+    ],
+    "crs": "EPSG:32638",
+    "transform": [
+      59.137301691947506,
+      0.0,
+      606521.68938634,
+      0.0,
+      -59.13730169194843,
+      1725843.6957370029,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "bounds_wgs84": [
+      45.99338994798649,
+      15.55339573694058,
+      46.04936134118065,
+      15.608179464312292
+    ],
+    "nodata": 0.0,
+    "valid_pixels_band1": 10248,
+    "range_band1": [
+      2.0,
+      255.0
+    ],
+    "tags": {
+      "creation_date": "2025-06-09T20:52:00Z",
+      "AREA_OR_POINT": "Area"
+    },
+    "band_tags": {},
+    "units": [
+      null,
+      null,
+      null
+    ],
+    "descriptions": [
+      "Red",
+      "Green",
+      "Blue"
+    ]
+  }
+]

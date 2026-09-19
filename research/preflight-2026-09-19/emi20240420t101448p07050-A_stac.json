@@ -1,0 +1,62 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/version/v1.2.0/schema.json"
+  ],
+  "id": "emi20240420t101448p07050-A",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      46.036003399263535,
+      15.586459832180779
+    ]
+  },
+  "bbox": [
+    46.036003399263535,
+    15.586459832180779,
+    46.036003399263535,
+    15.586459832180779
+  ],
+  "properties": {
+    "cm:longitude": 46.036003399263535,
+    "cm:latitude": 15.586459832180779,
+    "cm:cmf_type": "mfa",
+    "cm:gas": "CH4",
+    "cm:sector": "1B2",
+    "cm:phme_candidate": false,
+    "cm:published_at": "2024-05-08T22:57:42.324Z",
+    "cm:publications": null,
+    "cm:modified": "2025-03-25T23:15:47.060Z",
+    "cm:created": "2024-05-07T15:45:16.090Z",
+    "cm:visibility": "public",
+    "cm:mission_phase": "production",
+    "datetime": "2024-04-20T10:14:48Z",
+    "version": "v0"
+  },
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2c-ch4-v0/items/emi20240420t101448p07050-A",
+      "type": "application/json",
+      "title": "HTTP link"
+    },
+    {
+      "rel": "root",
+      "href": "https://api.carbonmapper.org/api/v1/stac/",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2c-ch4-v0",
+      "type": "application/json"
+    },
+    {
+      "rel": "collection",
+      "href": "https://api.carbonmapper.org/api/v1/stac/collections/l2c-ch4-v0",
+      "type": "application/json"
+    }
+  ],
+  "assets": {},
+  "collection": "l2c-ch4-v0"
+}

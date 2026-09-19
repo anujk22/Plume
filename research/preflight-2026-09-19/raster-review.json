@@ -1,0 +1,32 @@
+[
+  {
+    "record": "emi20240420t101448p07050-A",
+    "quantification_pixels_with_matching_spatial_samples": 166,
+    "valid_quantification_pixels": 166,
+    "max_numeric_difference": 0.0,
+    "masked_pixels": 11892,
+    "valid_zero_pixels": 303,
+    "render_scale": [
+      0,
+      5500
+    ],
+    "render_resampling": "nearest",
+    "crs": "EPSG:32638",
+    "provider_origin_within_asset_bounds": true
+  },
+  {
+    "record": "emi20241023t083741p06026-A",
+    "quantification_pixels_with_matching_spatial_samples": 133,
+    "valid_quantification_pixels": 133,
+    "max_numeric_difference": 0.0,
+    "masked_pixels": 5232,
+    "valid_zero_pixels": 205,
+    "render_scale": [
+      0,
+      5500
+    ],
+    "render_resampling": "nearest",
+    "crs": "EPSG:32638",
+    "provider_origin_within_asset_bounds": true
+  }
+]

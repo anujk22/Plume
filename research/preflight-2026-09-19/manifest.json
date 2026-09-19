@@ -1,0 +1,254 @@
+{
+  "status": "preflight_only_not_a_production_snapshot",
+  "checked_on": "2026-09-19",
+  "timestamp_note": "File modification times approximate retrieval; they are not acquisition times.",
+  "redaction_note": "Signed asset URL query strings removed. Re-fetch stable catalog/STAC records to obtain fresh URLs. Original and stored hashes are separate.",
+  "sources": {
+    "carbon_mapper_catalog": "https://api.carbonmapper.org/api/v1/catalog/plumes/annotated",
+    "carbon_mapper_stac": "https://api.carbonmapper.org/api/v1/stac/search",
+    "carbon_mapper_source": "https://api.carbonmapper.org/api/v1/catalog/source/plume/name/emi20240420t101448p07050-A",
+    "nasa_cmr": "https://cmr.earthdata.nasa.gov/search/granules.json",
+    "nasa_april_umm": "https://cmr.earthdata.nasa.gov/search/concepts/G3961088513-LPCLOUD.umm_json",
+    "nasa_october_umm": "https://cmr.earthdata.nasa.gov/search/concepts/G3961096319-LPCLOUD.umm_json",
+    "nasa_public_map_feed": "https://earth.jpl.nasa.gov/emit-mmgis/Missions/EMIT/Layers/coverage/combined_plume_metadata.json",
+    "nasa_public_map_config": "https://earth.jpl.nasa.gov/emit-mmgis/public/current_config.json"
+  },
+  "terms": {
+    "carbon_mapper": "https://carbonmapper.org/terms",
+    "nasa_product_guide": "https://github.com/emit-sds/emit-sds-tgp/blob/main/docs/EMIT_L2B_TRACE_GAS_User_Guide.md"
+  },
+  "files": [
+    {
+      "path": "carbon-source-april.json",
+      "bytes": 6165,
+      "original_sha256": "88a77099bd75b7e2678bf000def2db5f44e7eddeafbdd4ff050b307be7180f8b",
+      "stored_sha256": "effc4242718aa797473abe56ab2d4f70ad445043b48b1e56dac1216f1619dfce",
+      "signed_url_queries_removed": true,
+      "retrieved_at_file_mtime_utc": "2026-09-19T20:21:20.513711+00:00"
+    },
+    {
+      "path": "carbon-stac-april-search.json",
+      "bytes": 41382,
+      "original_sha256": "8869f01c6fde675194dd22deb7c9c5f598e5a13ae04690854fdb969333368251",
+      "stored_sha256": "d681387937bae8400404b631c5c537481479a88f6a5c2dfd765cf44e1bdee561",
+      "signed_url_queries_removed": false,
+      "retrieved_at_file_mtime_utc": "2026-09-19T20:15:03.060951+00:00"
+    },
+    {
+      "path": "carbon-stac-scene-search.json",
+      "bytes": 124184,
+      "original_sha256": "bbca2fed2b34094ffb348e43a08e7d5f25164254a76af88c6a4ee8bc33b9abbc",
+      "stored_sha256": "abf61b841235164ff50edd1209d48d5af77b1ee12ab2cf3c17078593e2dfd31a",
+      "signed_url_queries_removed": false,
+      "retrieved_at_file_mtime_utc": "2026-09-19T20:15:42.516772+00:00"
+    },
+    {
+      "path": "emi20240420t101448p07050-A.json",
+      "bytes": 2321,
+      "original_sha256": "8fc6cf59f175b986bc8d73926382a454a94ca7472af05402fa7200669d95abf1",
+      "stored_sha256": "3ef512ed3abfab491857f3fe728142cff1fae9a62b5153e410f6baee641972f9",
+      "signed_url_queries_removed": true,
+      "retrieved_at_file_mtime_utc": "2026-09-19T20:12:10.215837+00:00"
+    },
+    {
+      "path": "emi20240420t101448p07050-A_con_tif.tif",
+      "bytes": 14664,
+      "original_sha256": "43157ca6a13d27f5908bcb59395d05ee4764f77b8d6f96fb87d1e763acf36852",
+      "stored_sha256": "43157ca6a13d27f5908bcb59395d05ee4764f77b8d6f96fb87d1e763acf36852",
+      "signed_url_queries_removed": false,
+      "retrieved_at_file_mtime_utc": "2026-09-19T20:12:12.058312+00:00"
+    },
+    {
+      "path": "emi20240420t101448p07050-A_plume-concentrations.tif",
+      "bytes": 42108,
+      "original_sha256": "664e836aabf6fa2309c7c2557a9c4d6151a10b5ecbe3917e2b03c1a993a44476",
+      "stored_sha256": "664e836aabf6fa2309c7c2557a9c4d6151a10b5ecbe3917e2b03c1a993a44476",
+      "signed_url_queries_removed": false,
+      "retrieved_at_file_mtime_utc": "2026-09-19T20:18:19.162758+00:00"
+    },
+    {
+      "path": "emi20240420t101448p07050-A_plume-outline.geojson",
+      "bytes": 40192,
+      "original_sha256": "96f701b1004feebdc5cbddbb73902ca936241c398898ac6e78706b3ff67c0843",
+      "stored_sha256": "a350f9f307559c5380fd0b2d58b2470deed4fdfdd809dced144f9433e96e7f5b",
+      "signed_url_queries_removed": false,
+      "retrieved_at_file_mtime_utc": "2026-09-19T20:18:19.882136+00:00"
+    },
+    {
+      "path": "emi20240420t101448p07050-A_plume_png.png",
+      "bytes": 9552,
+      "original_sha256": "82386f62582422d468c0c28ac69cb474371d87634ce053cd7addb2e85c27572b",
+      "stored_sha256": "82386f62582422d468c0c28ac69cb474371d87634ce053cd7addb2e85c27572b",
+      "signed_url_queries_removed": false,
+      "retrieved_at_file_mtime_utc": "2026-09-19T20:12:12.931733+00:00"
+    },
+    {
+      "path": "emi20240420t101448p07050-A_plume_tif.tif",
+      "bytes": 13370,
+      "original_sha256": "f7cd17040ccc5abba5cdba1a85de666b8af0c8384746387e3d84b1cd2fd5b3fe",
+      "stored_sha256": "f7cd17040ccc5abba5cdba1a85de666b8af0c8384746387e3d84b1cd2fd5b3fe",
+      "signed_url_queries_removed": false,
+      "retrieved_at_file_mtime_utc": "2026-09-19T20:12:11.643688+00:00"
+    },
+    {
+      "path": "emi20240420t101448p07050-A_rgb.tif",
+      "bytes": 23729,
+      "original_sha256": "f506cf827194cf2362e2e2769d699dbd5be81f1c76e44b89d0c991be333ee475",
+      "stored_sha256": "f506cf827194cf2362e2e2769d699dbd5be81f1c76e44b89d0c991be333ee475",
+      "signed_url_queries_removed": false,
+      "retrieved_at_file_mtime_utc": "2026-09-19T20:18:20.628110+00:00"
+    },
+    {
+      "path": "emi20240420t101448p07050-A_stac.json",
+      "bytes": 1625,
+      "original_sha256": "39a5cb9d6050c27ccc70b699cab2a6171a6ee2aafcea39245a395f952a945b24",
+      "stored_sha256": "3686a452c6101eccbf8046a4cf9074b9efa19baa1dae15c333a6fd2a535dc270",
+      "signed_url_queries_removed": false,
+      "retrieved_at_file_mtime_utc": "2026-09-19T20:14:33.177280+00:00"
+    },
+    {
+      "path": "emi20240420t101448p07050-A_visualization-stac.json",
+      "bytes": 8719,
+      "original_sha256": "e811320962883625c1cea9a590c51dc182bb826fe7f76b45b69dfb7f2bcc88b5",
+      "stored_sha256": "8729a466d32663a36983c78c943a3bac559b516e142867ad343b37cdfeb9c05e",
+      "signed_url_queries_removed": false,
+      "retrieved_at_file_mtime_utc": "2026-09-19T20:18:18.198097+00:00"
+    },
+    {
+      "path": "emi20241023t083741p06026-A.json",
+      "bytes": 2316,
+      "original_sha256": "bf1bcef2347586fef21284368c09f574473f2d2b0687a1fcea8c7084904cedde",
+      "stored_sha256": "3e3496dd030db451414d007e4381b70716ffd5a999c9d6bcad1c748137cfc018",
+      "signed_url_queries_removed": true,
+      "retrieved_at_file_mtime_utc": "2026-09-19T20:12:10.222501+00:00"
+    },
+    {
+      "path": "emi20241023t083741p06026-A_con_tif.tif",
+      "bytes": 9576,
+      "original_sha256": "00c6001feda362b491efd8dcd1decfd89685efb67981433e3e9619f648426d5b",
+      "stored_sha256": "00c6001feda362b491efd8dcd1decfd89685efb67981433e3e9619f648426d5b",
+      "signed_url_queries_removed": false,
+      "retrieved_at_file_mtime_utc": "2026-09-19T20:12:12.044016+00:00"
+    },
+    {
+      "path": "emi20241023t083741p06026-A_plume-concentrations.tif",
+      "bytes": 20636,
+      "original_sha256": "cdee5f2e2d71d265af9a9c5006fac132dafc8bda211415554c44af3527963f01",
+      "stored_sha256": "cdee5f2e2d71d265af9a9c5006fac132dafc8bda211415554c44af3527963f01",
+      "signed_url_queries_removed": false,
+      "retrieved_at_file_mtime_utc": "2026-09-19T20:18:19.084444+00:00"
+    },
+    {
+      "path": "emi20241023t083741p06026-A_plume-outline.geojson",
+      "bytes": 18302,
+      "original_sha256": "8f1d92d068eef4ee170cecb5b75a5ffc834b670d10e6fd3bf9df04aa69a1366a",
+      "stored_sha256": "53c87faa3e7237071281f3e62568588fbfa9624ffc9b563816e45c5bd865b5a4",
+      "signed_url_queries_removed": false,
+      "retrieved_at_file_mtime_utc": "2026-09-19T20:18:19.700182+00:00"
+    },
+    {
+      "path": "emi20241023t083741p06026-A_plume_png.png",
+      "bytes": 3074,
+      "original_sha256": "5953c4ffac2349958d7aef634301490eb01b280ce5de7ae285ffd326a0b367c5",
+      "stored_sha256": "5953c4ffac2349958d7aef634301490eb01b280ce5de7ae285ffd326a0b367c5",
+      "signed_url_queries_removed": false,
+      "retrieved_at_file_mtime_utc": "2026-09-19T20:12:12.422791+00:00"
+    },
+    {
+      "path": "emi20241023t083741p06026-A_plume_tif.tif",
+      "bytes": 5812,
+      "original_sha256": "1ba0a0557efb66b004a007b4d36a3e859a9dd062500cdf9c1d1e3d098114983a",
+      "stored_sha256": "1ba0a0557efb66b004a007b4d36a3e859a9dd062500cdf9c1d1e3d098114983a",
+      "signed_url_queries_removed": false,
+      "retrieved_at_file_mtime_utc": "2026-09-19T20:12:11.606943+00:00"
+    },
+    {
+      "path": "emi20241023t083741p06026-A_rgb.tif",
+      "bytes": 21912,
+      "original_sha256": "000706c8ecfd016434a10ed68263109496fdfbe9865f4afbb69b705faf3161c0",
+      "stored_sha256": "000706c8ecfd016434a10ed68263109496fdfbe9865f4afbb69b705faf3161c0",
+      "signed_url_queries_removed": false,
+      "retrieved_at_file_mtime_utc": "2026-09-19T20:18:20.806207+00:00"
+    },
+    {
+      "path": "emi20241023t083741p06026-A_stac.json",
+      "bytes": 1617,
+      "original_sha256": "ef6435f66327b417739ad42aca3724c08f719bb9def54a6698ff347f79badd1f",
+      "stored_sha256": "8bf3440f0e3cf6c2ae3b56da92075a0d18e5eda6dbc938537b16c39c1553df69",
+      "signed_url_queries_removed": false,
+      "retrieved_at_file_mtime_utc": "2026-09-19T20:14:33.200706+00:00"
+    },
+    {
+      "path": "emi20241023t083741p06026-A_visualization-stac.json",
+      "bytes": 8562,
+      "original_sha256": "9b7de1c2380243d19b617c1cf5026f55ca880db31deecbba4e91a542e1b51ada",
+      "stored_sha256": "43be46b7659ed82e690a3e2636008288d9485ba1ea584e135715959028021a92",
+      "signed_url_queries_removed": false,
+      "retrieved_at_file_mtime_utc": "2026-09-19T20:18:18.191324+00:00"
+    },
+    {
+      "path": "nasa-candidate-umm.json",
+      "bytes": 27127,
+      "original_sha256": "00cd4868561114ca7816b9c688b7a36ec0ed6d42f79e9109055c6172fff3a194",
+      "stored_sha256": "66080b7b7f07d3656b9289abb1a538321e8067d984bdc48c1371fb82dba7a69c",
+      "signed_url_queries_removed": false,
+      "retrieved_at_file_mtime_utc": "2026-09-19T20:12:57.022448+00:00"
+    },
+    {
+      "path": "nasa-cmr-candidate.json",
+      "bytes": 90675,
+      "original_sha256": "636c6aec18e9b8b3e659a462964094890fad66dc2483787c0558332cd2052fdd",
+      "stored_sha256": "9cd9a2499e57d67d0e31018deee036d4c1db00497359b333575df592dc688935",
+      "signed_url_queries_removed": false,
+      "retrieved_at_file_mtime_utc": "2026-09-19T20:12:11.409079+00:00"
+    },
+    {
+      "path": "nasa-map-config.json",
+      "bytes": 31434,
+      "original_sha256": "84a0c459643bd585790ec4bbb92f471753ded961aeb1a039aca6e3016d4ee519",
+      "stored_sha256": "ac3600d59145c950ac548861a4971c421eeff8686f4f18e7dfdc9b4b0d347332",
+      "signed_url_queries_removed": false,
+      "retrieved_at_file_mtime_utc": "2026-09-19T20:15:42.322986+00:00"
+    },
+    {
+      "path": "nasa-october-umm.json",
+      "bytes": 21057,
+      "original_sha256": "232fb5d72b6aa5bfcdd4b21a9c036b15b25ed90d9885dc003ad3181ed50e8311",
+      "stored_sha256": "d56469789fe4b930d0b8ab1d379272c5543db34b6ca62163654c1ece237d1bef",
+      "signed_url_queries_removed": false,
+      "retrieved_at_file_mtime_utc": "2026-09-19T20:13:58.638264+00:00"
+    },
+    {
+      "path": "nasa-public-plumes.json",
+      "bytes": 21037902,
+      "original_sha256": "49ff588626db604fcd93fa074e6eb4b58820ae6ead14bbfcdf342df35ff15b73",
+      "stored_sha256": "4f01f0941b83607fade0051b048ee6dc39fb83311c47eaf7765ece748e4d214b",
+      "signed_url_queries_removed": false,
+      "retrieved_at_file_mtime_utc": "2026-09-19T20:16:22.027720+00:00"
+    },
+    {
+      "path": "raster-inspection.json",
+      "bytes": 6640,
+      "original_sha256": "5decc0e2767dc489ec988d3d000b52e0b4f0e575080725a9a34ea8e80cd770f5",
+      "stored_sha256": "633c0789e8b50174b14b96dc763fc77eacee59eb2a8f10d7b55aeed40931443c",
+      "signed_url_queries_removed": false,
+      "retrieved_at_file_mtime_utc": "2026-09-19T20:18:44.945844+00:00"
+    },
+    {
+      "path": "raster-review.json",
+      "bytes": 818,
+      "original_sha256": "b836de092ddc76ad583b55948ff282ac23e563ee7f37b185eb66daf8fb7afc22",
+      "stored_sha256": "6d3400d868b7db9ffb5be3710af0cd8cdc714ad73238db06083e0ec02d3a4696",
+      "signed_url_queries_removed": false,
+      "retrieved_at_file_mtime_utc": "2026-09-19T20:21:07.979119+00:00"
+    },
+    {
+      "path": "real-raster-preflight.png",
+      "bytes": 152878,
+      "original_sha256": "1eb7d3ddec36577e64605a6586c131a5e6ab39c6b2f1c6ca105a9bab90e8bdbf",
+      "stored_sha256": "1eb7d3ddec36577e64605a6586c131a5e6ab39c6b2f1c6ca105a9bab90e8bdbf",
+      "signed_url_queries_removed": false,
+      "retrieved_at_file_mtime_utc": "2026-09-19T20:21:07.978701+00:00"
+    }
+  ]
+}
