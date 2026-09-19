@@ -1,0 +1,116 @@
+{
+  "emi20240803t190415p13004-C": {
+    "url": "/data/home-plumes/emi20240803t190415p13004-C.png",
+    "coordinates": [
+      [
+        -121.94056667047657,
+        37.46135456220337
+      ],
+      [
+        -121.9328109589407,
+        37.46135456220337
+      ],
+      [
+        -121.9328109589407,
+        37.45614528610414
+      ],
+      [
+        -121.94056667047657,
+        37.45614528610414
+      ]
+    ],
+    "bounds": [
+      -121.94056667047657,
+      37.45614528610414,
+      -121.9328109589407,
+      37.46135456220337
+    ],
+    "unit": "ppm\u00b7m",
+    "scale": [
+      0,
+      9000
+    ],
+    "sourceUrl": "https://api.carbonmapper.org/api/v1/catalog/asset/l3a-ime-ch4-mfa-v3/2024/08/03/emi20240803t190415p13004-C/emi20240803t190415p13004-C_l3a-ime-ch4-mfa-v3_ime-cmf-concentrations.tif",
+    "sourceSha256": "e88be6e040a09ea783b7e0d4a96bede51f5d1c3add72bea7a8d422a309d63a49",
+    "sha256": "0d8ac092257c03591ce865773c8ef037844ce5602e78099569006e8a5b03e629",
+    "nativeSamples": 38,
+    "resampling": "nearest",
+    "mask": "Provider nodata mask; transparent areas are not measured zeros"
+  },
+  "emi20240807t172838p12003-A": {
+    "url": "/data/home-plumes/emi20240807t172838p12003-A.png",
+    "coordinates": [
+      [
+        -121.94468402358615,
+        37.46415584623492
+      ],
+      [
+        -121.93330644571898,
+        37.46415584623492
+      ],
+      [
+        -121.93330644571898,
+        37.45702595051345
+      ],
+      [
+        -121.94468402358615,
+        37.45702595051345
+      ]
+    ],
+    "bounds": [
+      -121.94468402358615,
+      37.45702595051345,
+      -121.93330644571898,
+      37.46415584623492
+    ],
+    "unit": "ppm\u00b7m",
+    "scale": [
+      0,
+      9000
+    ],
+    "sourceUrl": "https://api.carbonmapper.org/api/v1/catalog/asset/l3a-ime-ch4-mfa-v3/2024/08/07/emi20240807t172838p12003-A/emi20240807t172838p12003-A_l3a-ime-ch4-mfa-v3_ime-cmf-concentrations.tif",
+    "sourceSha256": "efefcb695955b7835f3d6d7de6f39f367643c233cf93b1873281101052620023",
+    "sha256": "c3d5aa4e673a8e9dcb8e1cf346bc69dd789afa6d2cee585d055bfad0c3a19b29",
+    "nativeSamples": 101,
+    "resampling": "nearest",
+    "mask": "Provider nodata mask; transparent areas are not measured zeros"
+  },
+  "emi20240926t213956p14002-A": {
+    "url": "/data/home-plumes/emi20240926t213956p14002-A.png",
+    "coordinates": [
+      [
+        -121.94390420197387,
+        37.46079277025659
+      ],
+      [
+        -121.9320118090618,
+        37.46079277025659
+      ],
+      [
+        -121.9320118090618,
+        37.45701674633067
+      ],
+      [
+        -121.94390420197387,
+        37.45701674633067
+      ]
+    ],
+    "bounds": [
+      -121.94390420197387,
+      37.45701674633067,
+      -121.9320118090618,
+      37.46079277025659
+    ],
+    "unit": "ppm\u00b7m",
+    "scale": [
+      0,
+      9000
+    ],
+    "sourceUrl": "https://api.carbonmapper.org/api/v1/catalog/asset/l3a-ime-ch4-mfa-v3/2024/09/26/emi20240926t213956p14002-A/emi20240926t213956p14002-A_l3a-ime-ch4-mfa-v3_ime-cmf-concentrations.tif",
+    "sourceSha256": "ada89035b5f43ce288d3a67f93a10c80081dd7a48990372b0a708b8db9b0f5ec",
+    "sha256": "49538b12a801a757d2a5a4956f74ddd7ffc753457543443f3acc34296a32d4f8",
+    "nativeSamples": 57,
+    "resampling": "nearest",
+    "mask": "Provider nodata mask; transparent areas are not measured zeros"
+  }
+}

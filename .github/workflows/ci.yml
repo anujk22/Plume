@@ -33,6 +33,7 @@ jobs:
         run: |
           python -m pip install numpy rasterio Pillow
           python scripts/verify_release.py
+          python scripts/prepare_home_plumes.py --check
           git diff --exit-code -- research/release-validation.json
       - run: npm run build
       - run: npx playwright install --with-deps chromium
