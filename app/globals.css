@@ -526,3 +526,39 @@ body {
 .measurement-popup{padding:8px;color:#174c54;font:11px var(--sans)}.measurement-popup strong{font-size:11px}.measurement-popup p{font:24px var(--serif);margin:8px 0}.measurement-popup small{font-size:10px;color:#547265}.maplibregl-popup-content:has(.measurement-popup){background:#f6f9ee;border-radius:14px;box-shadow:0 8px 24px #1b504328}
 .global-record-list{margin:10px 0;font-size:10px}.global-record-list summary{cursor:pointer;color:#975c3f}.global-record-list[open]{max-height:155px;overflow:auto}.global-record-list p{font-size:9px;color:#678171;margin:8px 0}.global-record-list button{width:100%;display:flex;justify-content:space-between;text-align:left;gap:7px;border-bottom:1px solid #dce6db;padding:7px 0;font-size:10px}.global-record-list button:hover{color:#a95f36}.global-record-list button small{font-size:9px}
 .global-zoom-record{display:flex;align-items:center;gap:6px;margin:10px 0;color:#a15c38;text-decoration:underline;font-size:11px}
+
+/* The paper frame steps in front of the workspace at its lower edge. */
+.workspace-foreground{position:absolute;left:0;right:0;bottom:0;width:100%;height:clamp(76px,10vh,110px);pointer-events:none;z-index:4;filter:drop-shadow(0 -3px 5px #20474a16)}
+.application .case-rail,.application .findings-panel{backdrop-filter:none;background:linear-gradient(125deg,#fffff9 0%,#f2f8f2 56%,#e5f0ec 100%);border:1px solid #ffffffdf;box-shadow:0 16px 36px #17494c1a,inset 0 1px 0 #fff;border-radius:27px}
+.application .case-search,.place-filters select,.place-date-filters input{background:#fffefa;border:1px solid #c8dbd7;box-shadow:0 3px 8px #1e4a4110,inset 0 1px 0 #fff}
+.application .case-tile{border-radius:15px;transition:background 160ms,box-shadow 160ms,transform 160ms}
+.application .case-tile.active{background:linear-gradient(120deg,#deeee6,#edf5ec);border-color:#b9d5cb;box-shadow:inset 0 1px 0 #ffffffba,0 3px 9px #1f56460a}
+.application .case-tile:hover{background:#e6f1e8;transform:translateX(2px)}
+.application .selected-observation-preview,.catalog-plume-preview{border:1px solid #c5d8ca;box-shadow:inset 0 1px 4px #315e5517;background:radial-gradient(ellipse at 58% 38%,#e9f1df,#b1cfc0);border-radius:18px}
+.application .observation-facts{border-color:#ccddd3;padding:9px 0;margin-top:4px}.application .observation-facts>button{padding:10px 0}.application .observation-facts strong{font-family:var(--serif);font-size:25px;font-weight:600}.application .observation-facts .fact-status{font-family:var(--sans);font-weight:500;font-size:10px}
+.application .evidence-actions>button{border-radius:18px;background:#ffffff80;border-color:#ccddd6;box-shadow:0 3px 7px #234e4610;padding:10px}.application .brief-actions>.primary,.catalog-selection>.primary{box-shadow:0 5px 10px #15464b24,inset 0 1px 0 #ffffff20;min-height:46px;font-weight:500}
+.application .panel-title{padding:3px 0 2px}.application .panel-back{font-size:11px}.application .observation-arrows button{background:#fffffb;box-shadow:0 4px 10px #15454b17;border:1px solid #e2ece4;width:30px;height:30px}
+.application .timeline{background:linear-gradient(110deg,#fffff6f5,#eef5edf5);border:1px solid #ffffffd9;box-shadow:0 8px 22px #18464216}
+.application .global-detections{background:linear-gradient(125deg,#fffff8f2,#eef5eaf2);box-shadow:0 8px 24px #214d4215;border-color:#ffffffd9}
+@media(min-width:1200px){
+ .investigation-workspace>.case-rail,.place-workspace>.place-filters{padding:25px 24px 78px;bottom:33px}
+ .investigation-workspace>.findings-panel,.place-workspace>.place-results{padding:22px 23px 55px;bottom:33px}
+ .investigation-workspace .rail-heading h2,.place-filters h1{font-size:29px;line-height:1.12;margin-bottom:12px}
+ .investigation-workspace .findings-panel>h2{font-size:25px;line-height:1.18;letter-spacing:-.6px;margin-top:15px}
+ .investigation-workspace .selected-observation-preview{height:108px;flex-shrink:0}
+ .investigation-workspace .case-list{gap:2px}.investigation-workspace .date-filter-disclosure{margin-bottom:0}.investigation-workspace .rail-heading h2{margin-top:8px;margin-bottom:8px}.investigation-workspace .case-rail .rail-rule{margin:7px 0}.investigation-workspace .observation-facts{padding:4px 0}.investigation-workspace .observation-facts>button{padding:7px 0}
+ .investigation-workspace .findings{justify-content:flex-start;overflow:visible;min-height:175px;flex:1 0 auto}.investigation-workspace .finding{padding:10px 0;flex-shrink:0}.investigation-workspace .finding p{font-size:12px;line-height:1.55}
+ .investigation-workspace.view-map .maplibregl-ctrl-bottom-right,.place-workspace .maplibregl-ctrl-bottom-right{bottom:0}
+}
+@media(min-width:1200px) and (max-height:900px){.investigation-workspace .selected-observation-preview{height:84px}.investigation-workspace .findings-panel>h2{font-size:22px}.investigation-workspace .findings{min-height:150px}.investigation-workspace .rail-heading h2{font-size:26px}.investigation-workspace .case-search{margin-top:12px}.application .observation-facts{padding:3px 0}.application .observation-facts>button{padding:7px 0}.investigation-workspace .finding{padding:7px 0}.investigation-workspace>.case-rail,.place-workspace>.place-filters{padding-top:22px}}
+@media(max-width:1199px){.workspace-foreground{display:none}.application .case-rail,.application .findings-panel{border-radius:24px}}
+
+/* Carry the brand and selected search bar from the invitation into the instrument. */
+html[data-map-transition] .landing .brand,html[data-map-transition] .app-header .brand{view-transition-name:plume-brand}
+html[data-map-transition] .header-place{view-transition-name:plume-search}
+::view-transition-group(*){animation-duration:620ms;animation-timing-function:cubic-bezier(.22,1,.36,1)}
+::view-transition-old(root){animation:plume-depart 350ms ease both}
+::view-transition-new(root){animation:plume-arrive 650ms cubic-bezier(.22,1,.36,1) both}
+@keyframes plume-depart{to{opacity:0;transform:scale(1.008)}}
+@keyframes plume-arrive{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.application .case-tile{transition:none}.application .case-tile:hover{transform:none}::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}}

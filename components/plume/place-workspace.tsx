@@ -5,6 +5,7 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import {ArrowRight,ArrowUpRight,CalendarDays,Info,Layers3,LoaderCircle,MapPin,Search} from 'lucide-react';
 import {Header} from './header';
+import {WorkspaceForeground} from './workspace-foreground';
 import {PlaceSearch} from './place-search';
 import {useSnapshot} from './use-snapshot';
 import {distanceKm,dateLabel} from '@/lib/plume/evidence';
@@ -30,7 +31,7 @@ export default function PlaceWorkspace({placeId,initialRadius}:{placeId:string;i
  if(error||snapshotError)return <><Header/><main className="error-page"><Info/><h1>Search unavailable</h1><p>{error||snapshotError}</p><Link href="/explore" className="pill primary">Browse reviewed investigations</Link></main></>;
  if(!place||!snapshot||(!catalog&&!catalogError))return <><Header/><main className="error-page"><LoaderCircle className="spin"/><p>Opening the place on the map…</p></main></>;
  const label=place.name+(place.postal?' '+place.postal:'');
- return <div className="application investigation-application place-application"><Header place={label} onSearch={()=>setSearch(true)}/><div className="workspace-art" aria-hidden="true"/><main className="workspace place-workspace">
+ return <div className="application investigation-application place-application"><Header place={label} onSearch={()=>setSearch(true)}/><div className="workspace-art" aria-hidden="true"/><WorkspaceForeground/><main className="workspace place-workspace">
   <aside className="case-rail place-filters" aria-label="Search filters"><p className="eyebrow">METHANE EXPLORER</p><h1>{label}</h1><p className="place-region">{place.admin}, {place.country}</p><button className="place-action" onClick={()=>setSearch(true)}><Search size={16}/> Search another place <ArrowRight size={14}/></button>
    <label className="radius-label">Search radius<select value={radius} onChange={e=>{const r=Number(e.target.value);router.replace('/places/'+place.id+'?radius='+r,{scroll:false});}}>{[10,25,50,100].map(r=><option key={r} value={r}>Within {r} km</option>)}</select></label>
    <fieldset className="place-date-filters"><legend>Date range</legend><label>From<input type="date" value={from} onChange={e=>setFrom(e.target.value)}/></label><label>To<input type="date" value={to} onChange={e=>setTo(e.target.value)}/></label>{(from||to)&&<button className="text-link" onClick={()=>{setFrom('');setTo('');}}>Reset dates</button>}</fieldset>

@@ -21,3 +21,31 @@ test('homepage suggestions stay under either search bar and support keyboard dis
  await page.getByRole('heading',{name:'Plume',exact:true}).click();await expect(compact.locator('.home-search-dropdown')).toHaveCount(0);
  await hero.getByRole('combobox').fill('08831');await expect(hero.getByRole('option',{name:/Monroe Township/})).toBeVisible();await hero.getByRole('combobox').press('ArrowDown');await expect(hero.getByRole('option').first()).toHaveAttribute('aria-selected','true');await hero.getByRole('combobox').press('Enter');await expect(page).toHaveURL(/\/places\/us-24058/);
 });
+
+test('search transitions into the map and respects reduced motion',async({page})=>{
+ await page.addInitScript(()=>{
+  const start=document.startViewTransition.bind(document);
+  Object.assign(window,{mapTransitionState:'unused'});
+  document.startViewTransition=(...args:Parameters<typeof start>)=>{
+   Object.assign(window,{mapTransitionState:'started'});
+   const transition=start(...args);
+   void transition.ready.then(()=>Object.assign(window,{mapTransitionState:'ready'}),()=>Object.assign(window,{mapTransitionState:'failed'}));
+   void transition.finished.then(()=>{if((window as unknown as {mapTransitionState:string}).mapTransitionState!=='failed')Object.assign(window,{mapTransitionState:'finished'});});
+   return transition;
+  };
+ });
+ await page.goto('/');
+ const search=page.locator('.home-hero-search');
+ await search.getByRole('combobox').fill('Santiago');
+ await search.getByRole('option',{name:/^Santiago Santiago Metropolitan/}).click();
+ await expect(page).toHaveURL(/\/places\/3871336/);
+ await expect.poll(()=>page.evaluate(()=>(window as unknown as {mapTransitionState:string}).mapTransitionState)).toBe('finished');
+ await expect(page.locator('html')).not.toHaveAttribute('data-map-transition');
+ await expect(page.locator('.place-map-canvas canvas')).toBeVisible();
+ await page.emulateMedia({reducedMotion:'reduce'});
+ await page.goto('/');
+ await page.getByRole('navigation',{name:'Main navigation'}).getByRole('link',{name:'Explore the map'}).click();
+ await expect(page).toHaveURL(/\/explore/);
+ expect(await page.evaluate(()=>(window as unknown as {mapTransitionState:string}).mapTransitionState)).toBe('unused');
+ await expect(page.locator('.application canvas')).toBeVisible();
+});

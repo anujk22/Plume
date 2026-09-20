@@ -1,6 +1,8 @@
 'use client';
 import {useEffect,useId,useRef,useState} from 'react';
 import {useRouter} from 'next/navigation';
+import {flushSync} from 'react-dom';
+import {enterMap} from '@/lib/plume/navigate';
 import Link from 'next/link';
 import {ArrowRight,LoaderCircle,MapPin,Search} from 'lucide-react';
 import type {Snapshot,Place} from '@/lib/plume/types';
@@ -13,7 +15,7 @@ export function PlaceSearch({snapshot,onNavigate,variant='panel'}:{snapshot:Snap
  useEffect(()=>{const requestId=++request.current;setResults([]);setActive(-1);if(query.trim().length<2){setLoading(false);return;}setLoading(true);const timer=setTimeout(()=>worker.current?.postMessage({query,request:requestId,origin:location.origin}),220);return()=>clearTimeout(timer);},[query]);
  useEffect(()=>{if(!inline||!open)return;const dismiss=(event:PointerEvent)=>{if(!root.current?.contains(event.target as Node))setOpen(false);};document.addEventListener('pointerdown',dismiss);return()=>document.removeEventListener('pointerdown',dismiss);},[inline,open]);
  useEffect(()=>{if(active>=0)document.getElementById(id+'-'+active)?.scrollIntoView({block:'nearest'});},[active,id]);
- function openPlace(p:Place){setOpen(false);onNavigate?.();router.push('/places/'+encodeURIComponent(p.id));}
+ function openPlace(p:Place){flushSync(()=>setOpen(false));onNavigate?.();enterMap('/places/'+encodeURIComponent(p.id),router.push,inline?root.current?.querySelector('form'):null);}
  const suggestions=<>
   <p className="body-note">{inline?'Find a place, or explore an included investigation.':'Choose a place to open its map. Coverage is limited to the investigations included in this snapshot.'}</p>
   {loading&&<p className="loading-line" role="status"><LoaderCircle className="spin" size={15}/> Looking up the place…</p>}

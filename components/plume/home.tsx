@@ -1,13 +1,21 @@
 'use client';
 import Link from 'next/link';
+import {useRouter} from 'next/navigation';
+import {enterMap} from '@/lib/plume/navigate';
 import {ArrowRight,Search,Leaf,Layers3,Users,Map as MapIcon,Waves,FileText,SplitSquareHorizontal,ArrowUpRight} from 'lucide-react';
 import {Brand} from './brand';
 import {useSnapshot} from './use-snapshot';
 import {PlaceSearch} from './place-search';
 export default function Home(){
+ const router=useRouter();
  const {snapshot,error}=useSnapshot();
  const investigation='/investigations/newby-island';
- return <main className="landing illustrated-landing">
+ return <main className="landing illustrated-landing" onClickCapture={e=>{
+   if(e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+   const link=(e.target as HTMLElement).closest('a');
+   if(!link||link.target||link.origin!==location.origin||!/^\/(explore|investigations|places)(\/|$)/.test(link.pathname))return;
+   e.preventDefault();e.stopPropagation();enterMap(link.pathname+link.search,router.push);
+  }}>
   <div className="landscape" aria-hidden="true"/>
   <header className="landing-header"><Brand/><nav aria-label="Main navigation"><Link href="/method#reading">About</Link><Link href="/explore">Evidence</Link><Link href="/method">Methodology</Link><Link href="/method#sources">Sources</Link><Link href="/explore" className="pill primary">Explore the map <ArrowRight size={16}/></Link></nav></header>
   <section className="hero-copy">
