@@ -10,7 +10,7 @@ export async function GET(_request:Request,{params}:{params:Promise<{period:stri
   const response=await fetch(`https://s5p-pal-nl-l3-tms.obs.eu-nl.otc.t-systems.com/${period.path}/${z}/${x}/${y}.png`,{signal:AbortSignal.timeout(15000)});
   // S5P-PAL's sparse tile pyramid omits tiles with no qualified measurements.
   if(response.status===404){
-   const empty=Uint8Array.from(atob('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVR4nGNgAAIAAAUAAarVyFEAAAAASUVORK5CYII='),c=>c.charCodeAt(0));
+   const empty=Uint8Array.from(atob('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVR4nGNgAAIAAAUAAXpeqz8AAAAASUVORK5CYII='),c=>c.charCodeAt(0));
    return new Response(empty,{headers:{'Content-Type':'image/png','Cache-Control':'public, max-age=86400','X-Plume-No-Data':'true'}});
   }
   if(!response.ok)return new Response('Atmospheric tile unavailable',{status:502});

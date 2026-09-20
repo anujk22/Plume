@@ -575,3 +575,5 @@ html[data-map-transition] .header-place{view-transition-name:plume-search}
 @media(max-width:1199px){.global-detections{max-height:350px;overflow:auto;scrollbar-width:thin}}
 @media(max-width:599px){.global-detections .atmospheric-control{grid-column:1/-1;margin:0;padding-bottom:8px}.global-detections .atmospheric-control select{margin:7px 0}.global-detections .atmospheric-control p{margin:4px 0}.global-detections .global-catalog-actions{grid-row:auto}.global-detections{max-height:270px}.place-map .global-detections{top:12px;bottom:auto;right:52px;max-height:235px}.place-map.plume-focused .global-detections{top:190px;right:10px}}
 .place-no-results .atmospheric-context{margin:0 0 24px;padding:14px 15px;border:1px solid #c4d9ce;border-radius:14px;background:#e4efe4;color:#315c60;font-size:11px;line-height:1.6}
+.atmospheric-period-label{display:block;margin-top:12px;font-size:8px;letter-spacing:.07em;color:#557d73;line-height:1.5}
+.atmospheric-control .atmospheric-history{font-size:9px;color:#61796f}.atmospheric-control .atmospheric-palette-toggle{font-size:10px;font-weight:400;margin:9px 0}
