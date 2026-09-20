@@ -13,7 +13,7 @@ test('worldwide detections remain separate from selected case evidence',async({p
  await page.getByRole('checkbox',{name:'Published hotspots worldwide'}).check();
  await expect(catalog).toContainText('1,686 in view');
  await expect(page.locator('.selection-scope')).toContainText('3 selected observations');
- await catalog.locator('summary').click();
+ await catalog.locator('.global-record-list summary').click();
  await catalog.locator('.global-record-list button').first().click();
  await expect(catalog.locator('.global-record')).toContainText('Peak column enhancement');
  await expect(catalog.getByRole('link',{name:'NASA source data'})).toHaveAttribute('href',/^https:\/\/data.lpdaac.earthdatacloud.nasa.gov\//);

@@ -19,6 +19,7 @@ test('regional methane has its own dated scale and preserves case evidence',asyn
  await atmosphere.getByRole('button',{name:'Regional view'}).click();
  await expect(atmosphere).toContainText('Gaps have no valid measurement.',{timeout:30000});
  await page.getByLabel('Atmospheric measurement month').selectOption('202408');
+ await atmosphere.locator('summary').click();
  await expect(atmosphere.getByRole('link')).toHaveAttribute('href',/cd261113/);
  await expect(atmosphere).toContainText('Gaps have no valid measurement.',{timeout:30000});
  await expect(page.locator('.selection-scope')).toContainText('3 selected observations');
@@ -27,6 +28,11 @@ test('regional methane has its own dated scale and preserves case evidence',asyn
  await atmosphere.getByRole('checkbox',{name:'Provider colors',exact:true}).check();
  await expect(atmosphere.locator('.atmospheric-scale')).not.toHaveAttribute('style',themedLegend!);
  await expect(atmosphere).toContainText('Gaps have no valid measurement.',{timeout:30000});
+ for(let i=0;i<2;i++){await page.getByRole('button',{name:'Zoom in',exact:true}).click();await page.waitForTimeout(350);}
+ await expect(atmosphere).toContainText('too coarse for local detail');
+ await expect(page.getByLabel('Atmospheric measurement month')).toHaveCount(0);
+ await atmosphere.getByRole('button',{name:'Regional view'}).click();
+ await expect(page.getByLabel('Atmospheric measurement month')).toBeVisible();
  await page.getByRole('checkbox',{name:'Atmospheric methane',exact:true}).uncheck();
  await expect(page.getByLabel('Atmospheric measurement month')).toHaveCount(0);
  await expect(page.locator('.selection-scope')).toContainText('3 selected observations');

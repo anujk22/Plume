@@ -583,3 +583,10 @@ html[data-map-transition] .header-place{view-transition-name:plume-search}
 .place-no-results .atmospheric-context{margin:0 0 24px;padding:14px 15px;border:1px solid #c4d9ce;border-radius:14px;background:#e4efe4;color:#315c60;font-size:11px;line-height:1.6}
 .atmospheric-period-label{display:block;margin-top:12px;font-size:8px;letter-spacing:.07em;color:#557d73;line-height:1.5}
 .atmospheric-control .atmospheric-history{font-size:9px;color:#61796f}.atmospheric-control .atmospheric-palette-toggle{font-size:10px;font-weight:400;margin:9px 0}
+
+/* Keep the regional legend compact; source and display options are secondary. */
+.atmospheric-details{font-size:10px;margin:9px 0;color:#305e60}
+.atmospheric-details summary{cursor:pointer;width:fit-content}
+.atmospheric-details a{font-size:10px;text-decoration:underline}
+.atmospheric-details[open]{padding-bottom:6px}
+.atmospheric-control .atmospheric-regional{margin:10px 0 0;text-decoration:none;border:1px solid #bfd3ca;background:#f9fcf6;border-radius:16px;padding:5px 10px}
