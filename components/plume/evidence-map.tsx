@@ -11,7 +11,7 @@ import type {Case,Observation} from '@/lib/plume/types';
 
 type Camera={center:[number,number];zoom:number};
 maplibregl.setWorkerUrl('/workers/maplibre-gl-worker.mjs');
-const baseStyle:StyleSpecification={version:8,sources:{},layers:[{id:'background',type:'background',paint:{'background-color':'#164c54'}}]};
+const baseStyle:StyleSpecification={version:8,sources:{},layers:[{id:'background',type:'background',paint:{'background-color':'#d5e4d8'}}]};
 export default function EvidenceMap({observation,allObservations,caseData,highlight=false,showFacilities=true,camera,onCamera,showScene=false,immersive=false,showMethane=true,sensorPixels=false}:{observation:Observation;allObservations:Observation[];caseData:Case;highlight?:boolean;showFacilities?:boolean;camera?:Camera;onCamera?:(c:Camera)=>void;showScene?:boolean;immersive?:boolean;showMethane?:boolean;sensorPixels?:boolean}){
  const el=useRef<HTMLDivElement>(null),mapRef=useRef<MapInstance|null>(null),selection=useRef(observation),facilities=useRef(showFacilities),cameraHandler=useRef(onCamera);
  const [error,setError]=useState(''),[ready,setReady]=useState(false),[webglError,setWebglError]=useState(false);
@@ -39,7 +39,7 @@ export default function EvidenceMap({observation,allObservations,caseData,highli
     map.addSource('contours',{type:'geojson',data:plumes[o.id as keyof typeof plumes].contoursUrl});
     map.addLayer({id:'plume-contours',type:'fill',source:'contours',paint:{'fill-color':['get','color'],'fill-opacity':.96}});
     map.addLayer({id:'plume-contour-lines',type:'line',source:'contours',paint:{'line-color':'#ffe2a5','line-width':.5,'line-opacity':.25}});
-    map.addSource('outline',{type:'geojson',data:o.outline});map.addLayer({id:'plume-outline',type:'line',source:'outline',paint:{'line-color':'#f3dfa2','line-width':1.4,'line-opacity':.15}});
+    map.addSource('outline',{type:'geojson',data:o.outline});map.addLayer({id:'plume-outline',type:'line',source:'outline',paint:{'line-color':'#708d78','line-width':1.4,'line-opacity':.35}});
     map.addSource('origin',{type:'geojson',data:{type:'Feature',properties:{},geometry:{type:'Point',coordinates:o.location}}});
     map.addLayer({id:'plume-origin',type:'circle',source:'origin',paint:{'circle-radius':6,'circle-color':'#ffffff','circle-stroke-width':3,'circle-stroke-color':'#0a545a'}});
     if(caseData.facilities?.length){map.addSource('facilities',{type:'geojson',data:{type:'FeatureCollection',features:caseData.facilities.map(f=>({type:'Feature',properties:{name:f.name},geometry:{type:'Point',coordinates:f.location}}))}});map.addLayer({id:'facility-points',type:'circle',source:'facilities',layout:{visibility:facilities.current?'visible':'none'},paint:{'circle-radius':6,'circle-color':'#76627d','circle-stroke-color':'#fff','circle-stroke-width':2}});}
@@ -51,10 +51,10 @@ export default function EvidenceMap({observation,allObservations,caseData,highli
     style.layers=style.layers.filter(l=>l.type!=='fill-extrusion'&&!(l.type==='symbol'&&l.layout?.['icon-image']&&!l.layout?.['text-field']));
     for(const layer of style.layers){
       const id=layer.id.toLowerCase();
-      if(layer.type==='background')layer.paint={'background-color':'#164c54'};
-      if(layer.type==='fill'){layer.paint={...layer.paint,'fill-color':id.includes('water')?'#072d3c':id.includes('building')?'#39777a':id.includes('park')?'#225e59':'#164c54'};delete layer.paint['fill-pattern'];}
-      if(layer.type==='line'&&/road|motorway|highway|path|bridge|tunnel/.test(id))layer.paint={...layer.paint,'line-color':id.includes('casing')?'#19454d':'#719a96'};
-      if(layer.type==='symbol')layer.paint={...layer.paint,'text-color':'#c2d9cf','text-halo-color':'#174953'};
+      if(layer.type==='background')layer.paint={'background-color':'#d5e4d8'};
+      if(layer.type==='fill'){layer.paint={...layer.paint,'fill-color':id.includes('water')?'#9fc9c5':id.includes('building')?'#b3cbbf':id.includes('park')?'#b8d0b9':'#d5e4d8'};delete layer.paint['fill-pattern'];}
+      if(layer.type==='line'&&/road|motorway|highway|path|bridge|tunnel/.test(id))layer.paint={...layer.paint,'line-color':id.includes('casing')?'#a8bfb2':'#f7f5e7'};
+      if(layer.type==='symbol')layer.paint={...layer.paint,'text-color':'#365e61','text-halo-color':'#edf3e8'};
     }
     map.setStyle(style);
   }).catch(e=>{if(e.name!=='AbortError'&&!disposed)setError('Basemap unavailable. Showing the georeferenced observations.');});

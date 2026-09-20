@@ -228,7 +228,7 @@ body {
 .observation-arrows button{display:grid;place-items:center;width:28px;height:28px;border:0;background:#ffffffc9;border-radius:50%;box-shadow:0 3px 9px #123a4810;color:#123f4b}
 .investigation-workspace .panel-title{gap:9px}
 .investigation-workspace .panel-title .icon-button{width:25px;height:28px}
-.investigation-workspace .selected-observation-preview{height:132px;margin-top:17px;background:radial-gradient(ellipse at 50% 70%,#2d6065,#103e4c);border-radius:15px}
+.investigation-workspace .selected-observation-preview{height:132px;margin-top:17px;background:radial-gradient(ellipse at 50% 70%,#e5eee0,#bad5c9);border-radius:15px}
 .investigation-workspace .selected-observation-preview img{padding:12px;object-fit:contain}
 .investigation-workspace .selected-observation-preview>span{font-size:9px;bottom:9px;left:10px}
 .investigation-workspace .findings-panel>h2{font-size:25px;line-height:1.1;margin:16px 0 6px;letter-spacing:-.65px}
@@ -462,22 +462,22 @@ body {
 @media(min-width:1200px){.place-workspace .place-date-filters{grid-template-columns:1fr 1fr;gap:8px;margin:18px 0}.place-workspace .place-date-filters label{min-width:0}.place-workspace .place-date-filters input{min-width:0;font-size:10px;padding:9px 6px}.place-workspace .catalog-selection h3{margin:13px 0 8px}.place-workspace .catalog-selection{padding-top:13px}.place-workspace .catalog-selection .catalog-caution{font-size:9px}.place-workspace .catalog-records>div{max-height:132px}}
 @media(max-width:899px){.place-application .workspace-art{background-size:auto 1000px;background-repeat:repeat-y}}
 
-/* Deep teal makes the measured plume the focus; the paper framing stays quiet. */
-.place-application .place-map-stage{background:#104750}
+/* Sage terrain and pale water echo the paper landscape around the map. */
+.place-application .place-map-stage{background:#d5e4d8}
 .place-map .map-view-switch{position:absolute;z-index:2;top:17px;left:16px;display:flex;gap:4px;padding:5px;border:1px solid #88b3ab66;background:#083d48f2;box-shadow:0 6px 20px #052d3930;border-radius:30px;color:#d0e5d8}
 .map-view-switch button{display:flex;align-items:center;gap:7px;padding:10px 15px;border:0;border-radius:24px;background:none;color:inherit;font-size:11px}
 .map-view-switch button[aria-pressed=true]{background:#e9f0da;color:#0b424d}
 .map-view-switch button:focus-visible{outline:2px solid #f7d976;outline-offset:2px}
-.plume-map-caption{position:absolute;top:83px;left:23px;color:#eff5dc;pointer-events:none;text-shadow:0 2px 12px #042a35}
-.plume-map-caption .eyebrow{font-size:9px;letter-spacing:.18em;color:#c9dbaa}
+.plume-map-caption{position:absolute;top:83px;left:23px;color:#174c54;pointer-events:none;text-shadow:0 1px 8px #f3f6e9}
+.plume-map-caption .eyebrow{font-size:9px;letter-spacing:.18em;color:#456e60}
 .plume-map-caption h2{font:500 35px var(--serif);letter-spacing:-1px;margin:7px 0 5px}
-.plume-map-caption p{font-size:11px;color:#b5d3c8}
+.plume-map-caption p{font-size:11px;color:#365e61}
 .plume-measurement-legend{position:absolute;z-index:2;right:16px;bottom:78px;width:218px;padding:14px 17px;border-radius:17px;background:#073440ed;border:1px solid #7da9a55c;color:#d8e6d7;font-size:10px}
 .plume-measurement-legend>div{display:flex;justify-content:space-between;gap:8px}
 .plume-measurement-legend strong{font-weight:500}.plume-measurement-legend .cividis{height:8px;border-radius:8px;margin:11px 0 6px}.plume-measurement-legend p{font-size:9px;line-height:1.4;color:#acc9bd;margin-top:9px}
-.catalog-plume-preview{position:relative;height:149px;margin:15px 0 12px;background:radial-gradient(ellipse at 55% 35%,#32656b,#083e4a 75%);border-radius:17px;overflow:hidden;border:1px solid #386b6d}
+.catalog-plume-preview{position:relative;height:149px;margin:15px 0 12px;background:radial-gradient(ellipse at 55% 35%,#e5eee0,#bad5c9 75%);border-radius:17px;overflow:hidden;border:1px solid #bdd1c4}
 .catalog-plume-preview img{width:100%;height:123px;object-fit:contain;padding:9px 25px;image-rendering:pixelated}
-.catalog-plume-preview figcaption{position:absolute;left:13px;right:13px;bottom:10px;display:flex;justify-content:space-between;gap:8px;color:#dfebd9;font-size:9px}
+.catalog-plume-preview figcaption{position:absolute;left:13px;right:13px;bottom:10px;display:flex;justify-content:space-between;gap:8px;color:#365e61;font-size:9px}
 .place-workspace .catalog-selection:has(.catalog-plume-preview){padding-top:10px}
 .place-workspace .catalog-selection:has(.catalog-plume-preview)>p{font-size:10px}
 .place-workspace .catalog-selection:has(.catalog-plume-preview) dl{margin:12px 0;gap:8px}
@@ -507,8 +507,8 @@ body {
 
 @media(min-width:1101px){.landing-footer>span:last-child{transform:translate(1vw,-3vw)}}
 .investigation-workspace .selected-observation-preview img,.investigation-workspace .case-thumbnail img,.investigation-workspace .observation-row img{image-rendering:auto}
-.investigation-workspace .case-thumbnail{background:#194d55}
+.investigation-workspace .case-thumbnail{background:#c6ddd0}
 .investigation-workspace .rail-measurement .inferno-scale{height:9px;margin:12px 0 5px}
 .investigation-workspace .legend-explanation{font-size:9px!important;line-height:1.4!important}
-.investigation-workspace .map-stage{background:#164c54}
+.investigation-workspace .map-stage{background:#d5e4d8}
 @media(min-width:1200px){.investigation-workspace .workspace-layers label{margin:6px 0}.investigation-workspace .rail-measurement{margin-top:9px}.investigation-workspace .workspace-layers{padding-bottom:4px}}

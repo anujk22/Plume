@@ -49,11 +49,11 @@ export default function PlaceMap(props:Props){
   if(!container.current)return;let disposed=false;const controller=new AbortController();let m:MapInstance;
   // Constructor failures need an accessible fallback when WebGL is unavailable.
   // eslint-disable-next-line react-hooks/set-state-in-effect
-  try{m=new maplibregl.Map({container:container.current,center:props.place.location,zoom:10,style:{version:8,sources:{},layers:[{id:'background',type:'background',paint:{'background-color':'#0c404b'}}]},attributionControl:{compact:true,customAttribution:'Place: <a href="https://www.geonames.org/">GeoNames</a> · Observations: <a href="https://carbonmapper.org/terms">Carbon Mapper</a>'}});}catch{setError('Interactive map unavailable. The search results and location remain available.');return;}
+  try{m=new maplibregl.Map({container:container.current,center:props.place.location,zoom:10,style:{version:8,sources:{},layers:[{id:'background',type:'background',paint:{'background-color':'#d5e4d8'}}]},attributionControl:{compact:true,customAttribution:'Place: <a href="https://www.geonames.org/">GeoNames</a> · Observations: <a href="https://carbonmapper.org/terms">Carbon Mapper</a>'}});}catch{setError('Interactive map unavailable. The search results and location remain available.');return;}
   map.current=m;const resize=new ResizeObserver(()=>{m.resize();fit();});resize.observe(container.current);
   m.addControl(new maplibregl.NavigationControl({showCompass:false}),'top-right');m.addControl(new maplibregl.ScaleControl({unit:'metric'}),'bottom-left');
   m.on('style.load',()=>{
-   m.addSource('search-area',{type:'geojson',data:{type:'FeatureCollection',features:[]}});m.addLayer({id:'search-area',type:'line',source:'search-area',paint:{'line-color':'#b7d8c9','line-width':1,'line-opacity':.4,'line-dasharray':[4,7]}});
+   m.addSource('search-area',{type:'geojson',data:{type:'FeatureCollection',features:[]}});m.addLayer({id:'search-area',type:'line',source:'search-area',paint:{'line-color':'#507e7b','line-width':1,'line-opacity':.4,'line-dasharray':[4,7]}});
    m.addSource('place',{type:'geojson',data:{type:'Feature',properties:{},geometry:{type:'Point',coordinates:current.current.place.location}}});m.addLayer({id:'place',type:'circle',source:'place',paint:{'circle-radius':7,'circle-color':'#073f4b','circle-stroke-color':'white','circle-stroke-width':3}});
    m.addSource('selected-footprint',{type:'geojson',data:{type:'FeatureCollection',features:[]}});
    m.addLayer({id:'selected-footprint-fill',type:'fill',source:'selected-footprint',paint:{'fill-color':'#f3ce60','fill-opacity':.25}});
@@ -73,11 +73,11 @@ export default function PlaceMap(props:Props){
   m.on('mouseenter','observations',()=>{m.getCanvas().style.cursor='pointer';});m.on('mouseleave','observations',()=>{m.getCanvas().style.cursor='';});
   fetch('https://tiles.openfreemap.org/styles/liberty',{signal:controller.signal}).then(r=>{if(!r.ok)throw new Error();return r.json() as Promise<StyleSpecification>;}).then(style=>{if(disposed)return;style.layers=style.layers.filter(l=>l.type!=='fill-extrusion'&&!(l.type==='symbol'&&l.layout?.['icon-image']&&!l.layout?.['text-field']));
    for(const l of style.layers){const id=l.id.toLowerCase();
-    if(l.type==='background')l.paint={'background-color':'#104750'};
-    if(l.type==='fill'){l.paint={...l.paint,'fill-color':id.includes('water')?'#072d3c':id.includes('building')?'#39777a':id.includes('park')?'#225e59':id.includes('landcover')?'#1c575a':'#164c54'};delete l.paint['fill-pattern'];}
-    if(l.type==='line'&&/road|motorway|highway|path|bridge|tunnel/.test(id))l.paint={...l.paint,'line-color':id.includes('casing')?'#19454d':id.includes('motorway')?'#93b7aa':'#538588'};
-    if(l.type==='line'&&!/road|motorway|highway|path|bridge|tunnel/.test(id))l.paint={...l.paint,'line-color':id.includes('water')?'#619593':'#477576'};
-    if(l.type==='symbol')l.paint={...l.paint,'text-color':'#c2d9cf','text-halo-color':'#174953','text-halo-width':1.5};
+    if(l.type==='background')l.paint={'background-color':'#d5e4d8'};
+    if(l.type==='fill'){l.paint={...l.paint,'fill-color':id.includes('water')?'#9fc9c5':id.includes('building')?'#b3cbbf':id.includes('park')?'#b8d0b9':id.includes('landcover')?'#c5d9c4':'#d5e4d8'};delete l.paint['fill-pattern'];}
+    if(l.type==='line'&&/road|motorway|highway|path|bridge|tunnel/.test(id))l.paint={...l.paint,'line-color':id.includes('casing')?'#a8bfb2':id.includes('motorway')?'#fff9e8':'#f3f2e3'};
+    if(l.type==='line'&&!/road|motorway|highway|path|bridge|tunnel/.test(id))l.paint={...l.paint,'line-color':id.includes('water')?'#80aaa7':'#a4bbaa'};
+    if(l.type==='symbol')l.paint={...l.paint,'text-color':'#365e61','text-halo-color':'#edf3e8','text-halo-width':1.5};
    }m.setStyle(style);}).catch(e=>{if(!disposed&&e.name!=='AbortError')setError('Basemap unavailable. Location, search area, and included observations remain shown.');});
   return()=>{disposed=true;controller.abort();resize.disconnect();m.remove();map.current=null;};
  // The route owns a stable place; filters update the existing map.
