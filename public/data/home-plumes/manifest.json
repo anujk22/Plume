@@ -1,4 +1,80 @@
 {
+  "emi20240420t101448p07050-A": {
+    "url": "/data/home-plumes/emi20240420t101448p07050-A.png",
+    "coordinates": [
+      [
+        46.02407019284899,
+        15.587091563545215
+      ],
+      [
+        46.037887486969446,
+        15.587091563545215
+      ],
+      [
+        46.037887486969446,
+        15.577508761210094
+      ],
+      [
+        46.02407019284899,
+        15.577508761210094
+      ]
+    ],
+    "bounds": [
+      46.02407019284899,
+      15.577508761210094,
+      46.037887486969446,
+      15.587091563545215
+    ],
+    "unit": "ppm\u00b7m",
+    "scale": [
+      0,
+      5500
+    ],
+    "sourceUrl": "https://catalog.carbonmapper.org/l3a-ime-ch4-mfa-v3/2024/04/20/emi20240420t101448p07050-A/emi20240420t101448p07050-A_l3a-ime-ch4-mfa-v3_ime-cmf-concentrations.tif",
+    "sourceSha256": "43157ca6a13d27f5908bcb59395d05ee4764f77b8d6f96fb87d1e763acf36852",
+    "sha256": "3a53732dc7165db8849871a8b6b77f77d4703628a0056adde33c50fd78ba8e90",
+    "nativeSamples": 166,
+    "resampling": "nearest",
+    "mask": "Provider nodata mask; transparent areas are not measured zeros"
+  },
+  "emi20241023t083741p06026-A": {
+    "url": "/data/home-plumes/emi20241023t083741p06026-A.png",
+    "coordinates": [
+      [
+        46.026057107287095,
+        15.587182068550215
+      ],
+      [
+        46.03876158667867,
+        15.587182068550215
+      ],
+      [
+        46.03876158667867,
+        15.580265249539389
+      ],
+      [
+        46.026057107287095,
+        15.580265249539389
+      ]
+    ],
+    "bounds": [
+      46.026057107287095,
+      15.580265249539389,
+      46.03876158667867,
+      15.587182068550215
+    ],
+    "unit": "ppm\u00b7m",
+    "scale": [
+      0,
+      5500
+    ],
+    "sourceUrl": "https://catalog.carbonmapper.org/l3a-ime-ch4-mfa-v3/2024/10/23/emi20241023t083741p06026-A/emi20241023t083741p06026-A_l3a-ime-ch4-mfa-v3_ime-cmf-concentrations.tif",
+    "sourceSha256": "00c6001feda362b491efd8dcd1decfd89685efb67981433e3e9619f648426d5b",
+    "sha256": "36bfed71b56217aeba06e2e4ad7fbc5e1ee37156a4daab7a141cdebd3a7bd9a9",
+    "nativeSamples": 133,
+    "resampling": "nearest",
+    "mask": "Provider nodata mask; transparent areas are not measured zeros"
+  },
   "emi20240803t190415p13004-C": {
     "url": "/data/home-plumes/emi20240803t190415p13004-C.png",
     "coordinates": [
@@ -30,7 +106,7 @@
       0,
       9000
     ],
-    "sourceUrl": "https://api.carbonmapper.org/api/v1/catalog/asset/l3a-ime-ch4-mfa-v3/2024/08/03/emi20240803t190415p13004-C/emi20240803t190415p13004-C_l3a-ime-ch4-mfa-v3_ime-cmf-concentrations.tif",
+    "sourceUrl": "https://catalog.carbonmapper.org/l3a-ime-ch4-mfa-v3/2024/08/03/emi20240803t190415p13004-C/emi20240803t190415p13004-C_l3a-ime-ch4-mfa-v3_ime-cmf-concentrations.tif",
     "sourceSha256": "e88be6e040a09ea783b7e0d4a96bede51f5d1c3add72bea7a8d422a309d63a49",
     "sha256": "0d8ac092257c03591ce865773c8ef037844ce5602e78099569006e8a5b03e629",
     "nativeSamples": 38,
@@ -68,7 +144,7 @@
       0,
       9000
     ],
-    "sourceUrl": "https://api.carbonmapper.org/api/v1/catalog/asset/l3a-ime-ch4-mfa-v3/2024/08/07/emi20240807t172838p12003-A/emi20240807t172838p12003-A_l3a-ime-ch4-mfa-v3_ime-cmf-concentrations.tif",
+    "sourceUrl": "https://catalog.carbonmapper.org/l3a-ime-ch4-mfa-v3/2024/08/07/emi20240807t172838p12003-A/emi20240807t172838p12003-A_l3a-ime-ch4-mfa-v3_ime-cmf-concentrations.tif",
     "sourceSha256": "efefcb695955b7835f3d6d7de6f39f367643c233cf93b1873281101052620023",
     "sha256": "c3d5aa4e673a8e9dcb8e1cf346bc69dd789afa6d2cee585d055bfad0c3a19b29",
     "nativeSamples": 101,
@@ -106,7 +182,7 @@
       0,
       9000
     ],
-    "sourceUrl": "https://api.carbonmapper.org/api/v1/catalog/asset/l3a-ime-ch4-mfa-v3/2024/09/26/emi20240926t213956p14002-A/emi20240926t213956p14002-A_l3a-ime-ch4-mfa-v3_ime-cmf-concentrations.tif",
+    "sourceUrl": "https://catalog.carbonmapper.org/l3a-ime-ch4-mfa-v3/2024/09/26/emi20240926t213956p14002-A/emi20240926t213956p14002-A_l3a-ime-ch4-mfa-v3_ime-cmf-concentrations.tif",
     "sourceSha256": "ada89035b5f43ce288d3a67f93a10c80081dd7a48990372b0a708b8db9b0f5ec",
     "sha256": "49538b12a801a757d2a5a4956f74ddd7ffc753457543443f3acc34296a32d4f8",
     "nativeSamples": 57,
