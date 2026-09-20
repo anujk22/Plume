@@ -1,14 +1,11 @@
 'use client';
-import {useState} from 'react';
 import Link from 'next/link';
 import {ArrowRight,Search,Leaf,Layers3,Users,Map as MapIcon,Waves,FileText,SplitSquareHorizontal,ArrowUpRight} from 'lucide-react';
 import {Brand} from './brand';
 import {useSnapshot} from './use-snapshot';
 import {PlaceSearch} from './place-search';
-import {Sheet,SheetContent,SheetHeader,SheetTitle,SheetDescription} from '@/components/ui/sheet';
 export default function Home(){
  const {snapshot,error}=useSnapshot();
- const [search,setSearch]=useState(false);
  const investigation='/investigations/newby-island';
  return <main className="landing illustrated-landing">
   <div className="landscape" aria-hidden="true"/>
@@ -16,12 +13,12 @@ export default function Home(){
   <section className="hero-copy">
    <p className="eyebrow">SEE THE OBSERVATIONS. FOLLOW THE EVIDENCE.</p><h1>Plume</h1>
    <h2>See methane. Understand the evidence.<br/>A clearer picture starts here.</h2>
-   <button className="home-search" disabled={!snapshot} onClick={()=>setSearch(true)}><Search size={23}/><span>Search a city, region, or ZIP code…</span><span className="circle"><ArrowRight size={22}/></span></button>
+   {snapshot?<PlaceSearch snapshot={snapshot} variant="hero"/>:<button className="home-search" disabled><Search size={23}/><span>Search a city, region, or ZIP code…</span><span className="circle"><ArrowRight size={22}/></span></button>}
    <div className="hero-benefits"><div><Leaf/><strong>Real data</strong><span>From satellites<br/>to the source</span></div><div><Layers3/><strong>Bigger context</strong><span>See what the<br/>evidence supports</span></div><div><Users/><strong>Shared understanding</strong><span>A brief anyone<br/>can explore</span></div></div>
   </section>
   <p className="home-margin-note" aria-hidden="true">SEARCH<br/>EXPLORE<br/>UNDERSTAND<br/>FOLLOW THE EVIDENCE<span/></p>
   <section className="home-map-area" aria-label="Illustrated introduction to Plume">
-   <button className="home-place" disabled={!snapshot} onClick={()=>setSearch(true)}><Search size={22}/><span>Find an investigation</span><ArrowRight size={17}/></button>
+   {snapshot?<PlaceSearch snapshot={snapshot} variant="compact"/>:<button className="home-place" disabled><Search size={22}/><span>Find an investigation</span><ArrowRight size={17}/></button>}
    <nav className="home-map-tools" aria-label="Explore Plume"><Link href={investigation}><MapIcon/><span>Map</span></Link><Link className="home-tool-featured" href="/method#reading"><Waves/><span>Methane</span></Link><Link href={investigation+'?view=compare'}><SplitSquareHorizontal/><span>Compare</span></Link><Link href="/method#sources"><Layers3/><span>Sources</span></Link></nav>
    <div className="home-illustration-note"><span className="illustration-dot"/><div><strong>Illustrated landscape</strong><span>Not measured methane data</span></div></div>
    <Link className="home-rate-card home-discovery-card" href={investigation}><Waves/><div><span>Satellite observations</span><strong>Real evidence.</strong></div><FileText/><div><span>Original records, in context</span><p>Explore a real case <ArrowRight size={16}/></p></div></Link>
@@ -30,6 +27,6 @@ export default function Home(){
    {error&&<p className="home-load-error" role="alert">Place search is unavailable. <Link href="/explore">Open investigations</Link></p>}
   </section>
   <footer className="landing-footer"><span>SAME PLANET.<br/>A CLEARER PICTURE.<i/></span><span>PEOPLE<br/>PLACES<br/>PERSPECTIVE<i/></span></footer>
-  <Sheet open={search} onOpenChange={setSearch}><SheetContent className="plume-sheet"><SheetHeader><SheetTitle>Find a place</SheetTitle><SheetDescription>Search geography and discover the investigations included in this snapshot.</SheetDescription></SheetHeader><div className="sheet-body">{snapshot?<PlaceSearch snapshot={snapshot}/>:<p>{error||'Loading the included investigations…'}</p>}</div></SheetContent></Sheet>
+
  </main>;
 }
