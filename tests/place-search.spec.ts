@@ -17,3 +17,24 @@ test('nearby evidence opens the real investigation and empty date filters can re
  await page.getByLabel('From',{exact:true}).fill('2025-01-01');await expect(page.getByText('The selected date range excludes the nearby observations.')).toBeVisible();await page.getByRole('button',{name:'Reset date range',exact:true}).click();
  await page.locator('.place-result-card').click();await expect(page).toHaveURL(/\/investigations\/newby-island\?observation=/);await expect(page.locator('.selection-scope')).toContainText('3 selected observations');
 });
+
+test('Santiago shows sourced regional detections and selected footprints',async({page})=>{
+ const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.goto('/places/3871336');
+ await expect(page.locator('.place-results-title')).toContainText('30 observations');
+ await expect(page.locator('.catalog-selection')).toContainText('Tanager-1');
+ const link=page.getByRole('link',{name:'View original record'});
+ const initial=await link.getAttribute('href');
+ await page.locator('.catalog-records button').nth(1).click();
+ await expect(link).not.toHaveAttribute('href',initial!);
+ await expect(link).toHaveAttribute('href',/^https:\/\/api.carbonmapper.org\/api\/v1\/stac\/collections\/l3a-vis-ch4-/);
+ await page.getByRole('button',{name:'Zoom to detection'}).click();
+ await page.getByLabel('Search radius').selectOption('100');
+ await expect(page.locator('.place-results-title')).toContainText('101 observations');
+ await page.getByLabel('From',{exact:true}).fill('2027-01-01');
+ await expect(page.getByText('The selected date range excludes the nearby observations.')).toBeVisible();
+ await page.getByRole('button',{name:'Reset date range',exact:true}).click();
+ await expect(page.locator('.catalog-selection')).toBeVisible();
+ for(const width of [1672,1024,768,390]){await page.setViewportSize({width,height:941});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);}
+ expect(errors).toEqual([]);
+});

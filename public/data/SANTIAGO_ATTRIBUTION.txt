@@ -1,0 +1,13 @@
+Source: Carbon Mapper — https://data.carbonmapper.org/
+Regional methane plume catalog excerpt retrieved 19 September 2026.
+Data remains subject to Carbon Mapper non-commercial terms, attribution and
+share-alike requirements: https://carbonmapper.org/terms
+The application's source-code license does not relicense provider data.
+
+Rebuild: python3 scripts/prepare_santiago_catalog.py
+Provenance, geographic bounds, retrieval time, source URLs, processing-version
+selection rule and raw-response digest are embedded in santiago-catalog.json.
+Only public CH4 L3 plume visualization records are retained. Other gas products,
+scene footprints and duplicate processing versions are excluded. Source links
+identify the exact selected provider product. Counts are plume records, not
+independent acquisitions, facilities, coverage frequency or emission rates.
