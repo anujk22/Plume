@@ -31,9 +31,10 @@ jobs:
       - run: npm test
       - name: verify scientific source assets
         run: |
-          python -m pip install numpy rasterio Pillow
+          python -m pip install numpy rasterio Pillow matplotlib contourpy
           python scripts/verify_release.py
           python scripts/prepare_home_plumes.py --check
+          python scripts/prepare_santiago_plumes.py --check
           git diff --exit-code -- research/release-validation.json
       - run: npm run build
       - run: npx playwright install --with-deps chromium

@@ -28,7 +28,15 @@ test('Santiago shows sourced regional detections and selected footprints',async(
  await page.locator('.catalog-records button').nth(1).click();
  await expect(link).not.toHaveAttribute('href',initial!);
  await expect(link).toHaveAttribute('href',/^https:\/\/api.carbonmapper.org\/api\/v1\/stac\/collections\/l3a-vis-ch4-/);
+ await expect(page.getByRole('button',{name:'Selected plume',exact:true})).toHaveAttribute('aria-pressed','true');
+ await page.getByRole('button',{name:'Inspect sensor pixels'}).click();
+ await expect(page.getByRole('button',{name:'Show contour bands'})).toBeVisible();
+ await page.getByRole('button',{name:'Show contour bands'}).click();
+ await page.getByRole('button',{name:'Area overview',exact:true}).click();
  await page.getByRole('button',{name:'Zoom to detection'}).click();
+ await page.locator('.catalog-records button').nth(3).click();
+ await expect(page.locator('.catalog-plume-preview')).toHaveCount(0);
+ await expect(page.getByText('Concentration imagery is not prepared for this date.',{exact:false})).toBeVisible();
  await page.getByLabel('Search radius').selectOption('100');
  await expect(page.locator('.place-results-title')).toContainText('101 observations');
  await page.getByLabel('From',{exact:true}).fill('2027-01-01');

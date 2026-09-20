@@ -11,3 +11,12 @@ Only public CH4 L3 plume visualization records are retained. Other gas products,
 scene footprints and duplicate processing versions are excluded. Source links
 identify the exact selected provider product. Counts are plume records, not
 independent acquisitions, facilities, coverage frequency or emission rates.
+
+Three Tanager-1 acquisitions have an optional derived imagery layer in
+santiago-plumes/. Original numeric TIFFs and source metadata are stored in
+research/santiago/. Run scripts/prepare_santiago_plumes.py with the geospatial
+Python environment; --check verifies pixels, contours and provenance hashes.
+ContourPy uses linear interpolation within fully valid raster cells only
+(corner_mask=False). No smoothing or missing-cell infilling is performed.
+Five 500 ppm·m bands use inferno with the same 0–2500 ppm·m scale across dates.
+Sensor-pixel mode displays nearest-neighbor samples on the same scale.

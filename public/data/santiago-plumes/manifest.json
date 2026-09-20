@@ -1,0 +1,137 @@
+{
+  "tan20260730t161512c43s4001-C": {
+    "url": "/data/santiago-plumes/tan20260730t161512c43s4001-C.png",
+    "contoursUrl": "/data/santiago-plumes/tan20260730t161512c43s4001-C.geojson",
+    "previewUrl": "/data/santiago-plumes/tan20260730t161512c43s4001-C.svg",
+    "palette": "inferno",
+    "contoursSha256": "0adf330739705dfad3a61e70ad34627f07688c42928103dc021ca1cd5341b674",
+    "contourMethod": "ContourPy linear interpolation within fully valid cells; 500 ppm\u00b7m bands; no spatial smoothing or nodata infilling",
+    "coordinates": [
+      [
+        -70.86811774338366,
+        -33.517037730322976
+      ],
+      [
+        -70.85807869495488,
+        -33.517037730322976
+      ],
+      [
+        -70.85807869495488,
+        -33.52675691961426
+      ],
+      [
+        -70.86811774338366,
+        -33.52675691961426
+      ]
+    ],
+    "bounds": [
+      -70.86811774338366,
+      -33.52675691961426,
+      -70.85807869495488,
+      -33.517037730322976
+    ],
+    "scale": [
+      0,
+      2500
+    ],
+    "unit": "ppm\u00b7m",
+    "quantity": "Methane column enhancement",
+    "sourceUrl": "https://api.carbonmapper.org/api/v1/catalog/asset/l3a-ime-ch4-mfa-v3e/2026/07/30/tan20260730t161512c43s4001-C/tan20260730t161512c43s4001-C_l3a-ime-ch4-mfa-v3e_ime-cmf-concentrations.tif",
+    "recordUrl": "https://api.carbonmapper.org/api/v1/stac/collections/l3a-ime-ch4-mfa-v3e/items/tan20260730t161512c43s4001-C",
+    "sourceSha256": "e875d5ea0ab38059874e27db535c07d6c36b0fea7a9586c4848ff987f5b5998d",
+    "sha256": "27c8f5f0165bdcd1927df35688ea83a9bcabb93d8835e0cdc36dfc8f4954c5a9",
+    "resampling": "nearest",
+    "mask": "Provider nodata mask; transparent areas are not measured zeros",
+    "nativeSamples": 250
+  },
+  "tan20260730t161512c43s4001-F": {
+    "url": "/data/santiago-plumes/tan20260730t161512c43s4001-F.png",
+    "contoursUrl": "/data/santiago-plumes/tan20260730t161512c43s4001-F.geojson",
+    "previewUrl": "/data/santiago-plumes/tan20260730t161512c43s4001-F.svg",
+    "palette": "inferno",
+    "contoursSha256": "a7d5ef282af4d8a7d075333767fed49dc4b0207d3e746a4d2068f195cca92acb",
+    "contourMethod": "ContourPy linear interpolation within fully valid cells; 500 ppm\u00b7m bands; no spatial smoothing or nodata infilling",
+    "coordinates": [
+      [
+        -70.87031983895123,
+        -33.519978503469126
+      ],
+      [
+        -70.86869834524994,
+        -33.519978503469126
+      ],
+      [
+        -70.86869834524994,
+        -33.5237635403412
+      ],
+      [
+        -70.87031983895123,
+        -33.5237635403412
+      ]
+    ],
+    "bounds": [
+      -70.87031983895123,
+      -33.5237635403412,
+      -70.86869834524994,
+      -33.519978503469126
+    ],
+    "scale": [
+      0,
+      2500
+    ],
+    "unit": "ppm\u00b7m",
+    "quantity": "Methane column enhancement",
+    "sourceUrl": "https://api.carbonmapper.org/api/v1/catalog/asset/l3a-ime-ch4-mfa-v3e/2026/07/30/tan20260730t161512c43s4001-F/tan20260730t161512c43s4001-F_l3a-ime-ch4-mfa-v3e_ime-cmf-concentrations.tif",
+    "recordUrl": "https://api.carbonmapper.org/api/v1/stac/collections/l3a-ime-ch4-mfa-v3e/items/tan20260730t161512c43s4001-F",
+    "sourceSha256": "dbae00f7d44ec3b3eac54472eb19552e8e7c095c7b20c105b6e4172e275ef28a",
+    "sha256": "44d4676584ac7ac94f5c58804ef71700deff1bbee7e6d0efc24c45a5161a5acc",
+    "resampling": "nearest",
+    "mask": "Provider nodata mask; transparent areas are not measured zeros",
+    "nativeSamples": 30
+  },
+  "tan20260820t161353c35s4001-C": {
+    "url": "/data/santiago-plumes/tan20260820t161353c35s4001-C.png",
+    "contoursUrl": "/data/santiago-plumes/tan20260820t161353c35s4001-C.geojson",
+    "previewUrl": "/data/santiago-plumes/tan20260820t161353c35s4001-C.svg",
+    "palette": "inferno",
+    "contoursSha256": "a5ef6c5d19d0dc0e04d410d5ca3e819633ea7f96aa1678f288d6e45922dd65ea",
+    "contourMethod": "ContourPy linear interpolation within fully valid cells; 500 ppm\u00b7m bands; no spatial smoothing or nodata infilling",
+    "coordinates": [
+      [
+        -70.87953057497461,
+        -33.51767808443279
+      ],
+      [
+        -70.86301934331094,
+        -33.51767808443279
+      ],
+      [
+        -70.86301934331094,
+        -33.53171253036645
+      ],
+      [
+        -70.87953057497461,
+        -33.53171253036645
+      ]
+    ],
+    "bounds": [
+      -70.87953057497461,
+      -33.53171253036645,
+      -70.86301934331094,
+      -33.51767808443279
+    ],
+    "scale": [
+      0,
+      2500
+    ],
+    "unit": "ppm\u00b7m",
+    "quantity": "Methane column enhancement",
+    "sourceUrl": "https://api.carbonmapper.org/api/v1/catalog/asset/l3a-ime-ch4-mfa-v3e/2026/08/20/tan20260820t161353c35s4001-C/tan20260820t161353c35s4001-C_l3a-ime-ch4-mfa-v3e_ime-cmf-concentrations.tif",
+    "recordUrl": "https://api.carbonmapper.org/api/v1/stac/collections/l3a-ime-ch4-mfa-v3e/items/tan20260820t161353c35s4001-C",
+    "sourceSha256": "c9ca9f7b33b9c3fdbcdb524b4f4a7b1b323fc20ca7f4347f4637b1bb910c9871",
+    "sha256": "f590a91f93b35cdbe5e0e7be146025f078c51c0deb7c4413eda5208190320b1e",
+    "resampling": "nearest",
+    "mask": "Provider nodata mask; transparent areas are not measured zeros",
+    "nativeSamples": 1153
+  }
+}
