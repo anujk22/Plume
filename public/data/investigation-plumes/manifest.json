@@ -1,0 +1,227 @@
+{
+  "emi20240420t101448p07050-A": {
+    "url": "/data/investigation-plumes/emi20240420t101448p07050-A.png",
+    "contoursUrl": "/data/investigation-plumes/emi20240420t101448p07050-A.geojson",
+    "previewUrl": "/data/investigation-plumes/emi20240420t101448p07050-A.svg",
+    "palette": "inferno",
+    "contoursSha256": "4c6830675d6e06f5f18c301b6df5fe63d4e739610ee5e72e3568945c71c7dd21",
+    "contourMethod": "ContourPy linear interpolation within valid measured triangles; 1100 ppm\u00b7m bands; no spatial smoothing or nodata infilling",
+    "coordinates": [
+      [
+        46.02407019284899,
+        15.587091563545215
+      ],
+      [
+        46.037887486969446,
+        15.587091563545215
+      ],
+      [
+        46.037887486969446,
+        15.577508761210094
+      ],
+      [
+        46.02407019284899,
+        15.577508761210094
+      ]
+    ],
+    "bounds": [
+      46.02407019284899,
+      15.577508761210094,
+      46.037887486969446,
+      15.587091563545215
+    ],
+    "scale": [
+      0,
+      5500
+    ],
+    "unit": "ppm\u00b7m",
+    "quantity": "Methane column enhancement",
+    "sourceUrl": "https://catalog.carbonmapper.org/l3a-ime-ch4-mfa-v3/2024/04/20/emi20240420t101448p07050-A/emi20240420t101448p07050-A_l3a-ime-ch4-mfa-v3_ime-cmf-concentrations.tif",
+    "recordUrl": "https://api.carbonmapper.org/api/v1/stac/collections/l3a-vis-ch4-mfa-v3/items/emi20240420t101448p07050-A",
+    "sourceSha256": "43157ca6a13d27f5908bcb59395d05ee4764f77b8d6f96fb87d1e763acf36852",
+    "sha256": "407e711fcd95e257e33c5dc01a22da511f5abbc1dfc8629cd1e02d1c60815bfb",
+    "resampling": "nearest",
+    "mask": "Provider nodata mask; transparent areas are not measured zeros",
+    "nativeSamples": 166
+  },
+  "emi20241023t083741p06026-A": {
+    "url": "/data/investigation-plumes/emi20241023t083741p06026-A.png",
+    "contoursUrl": "/data/investigation-plumes/emi20241023t083741p06026-A.geojson",
+    "previewUrl": "/data/investigation-plumes/emi20241023t083741p06026-A.svg",
+    "palette": "inferno",
+    "contoursSha256": "03a76203e87d7d6d0918e8b8ef217506322ceac2e82599adb12fe82a82311763",
+    "contourMethod": "ContourPy linear interpolation within valid measured triangles; 1100 ppm\u00b7m bands; no spatial smoothing or nodata infilling",
+    "coordinates": [
+      [
+        46.026057107287095,
+        15.587182068550215
+      ],
+      [
+        46.03876158667867,
+        15.587182068550215
+      ],
+      [
+        46.03876158667867,
+        15.580265249539389
+      ],
+      [
+        46.026057107287095,
+        15.580265249539389
+      ]
+    ],
+    "bounds": [
+      46.026057107287095,
+      15.580265249539389,
+      46.03876158667867,
+      15.587182068550215
+    ],
+    "scale": [
+      0,
+      5500
+    ],
+    "unit": "ppm\u00b7m",
+    "quantity": "Methane column enhancement",
+    "sourceUrl": "https://catalog.carbonmapper.org/l3a-ime-ch4-mfa-v3/2024/10/23/emi20241023t083741p06026-A/emi20241023t083741p06026-A_l3a-ime-ch4-mfa-v3_ime-cmf-concentrations.tif",
+    "recordUrl": "https://api.carbonmapper.org/api/v1/stac/collections/l3a-vis-ch4-mfa-v3/items/emi20241023t083741p06026-A",
+    "sourceSha256": "00c6001feda362b491efd8dcd1decfd89685efb67981433e3e9619f648426d5b",
+    "sha256": "a00ee6403ee8821b954b28b82d0276a70655be9ea3892c4144e26a4527e07dd3",
+    "resampling": "nearest",
+    "mask": "Provider nodata mask; transparent areas are not measured zeros",
+    "nativeSamples": 133
+  },
+  "emi20240803t190415p13004-C": {
+    "url": "/data/investigation-plumes/emi20240803t190415p13004-C.png",
+    "contoursUrl": "/data/investigation-plumes/emi20240803t190415p13004-C.geojson",
+    "previewUrl": "/data/investigation-plumes/emi20240803t190415p13004-C.svg",
+    "palette": "inferno",
+    "contoursSha256": "f4acb7a62240781ce1ee62cc429061648c4dd681feae7583af77cbd5e147a32d",
+    "contourMethod": "ContourPy linear interpolation within valid measured triangles; 1800 ppm\u00b7m bands; no spatial smoothing or nodata infilling",
+    "coordinates": [
+      [
+        -121.94056667047657,
+        37.46135456220337
+      ],
+      [
+        -121.9328109589407,
+        37.46135456220337
+      ],
+      [
+        -121.9328109589407,
+        37.45614528610414
+      ],
+      [
+        -121.94056667047657,
+        37.45614528610414
+      ]
+    ],
+    "bounds": [
+      -121.94056667047657,
+      37.45614528610414,
+      -121.9328109589407,
+      37.46135456220337
+    ],
+    "scale": [
+      0,
+      9000
+    ],
+    "unit": "ppm\u00b7m",
+    "quantity": "Methane column enhancement",
+    "sourceUrl": "https://catalog.carbonmapper.org/l3a-ime-ch4-mfa-v3/2024/08/03/emi20240803t190415p13004-C/emi20240803t190415p13004-C_l3a-ime-ch4-mfa-v3_ime-cmf-concentrations.tif",
+    "recordUrl": "https://api.carbonmapper.org/api/v1/stac/collections/l3a-vis-ch4-mfa-v3/items/emi20240803t190415p13004-C",
+    "sourceSha256": "e88be6e040a09ea783b7e0d4a96bede51f5d1c3add72bea7a8d422a309d63a49",
+    "sha256": "6cdfee63781411d75bb24d3a11bde1177ec172c3e779ce790492fe13f3ba27a5",
+    "resampling": "nearest",
+    "mask": "Provider nodata mask; transparent areas are not measured zeros",
+    "nativeSamples": 38
+  },
+  "emi20240807t172838p12003-A": {
+    "url": "/data/investigation-plumes/emi20240807t172838p12003-A.png",
+    "contoursUrl": "/data/investigation-plumes/emi20240807t172838p12003-A.geojson",
+    "previewUrl": "/data/investigation-plumes/emi20240807t172838p12003-A.svg",
+    "palette": "inferno",
+    "contoursSha256": "65b373d52ac0425794bee670da8de446f82d42e806890a2c5fd6a7f1626baf39",
+    "contourMethod": "ContourPy linear interpolation within valid measured triangles; 1800 ppm\u00b7m bands; no spatial smoothing or nodata infilling",
+    "coordinates": [
+      [
+        -121.94468402358615,
+        37.46415584623492
+      ],
+      [
+        -121.93330644571898,
+        37.46415584623492
+      ],
+      [
+        -121.93330644571898,
+        37.45702595051345
+      ],
+      [
+        -121.94468402358615,
+        37.45702595051345
+      ]
+    ],
+    "bounds": [
+      -121.94468402358615,
+      37.45702595051345,
+      -121.93330644571898,
+      37.46415584623492
+    ],
+    "scale": [
+      0,
+      9000
+    ],
+    "unit": "ppm\u00b7m",
+    "quantity": "Methane column enhancement",
+    "sourceUrl": "https://catalog.carbonmapper.org/l3a-ime-ch4-mfa-v3/2024/08/07/emi20240807t172838p12003-A/emi20240807t172838p12003-A_l3a-ime-ch4-mfa-v3_ime-cmf-concentrations.tif",
+    "recordUrl": "https://api.carbonmapper.org/api/v1/stac/collections/l3a-vis-ch4-mfa-v3/items/emi20240807t172838p12003-A",
+    "sourceSha256": "efefcb695955b7835f3d6d7de6f39f367643c233cf93b1873281101052620023",
+    "sha256": "a39ec9ecbe6a5392d0ccc5652d8e2e4987223b7a7f6ca167c931be59743de3af",
+    "resampling": "nearest",
+    "mask": "Provider nodata mask; transparent areas are not measured zeros",
+    "nativeSamples": 101
+  },
+  "emi20240926t213956p14002-A": {
+    "url": "/data/investigation-plumes/emi20240926t213956p14002-A.png",
+    "contoursUrl": "/data/investigation-plumes/emi20240926t213956p14002-A.geojson",
+    "previewUrl": "/data/investigation-plumes/emi20240926t213956p14002-A.svg",
+    "palette": "inferno",
+    "contoursSha256": "87106075e86c5bd99bcea211c47ae8e4c83a0d1bd8abe15370b12f9bf5adf1ae",
+    "contourMethod": "ContourPy linear interpolation within valid measured triangles; 1800 ppm\u00b7m bands; no spatial smoothing or nodata infilling",
+    "coordinates": [
+      [
+        -121.94390420197387,
+        37.46079277025659
+      ],
+      [
+        -121.9320118090618,
+        37.46079277025659
+      ],
+      [
+        -121.9320118090618,
+        37.45701674633067
+      ],
+      [
+        -121.94390420197387,
+        37.45701674633067
+      ]
+    ],
+    "bounds": [
+      -121.94390420197387,
+      37.45701674633067,
+      -121.9320118090618,
+      37.46079277025659
+    ],
+    "scale": [
+      0,
+      9000
+    ],
+    "unit": "ppm\u00b7m",
+    "quantity": "Methane column enhancement",
+    "sourceUrl": "https://catalog.carbonmapper.org/l3a-ime-ch4-mfa-v3/2024/09/26/emi20240926t213956p14002-A/emi20240926t213956p14002-A_l3a-ime-ch4-mfa-v3_ime-cmf-concentrations.tif",
+    "recordUrl": "https://api.carbonmapper.org/api/v1/stac/collections/l3a-vis-ch4-mfa-v3/items/emi20240926t213956p14002-A",
+    "sourceSha256": "ada89035b5f43ce288d3a67f93a10c80081dd7a48990372b0a708b8db9b0f5ec",
+    "sha256": "4f2c8e030796364b6f41f5a93764e8225435459f7d0a9e5ffd8450a8e624eaa3",
+    "resampling": "nearest",
+    "mask": "Provider nodata mask; transparent areas are not measured zeros",
+    "nativeSamples": 57
+  }
+}

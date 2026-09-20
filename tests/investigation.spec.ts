@@ -25,3 +25,21 @@ test('real PDF and ZIP agree, retain provenance, and verify every packaged hash'
  expect(strFromU8(files['manifest.sha256']).split(' ')[0]).toBe(createHash('sha256').update(files['manifest.json']).digest('hex'));
  await page.getByRole('checkbox',{name:'Include 26 Sept 2024 in brief'}).uncheck();await expect(page.getByRole('link',{name:'Download PDF',exact:true})).toHaveCount(0);
 });
+
+test('both investigations default to dated vector contours with explicit raw controls',async({page})=>{
+ for(const id of ['marib-yemen','newby-island']){
+  await page.goto(id==='marib-yemen'?'/explore':'/investigations/'+id);
+  await expect(page.locator('.selected-observation-preview img')).toHaveAttribute('src',/investigation-plumes\/.*\.svg$/);
+  await expect(page.locator('.map-date')).toContainText('Derived contours');
+  await page.getByRole('checkbox',{name:'Inspect sensor pixels',exact:true}).check();
+  await expect(page.locator('.map-date')).toContainText('Sensor pixels');
+  await page.getByRole('checkbox',{name:'Inspect sensor pixels',exact:true}).uncheck();
+  const image=await page.locator('.selected-observation-preview img').getAttribute('src');
+  await page.getByRole('button',{name:'Next observation',exact:true}).click();
+  await expect(page.locator('.selected-observation-preview img')).not.toHaveAttribute('src',image!);
+  await expect(page.locator('.map-date')).toContainText('Derived contours');
+  await page.getByRole('tab',{name:'Compare dates',exact:true}).click();
+  await expect(page.locator('.map-date')).toHaveCount(2);
+  for(const date of await page.locator('.map-date').all())await expect(date).toContainText('Derived contours');
+ }
+});

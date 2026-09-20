@@ -1,4 +1,4 @@
-"""Prepare masked numeric methane imagery without interpolation or invented samples."""
+"""Prepare traceable sensor pixels and labeled contour bands from numeric methane imagery."""
 from pathlib import Path
 import hashlib,json,sys
 import numpy as np
@@ -10,10 +10,14 @@ from rasterio.windows import Window
 from PIL import Image
 from io import BytesIO
 root=Path(__file__).resolve().parents[1]
-output=root/'public/data/santiago-plumes'
+investigations='--investigations' in sys.argv
+folder='investigation-plumes' if investigations else 'santiago-plumes'
+output=root/'public/data'/folder
+snapshot=json.loads((root/'public/data/plume-2026-09-19/snapshot.json').read_text())
+observations={o['id']:o for o in snapshot['observations']}
 check='--check' in sys.argv
 palette=(colormaps['inferno'](np.linspace(0,1,256))*255).astype('uint8')
-paths=sorted((root/'research/santiago').glob('*.tif'))
+paths=sorted((root/'research').glob('*/*_con_tif.tif')) if investigations else sorted((root/'research/santiago').glob('*.tif'))
 maximum=0
 for path in paths:
  with rasterio.open(path) as src: maximum=max(maximum,float(src.read(1,masked=True).max()))
@@ -21,6 +25,8 @@ for path in paths:
 maximum=int(np.ceil(maximum/500)*500)
 manifest={}
 for path in paths:
+ name=path.stem.removesuffix('_con_tif')
+ if investigations:maximum=observations[name]['asset']['scale'][1]
  with rasterio.open(path) as src:
   raw=src.read(1,masked=True)
   valid=~np.ma.getmaskarray(raw)&np.isfinite(raw.data)
@@ -36,11 +42,11 @@ for path in paths:
   indices=np.minimum((np.nan_to_num(dest,nan=0)/maximum*256).astype(int),255)
   rgba=palette[indices].copy();rgba[:,:,3]=np.where(np.isfinite(dest),255,0)
   png=BytesIO();Image.fromarray(rgba).save(png,format='PNG');data=png.getvalue()
-  if check:data=(output/(path.stem+'.png')).read_bytes()
+  if check:data=(output/(name+'.png')).read_bytes()
   west,south,east,north=transform_bounds('EPSG:3857','EPSG:4326',*rasterio.transform.array_bounds(height,width,transform))
-  metadata=json.loads(path.with_suffix('.json').read_text())
+  metadata={'sourceUrl':json.loads((path.parent/(name+'.json')).read_text())['items'][0]['con_tif'].split('?')[0],'recordUrl':observations[name]['sourceUrl']} if investigations else json.loads(path.with_suffix('.json').read_text())
   levels=np.linspace(0,maximum,6)
-  generator=contourpy.contour_generator(z=np.ma.masked_invalid(dest),corner_mask=False,fill_type='OuterOffset',z_interp='Linear')
+  generator=contourpy.contour_generator(z=np.ma.masked_invalid(dest),corner_mask=investigations,fill_type='OuterOffset',z_interp='Linear')
   features=[];svg_paths=[]
   for lower,upper in zip(levels[:-1],levels[1:]):
    color=colors.to_hex(colormaps['inferno']((lower+upper)/(2*maximum)))
@@ -49,7 +55,7 @@ for path in paths:
     rings=[];commands=[]
     for start,end in zip(offset[:-1],offset[1:]):
      ring=polygon[start:end]
-     # Contours interpolate inside fully valid cells only; no mask gap is filled.
+     # Contours use valid measured corners only; masked vertices never contribute.
      assert all(0<=point[0]<=width-1 and 0<=point[1]<=height-1 for point in ring)
      xy=[transform*(float(x)+.5,float(y)+.5) for x,y in ring]
      lon,lat=transform_points('EPSG:3857','EPSG:4326',[v[0] for v in xy],[v[1] for v in xy])
@@ -60,13 +66,13 @@ for path in paths:
   contours=json.dumps({'type':'FeatureCollection','features':features},separators=(',',':'))+'\n'
   svg=f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}">'+''.join(svg_paths)+'</svg>\n'
   for suffix,body in [('.geojson',contours),('.svg',svg)]:
-   target=output/(path.stem+suffix)
+   target=output/(name+suffix)
    if check:assert target.read_text()==body
    else:output.mkdir(exist_ok=True);target.write_text(body)
 
-  manifest[path.stem]={'url':f'/data/santiago-plumes/{path.stem}.png','contoursUrl':f'/data/santiago-plumes/{path.stem}.geojson','previewUrl':f'/data/santiago-plumes/{path.stem}.svg','palette':'inferno','contoursSha256':hashlib.sha256(contours.encode()).hexdigest(),'contourMethod':'ContourPy linear interpolation within fully valid cells; 500 ppm·m bands; no spatial smoothing or nodata infilling','coordinates':[[west,north],[east,north],[east,south],[west,south]],'bounds':[west,south,east,north],'scale':[0,maximum],'unit':'ppm·m','quantity':'Methane column enhancement','sourceUrl':metadata['sourceUrl'],'recordUrl':metadata['recordUrl'],'sourceSha256':hashlib.sha256(path.read_bytes()).hexdigest(),'sha256':hashlib.sha256(data).hexdigest(),'resampling':'nearest','mask':'Provider nodata mask; transparent areas are not measured zeros','nativeSamples':int(valid.sum())}
-  if check:np.testing.assert_array_equal(np.asarray(Image.open(output/(path.stem+'.png'))),rgba)
-  else:output.mkdir(exist_ok=True);(output/(path.stem+'.png')).write_bytes(data)
+  manifest[name]={'url':f'/data/{folder}/{name}.png','contoursUrl':f'/data/{folder}/{name}.geojson','previewUrl':f'/data/{folder}/{name}.svg','palette':'inferno','contoursSha256':hashlib.sha256(contours.encode()).hexdigest(),'contourMethod':f'ContourPy linear interpolation within {"valid measured triangles" if investigations else "fully valid cells"}; {maximum/5:g} ppm·m bands; no spatial smoothing or nodata infilling','coordinates':[[west,north],[east,north],[east,south],[west,south]],'bounds':[west,south,east,north],'scale':[0,maximum],'unit':'ppm·m','quantity':'Methane column enhancement','sourceUrl':metadata['sourceUrl'],'recordUrl':metadata['recordUrl'],'sourceSha256':hashlib.sha256(path.read_bytes()).hexdigest(),'sha256':hashlib.sha256(data).hexdigest(),'resampling':'nearest','mask':'Provider nodata mask; transparent areas are not measured zeros','nativeSamples':int(valid.sum())}
+  if check:np.testing.assert_array_equal(np.asarray(Image.open(output/(name+'.png'))),rgba)
+  else:output.mkdir(exist_ok=True);(output/(name+'.png')).write_bytes(data)
 if check:
  recorded=json.loads((output/'manifest.json').read_text())
  assert recorded.keys()==manifest.keys()
@@ -76,4 +82,4 @@ if check:
    asset[key]=recorded[name][key]
   assert recorded[name]==asset
 else:(output/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
-print(f'{len(manifest)} verified plumes, shared scale 0–{maximum} ppm·m')
+print(f'{len(manifest)} verified plumes; published case scales preserved' if investigations else f'{len(manifest)} verified plumes, shared scale 0–{maximum} ppm·m')
