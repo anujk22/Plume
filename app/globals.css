@@ -562,3 +562,16 @@ html[data-map-transition] .header-place{view-transition-name:plume-search}
 @keyframes plume-depart{to{opacity:0;transform:scale(1.008)}}
 @keyframes plume-arrive{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){.application .case-tile{transition:none}.application .case-tile:hover{transform:none}::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}}
+
+/* Regional column methane and individual plumes retain separate scales and dates. */
+.atmospheric-control{border-bottom:1px solid #c8dacf;padding-bottom:12px;margin-bottom:12px}
+.atmospheric-control label{font-weight:600}.atmospheric-control input{accent-color:#236f70}
+.atmospheric-control select{width:100%;border:1px solid #c2d7cd;background:#fffef7;border-radius:10px;padding:7px 9px;margin:10px 0;color:#244f55;font:11px var(--sans)}
+.atmospheric-scale{height:9px;border-radius:6px;background:linear-gradient(90deg,#000,#007fff 25%,#0ff 50%,#ff0 75%,#f00)}
+.atmospheric-ticks{display:flex;justify-content:space-between;margin-top:5px;font-size:9px;color:#315b60}
+.atmospheric-control p{font-size:9px;line-height:1.45;color:#537568;margin:7px 0}.atmospheric-control .atmospheric-unit{color:#234f54;font-size:9px}
+.atmospheric-control>a{font-size:9px}.atmospheric-regional{font-size:10px;color:#17676b;margin:2px 0 8px;display:block;text-decoration:underline}
+@media(min-width:1200px){.investigation-workspace .maplibregl-ctrl-top-right,.place-workspace .maplibregl-ctrl-top-right{top:465px}.global-detections{max-height:calc(100vh - 350px);overflow:auto;scrollbar-width:thin}}
+@media(max-width:1199px){.global-detections{max-height:350px;overflow:auto;scrollbar-width:thin}}
+@media(max-width:599px){.global-detections .atmospheric-control{grid-column:1/-1;margin:0;padding-bottom:8px}.global-detections .atmospheric-control select{margin:7px 0}.global-detections .atmospheric-control p{margin:4px 0}.global-detections .global-catalog-actions{grid-row:auto}.global-detections{max-height:270px}.place-map .global-detections{top:12px;bottom:auto;right:52px;max-height:235px}.place-map.plume-focused .global-detections{top:190px;right:10px}}
+.place-no-results .atmospheric-context{margin:0 0 24px;padding:14px 15px;border:1px solid #c4d9ce;border-radius:14px;background:#e4efe4;color:#315c60;font-size:11px;line-height:1.6}

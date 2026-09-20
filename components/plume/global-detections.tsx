@@ -4,6 +4,7 @@ import {Globe2,X,ArrowUpRight} from 'lucide-react';
 import * as maplibregl from 'maplibre-gl';
 import type {FeatureCollection,Point} from 'geojson';
 import manifest from '@/public/data/global-methane/manifest.json';
+import AtmosphericMethane from './atmospheric-methane';
 import {dateLabel} from '@/lib/plume/evidence';
 
 type RecordProperties={id:string;date:string;scenes:string;peak:number;download:string};
@@ -14,8 +15,10 @@ function loadCatalog(){
 }
 const layerIds=['global-footprints','global-footprint-edges','global-clusters','global-counts','global-points'];
 export default function GlobalDetections({map}:{map:maplibregl.Map|null}){
+ const [atmosphere,setAtmosphere]=useState(true),[zoom,setZoom]=useState(0);
  const [viewRecords,setViewRecords]=useState<RecordProperties[]>([]);
  const [enabled,setEnabled]=useState(true),[catalog,setCatalog]=useState<Catalog|null>(null),[error,setError]=useState(false),[visible,setVisible]=useState(0),[selected,setSelected]=useState<RecordProperties|null>(null);
+ useEffect(()=>{if(!map)return;const updateZoom=()=>setZoom(map.getZoom());updateZoom();map.on('moveend',updateZoom);return()=>{map.off('moveend',updateZoom);};},[map]);
  useEffect(()=>{let cancelled=false;loadCatalog().then(data=>{if(!cancelled)setCatalog(data);}).catch(()=>{if(!cancelled)setError(true);});return()=>{cancelled=true;};},[]);
  useEffect(()=>{
   if(!map||!catalog)return;
@@ -35,6 +38,7 @@ export default function GlobalDetections({map}:{map:maplibregl.Map|null}){
     map.addLayer({id:'global-points',type:'circle',source:'global-detections',filter:['!',['has','point_count']],paint:{'circle-color':'#db9050','circle-radius':['interpolate',['linear'],['zoom'],2,3,10,5,14,7],'circle-stroke-color':'#fff9e9','circle-stroke-width':1.5}});
    }
    addFootprints();
+   for(const id of ['global-clusters','global-counts','global-points'])if(map.getLayer(id))map.setLayerZoomRange(id,atmosphere?9:0,24);
    for(const id of layerIds)if(map.getLayer(id))map.setLayoutProperty(id,'visibility',enabled?'visible':'none');
    countVisible();
   };
@@ -48,7 +52,7 @@ export default function GlobalDetections({map}:{map:maplibregl.Map|null}){
   // Parent evidence layers exist only after style.load, even while tiles are still loading.
   if(map.getSource('global-detections')||map.getLayer('plume-origin')||map.getLayer('selected-origin')||map.isStyleLoaded())install();
   return()=>{disposed=true;map.off('style.load',install);map.off('moveend',move);map.off('click','global-points',clickPoint);map.off('click','global-clusters',clickCluster);for(const id of ['global-points','global-clusters']){map.off('mouseenter',id,enter);map.off('mouseleave',id,leave);}};
- },[map,catalog,enabled]);
+ },[map,catalog,enabled,atmosphere]);
  function showWorld(){
   if(!map)return;
   const workspace=map.getContainer().closest('.workspace');
@@ -58,11 +62,12 @@ export default function GlobalDetections({map}:{map:maplibregl.Map|null}){
   map.fitBounds([[-180,-55],[180,75]],{padding:desktop?{top:100,bottom:200,left:left+65,right:right+65}:55,duration:600});
  }
  return <aside className="global-detections" aria-label="Worldwide methane catalog">
-  <div className="global-catalog-heading"><Globe2 size={16}/><strong>Beyond this investigation</strong></div>
+  <div className="global-catalog-heading"><Globe2 size={16}/><strong>Methane across scales</strong></div>
+  <AtmosphericMethane map={map} enabled={atmosphere} onEnabled={setAtmosphere} zoom={zoom}/>
   <label><input type="checkbox" checked={enabled} onChange={e=>{setEnabled(e.target.checked);setSelected(null);}}/> Published hotspots worldwide</label>
   <p role="status">{error?'NASA catalog unavailable.':catalog?`${enabled?visible.toLocaleString():0} in view · ${manifest.count.toLocaleString()} in catalog`:'Loading NASA detections…'}</p>
   <div className="global-catalog-actions"><span>NASA EMIT · 2022–2025</span><button onClick={showWorld}><Globe2 size={13}/> World view</button></div>
   {enabled&&viewRecords.length>0&&!selected&&<details className="global-record-list"><summary>Browse recent records in view</summary><p>Up to eight most recent records</p>{viewRecords.map(record=><button key={record.id} onClick={()=>setSelected(record)}><span>{dateLabel(record.date,true)}</span><small>{record.peak.toLocaleString()} ppm·m peak</small></button>)}</details>}
-  {selected&&enabled?<div className="global-record"><button className="global-record-close" onClick={()=>setSelected(null)} aria-label="Close hotspot details"><X size={14}/></button><span className="eyebrow">NASA PUBLISHED DETECTION</span><h3>{dateLabel(selected.date,true)}</h3><dl><div><dt>Peak column enhancement</dt><dd>{selected.peak.toLocaleString()} ppm·m</dd></div><div><dt>Plume record</dt><dd>{selected.id}</dd></div></dl><p>Point marks the maximum measured enhancement; the outline is the published footprint. It does not identify the emitting facility.</p><button className="global-zoom-record" onClick={()=>{const point=catalog?.features.find(f=>f.properties.id===selected.id);if(point)map?.easeTo({center:point.geometry.coordinates as [number,number],zoom:13,duration:500});}}>Zoom to this hotspot <ArrowUpRight size={13}/></button><a href={selected.download} target="_blank" rel="noreferrer">NASA source data <ArrowUpRight size={13}/></a><small>Earthdata sign-in may be required. This record is not added to the case brief.</small></div>:<small>Amber markers locate detections; numbers count records, not emission rates. All catalog dates; separate from the case timeline. <a href="/method#coverage">Coverage & sources</a></small>}
+  {selected&&enabled?<div className="global-record"><button className="global-record-close" onClick={()=>setSelected(null)} aria-label="Close hotspot details"><X size={14}/></button><span className="eyebrow">NASA PUBLISHED DETECTION</span><h3>{dateLabel(selected.date,true)}</h3><dl><div><dt>Peak column enhancement</dt><dd>{selected.peak.toLocaleString()} ppm·m</dd></div><div><dt>Plume record</dt><dd>{selected.id}</dd></div></dl><p>Point marks the maximum measured enhancement; the outline is the published footprint. It does not identify the emitting facility.</p><button className="global-zoom-record" onClick={()=>{const point=catalog?.features.find(f=>f.properties.id===selected.id);if(point)map?.easeTo({center:point.geometry.coordinates as [number,number],zoom:13,duration:500});}}>Zoom to this hotspot <ArrowUpRight size={13}/></button><a href={selected.download} target="_blank" rel="noreferrer">NASA source data <ArrowUpRight size={13}/></a><small>Earthdata sign-in may be required. This record is not added to the case brief.</small></div>:<small>{atmosphere&&zoom<9?"Zoom in for individual plume records. ":"Amber markers count detections, not emission rates. "}NASA: all catalog dates, separate from the atmospheric month and case timeline. <a href="/method#coverage">Coverage & sources</a></small>}
  </aside>;
 }

@@ -1,0 +1,43 @@
+{
+  "provider": "Copernicus Sentinel-5P / S5P-PAL",
+  "sourceUrl": "https://maps.s5p-pal.com/ch4/month/",
+  "checkedOn": "2026-09-19",
+  "sourcePageSha256": "91e24ac4688651d05c1e3671b85015746c1d44bc2fab8b782e358565e91cd0bd",
+  "quantity": "Column-averaged methane mixing ratio",
+  "unit": "ppbv",
+  "scale": [
+    1680,
+    1980
+  ],
+  "colorStops": [
+    "#000000",
+    "#007fff",
+    "#00ffff",
+    "#ffff00",
+    "#ff0000"
+  ],
+  "qualityFilter": "qa_value > 0.50",
+  "nativeTileZoom": 5,
+  "scheme": "tms",
+  "attribution": "Contains modified Copernicus Sentinel data processed by S&T / S5P-PAL.",
+  "periods": [
+    {
+      "id": "202608",
+      "label": "1 - 31 Aug 2026",
+      "path": "l3tms/s5p/ch4/001/month/2026/s5p-l3tms-ch4-001-month-20260801-20260903",
+      "downloadUrl": "https://data-portal.s5p-pal.com/download/s5p-l3/0448e2c0-9f95-465b-b598-51c94fe03a95"
+    },
+    {
+      "id": "202408",
+      "label": "1 - 31 Aug 2024",
+      "path": "l3tms/s5p/ch4/001/month/2024/s5p-l3tms-ch4-001-month-20240801-20240903",
+      "downloadUrl": "https://data-portal.s5p-pal.com/download/s5p-l3/cd261113-e1a8-4a97-85ed-ca1009758b93"
+    },
+    {
+      "id": "202404",
+      "label": "1 - 30 Apr 2024",
+      "path": "l3tms/s5p/ch4/001/month/2024/s5p-l3tms-ch4-001-month-20240401-20240505",
+      "downloadUrl": "https://data-portal.s5p-pal.com/download/s5p-l3/bae06adc-9b10-405b-bded-8cfba52951d9"
+    }
+  ]
+}

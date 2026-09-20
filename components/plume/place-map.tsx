@@ -28,7 +28,7 @@ export default function PlaceMap(props:Props){
   const p=current.current,m=map.current;if(!m)return;
   const image=p.selected?plumeImages[p.selected.id as keyof typeof plumeImages]:undefined;
   const points=mode.current&&p.selected?(image?[[image.bounds[0],image.bounds[1]],[image.bounds[2],image.bounds[3]]]:[[p.selected.location[0]-.012,p.selected.location[1]-.008],[p.selected.location[0]+.012,p.selected.location[1]+.008]]):searchRing(p.place,p.radius);
-  m.fitBounds([[Math.min(...points.map(c=>c[0])),Math.min(...points.map(c=>c[1]))],[Math.max(...points.map(c=>c[0])),Math.max(...points.map(c=>c[1]))]],{padding:window.innerWidth>=1200?{top:145,bottom:130,left:(container.current?.closest('.workspace')?.querySelector('.case-rail')?.clientWidth||270)+100,right:(container.current?.closest('.workspace')?.querySelector('.findings-panel')?.clientWidth||330)+100}:mode.current&&p.selected?{top:165,bottom:190,left:45,right:45}:65,duration:0,maxZoom:14});
+  m.fitBounds([[Math.min(...points.map(c=>c[0])),Math.min(...points.map(c=>c[1]))],[Math.max(...points.map(c=>c[0])),Math.max(...points.map(c=>c[1]))]],{padding:window.innerWidth>=1200?{top:145,bottom:130,left:(container.current?.closest('.workspace')?.querySelector('.case-rail')?.clientWidth||270)+100,right:(container.current?.closest('.workspace')?.querySelector('.findings-panel')?.clientWidth||330)+100}:mode.current&&p.selected?{top:165,bottom:190,left:45,right:45}:65,duration:0,maxZoom:mode.current&&p.selected?14:7});
  }
  function update(){
   const m=map.current;if(!m?.getSource('search-area'))return;const p=current.current;
