@@ -334,3 +334,31 @@ body {
 @media(min-width:1200px){.investigation-workspace>.case-rail{bottom:50px}.investigation-workspace .timeline{bottom:62px}.investigation-workspace .finding p{font-size:13px}.investigation-workspace .observation-facts strong{font-size:20px}.investigation-workspace .observation-facts .fact-status{font-size:11px}.investigation-workspace .workspace-layers label{font-size:12px}.investigation-workspace .evidence-actions>button>span{font-size:11px}}
 
 @media(min-width:1200px){.investigation-workspace>.case-rail{padding-bottom:12px}.investigation-workspace.view-compare .map-stage{bottom:280px}.investigation-workspace .compare-selectors{bottom:216px}}
+
+/* The landing page is an illustrated invitation; measured maps live in investigations. */
+.illustrated-landing .landscape{background-image:url('/art/home-illustrated.png')}
+.illustrated-landing .home-map-tools a{border:0;background:none;color:inherit;border-radius:17px;padding:.65vw 0;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:.72vw;text-decoration:none}
+.illustrated-landing .home-map-tools a:hover{background:#245c66}
+.illustrated-landing .home-map-tools .home-tool-featured{background:#bfe3e2;color:#075460}
+.illustrated-landing .home-place{width:48%}
+.home-illustration-note{position:absolute;right:6%;top:11%;display:flex;align-items:center;gap:10px;padding:15px 18px;border:1px solid #52838c80;border-radius:22px;background:#053541ef;color:#e4eee7;box-shadow:0 8px 24px #012e4130}
+.home-illustration-note strong{display:block;font-size:13px;font-weight:500}
+.home-illustration-note div>span{display:block;font-size:10px;color:#b2cfd0;margin-top:4px}
+.illustration-dot{width:8px;height:8px;background:#bedac3;border-radius:50%;flex:none}
+.illustrated-landing .home-discovery-card{width:35%;right:7%;top:39%;padding:1.3vw 1.2vw;gap:17px 12px}
+.home-discovery-card strong{font-size:1.45vw;font-weight:500;white-space:nowrap;margin-top:5px}
+.home-discovery-card span{font-size:.72vw}
+.home-discovery-card p{font-size:.8vw;margin-top:7px}
+.illustrated-landing .home-story{bottom:5.4%;padding:1.25vw 1.4vw;min-height:8.3vw;gap:1.3vw}
+.illustrated-landing .home-story h3{font-size:1.27vw;line-height:1.14}
+.illustrated-landing .home-story p{font-size:.76vw;line-height:1.35;margin-top:8px}
+.illustrated-landing .home-art-thumbnail{background:#0b4050 url('/art/home-illustrated.png') 77% 29% / auto 500%;width:6.5vw;height:5.9vw;border-radius:18px}
+.illustrated-landing .home-story-action{align-self:flex-start;margin-top:1px}
+.illustrated-landing .home-source{bottom:2.6%;font-size:.59vw;color:#daebe6;display:flex;gap:5px;align-items:center}
+.illustrated-landing .home-source a{display:inline-flex;align-items:center;gap:3px}
+@media(max-width:1100px) and (min-width:761px){.illustrated-landing .home-map-tools a{font-size:10px;padding:10px 0}.home-illustration-note{right:4%;padding:12px;gap:8px}.home-illustration-note strong{font-size:11px}.home-illustration-note div>span{font-size:8px}.illustrated-landing .home-discovery-card{width:51%;padding:17px 13px;gap:12px 8px}.home-discovery-card strong{font-size:18px}.home-discovery-card span{font-size:10px}.home-discovery-card p{font-size:11px}.illustrated-landing .home-story{width:86%;padding:16px;gap:13px}.illustrated-landing .home-story h3{font-size:19px}.illustrated-landing .home-story p{font-size:10px}.illustrated-landing .home-art-thumbnail{width:70px;height:87px}.illustrated-landing .home-source{font-size:8px;flex-wrap:wrap}.illustrated-landing .home-place{width:69%}}
+@media(max-width:760px){.illustrated-landing .home-map-area{height:670px;background:url('/art/home-illustrated.png') 99% 50% / auto 110% no-repeat;mask-image:linear-gradient(transparent,#000 6%,#000 96%,transparent)}.illustrated-landing .home-map-tools a{font-size:10px;padding:11px 0}.illustrated-landing .home-place{width:71%;font-size:14px}.home-illustration-note{top:15%;right:6%;padding:12px 14px;gap:8px}.home-illustration-note strong{font-size:12px}.home-illustration-note div>span{font-size:9px}.illustrated-landing .home-discovery-card{top:44%;right:6%;width:58%;padding:18px 15px;gap:14px 10px}.home-discovery-card strong{font-size:20px}.home-discovery-card span{font-size:10px}.home-discovery-card p{font-size:12px}.illustrated-landing .home-story{bottom:9%;width:90%;padding:16px;gap:12px;min-height:120px}.illustrated-landing .home-story h3{font-size:21px}.illustrated-landing .home-story p{font-size:10px}.illustrated-landing .home-art-thumbnail{width:64px;height:87px;border-radius:13px}.illustrated-landing .home-source{bottom:4.8%;font-size:8px;flex-wrap:wrap}.illustrated-landing .home-story-action{margin-top:0}}
+
+.illustrated-landing .home-discovery-card{grid-template-columns:23px minmax(0,1fr)}
+.illustrated-landing .home-discovery-card span{white-space:normal}
+.illustrated-landing .home-story-action>.circle{color:#fff}
