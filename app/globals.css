@@ -527,8 +527,9 @@ body {
 .global-record-list{margin:10px 0;font-size:10px}.global-record-list summary{cursor:pointer;color:#975c3f}.global-record-list[open]{max-height:155px;overflow:auto}.global-record-list p{font-size:9px;color:#678171;margin:8px 0}.global-record-list button{width:100%;display:flex;justify-content:space-between;text-align:left;gap:7px;border-bottom:1px solid #dce6db;padding:7px 0;font-size:10px}.global-record-list button:hover{color:#a95f36}.global-record-list button small{font-size:9px}
 .global-zoom-record{display:flex;align-items:center;gap:6px;margin:10px 0;color:#a15c38;text-decoration:underline;font-size:11px}
 
-/* The paper frame steps in front of the workspace at its lower edge. */
-.workspace-foreground{position:absolute;left:0;right:0;bottom:0;width:100%;height:clamp(76px,10vh,110px);pointer-events:none;z-index:4;filter:drop-shadow(0 -3px 5px #20474a16)}
+/* Paper edges overlap the canvas while the header and controls remain accessible. */
+.workspace-crown{position:absolute;top:0;left:0;width:100%;height:125px;z-index:4;pointer-events:none;filter:drop-shadow(0 3px 4px #20474a12)}
+.workspace-foreground{position:absolute;left:0;right:0;bottom:0;width:100%;height:clamp(165px,21vh,225px);pointer-events:none;z-index:4;filter:drop-shadow(0 -5px 8px #20474a24)}
 .application .case-rail,.application .findings-panel{backdrop-filter:none;background:linear-gradient(125deg,#fffff9 0%,#f2f8f2 56%,#e5f0ec 100%);border:1px solid #ffffffdf;box-shadow:0 16px 36px #17494c1a,inset 0 1px 0 #fff;border-radius:27px}
 .application .case-search,.place-filters select,.place-date-filters input{background:#fffefa;border:1px solid #c8dbd7;box-shadow:0 3px 8px #1e4a4110,inset 0 1px 0 #fff}
 .application .case-tile{border-radius:15px;transition:background 160ms,box-shadow 160ms,transform 160ms}
@@ -541,17 +542,22 @@ body {
 .application .timeline{background:linear-gradient(110deg,#fffff6f5,#eef5edf5);border:1px solid #ffffffd9;box-shadow:0 8px 22px #18464216}
 .application .global-detections{background:linear-gradient(125deg,#fffff8f2,#eef5eaf2);box-shadow:0 8px 24px #214d4215;border-color:#ffffffd9}
 @media(min-width:1200px){
- .investigation-workspace>.case-rail,.place-workspace>.place-filters{padding:25px 24px 78px;bottom:33px}
- .investigation-workspace>.findings-panel,.place-workspace>.place-results{padding:22px 23px 55px;bottom:33px}
+ .investigation-workspace>.case-rail,.place-workspace>.place-filters{padding:25px 24px 130px;bottom:33px}
+ .investigation-workspace>.findings-panel,.place-workspace>.place-results{padding:22px 23px 110px;bottom:33px}
  .investigation-workspace .rail-heading h2,.place-filters h1{font-size:29px;line-height:1.12;margin-bottom:12px}
  .investigation-workspace .findings-panel>h2{font-size:25px;line-height:1.18;letter-spacing:-.6px;margin-top:15px}
  .investigation-workspace .selected-observation-preview{height:108px;flex-shrink:0}
  .investigation-workspace .case-list{gap:2px}.investigation-workspace .date-filter-disclosure{margin-bottom:0}.investigation-workspace .rail-heading h2{margin-top:8px;margin-bottom:8px}.investigation-workspace .case-rail .rail-rule{margin:7px 0}.investigation-workspace .observation-facts{padding:4px 0}.investigation-workspace .observation-facts>button{padding:7px 0}
- .investigation-workspace .findings{justify-content:flex-start;overflow:visible;min-height:175px;flex:1 0 auto}.investigation-workspace .finding{padding:10px 0;flex-shrink:0}.investigation-workspace .finding p{font-size:12px;line-height:1.55}
- .investigation-workspace.view-map .maplibregl-ctrl-bottom-right,.place-workspace .maplibregl-ctrl-bottom-right{bottom:0}
+ .investigation-workspace .findings{justify-content:flex-start;overflow:visible;min-height:150px;flex:1 0 auto}.investigation-workspace .finding{padding:7px 0;flex-shrink:0}.investigation-workspace .finding p{font-size:12px;line-height:1.55}
+ .investigation-workspace.view-map .maplibregl-ctrl-bottom-right{bottom:42px}
+ .place-workspace .maplibregl-ctrl-bottom-right{bottom:25px}
+ .investigation-workspace .timeline{bottom:100px}
+ .place-results-footer{bottom:90px}
+ .investigation-workspace .recenter{bottom:224px}
+ .investigation-workspace .maplibregl-ctrl-bottom-left{bottom:221px}
 }
 @media(min-width:1200px) and (max-height:900px){.investigation-workspace .selected-observation-preview{height:84px}.investigation-workspace .findings-panel>h2{font-size:22px}.investigation-workspace .findings{min-height:150px}.investigation-workspace .rail-heading h2{font-size:26px}.investigation-workspace .case-search{margin-top:12px}.application .observation-facts{padding:3px 0}.application .observation-facts>button{padding:7px 0}.investigation-workspace .finding{padding:7px 0}.investigation-workspace>.case-rail,.place-workspace>.place-filters{padding-top:22px}}
-@media(max-width:1199px){.workspace-foreground{display:none}.application .case-rail,.application .findings-panel{border-radius:24px}}
+@media(max-width:1199px){.workspace-foreground,.workspace-crown{display:none}.application .case-rail,.application .findings-panel{border-radius:24px}}
 
 /* Carry the brand and selected search bar from the invitation into the instrument. */
 html[data-map-transition] .landing .brand,html[data-map-transition] .app-header .brand{view-transition-name:plume-brand}
@@ -571,7 +577,7 @@ html[data-map-transition] .header-place{view-transition-name:plume-search}
 .atmospheric-ticks{display:flex;justify-content:space-between;margin-top:5px;font-size:9px;color:#315b60}
 .atmospheric-control p{font-size:9px;line-height:1.45;color:#537568;margin:7px 0}.atmospheric-control .atmospheric-unit{color:#234f54;font-size:9px}
 .atmospheric-control>a{font-size:9px}.atmospheric-regional{font-size:10px;color:#17676b;margin:2px 0 8px;display:block;text-decoration:underline}
-@media(min-width:1200px){.investigation-workspace .maplibregl-ctrl-top-right,.place-workspace .maplibregl-ctrl-top-right{top:465px}.global-detections{max-height:calc(100vh - 350px);overflow:auto;scrollbar-width:thin}}
+@media(min-width:1200px){.investigation-workspace .maplibregl-ctrl-top-right,.place-workspace .maplibregl-ctrl-top-right{top:auto;bottom:215px;left:calc(var(--rail-width) + var(--edge));right:auto}.investigation-workspace .maplibregl-ctrl-top-right{bottom:260px}.global-detections{max-height:calc(100vh - 350px);overflow:auto;scrollbar-width:thin}}
 @media(max-width:1199px){.global-detections{max-height:350px;overflow:auto;scrollbar-width:thin}}
 @media(max-width:599px){.global-detections .atmospheric-control{grid-column:1/-1;margin:0;padding-bottom:8px}.global-detections .atmospheric-control select{margin:7px 0}.global-detections .atmospheric-control p{margin:4px 0}.global-detections .global-catalog-actions{grid-row:auto}.global-detections{max-height:270px}.place-map .global-detections{top:12px;bottom:auto;right:52px;max-height:235px}.place-map.plume-focused .global-detections{top:190px;right:10px}}
 .place-no-results .atmospheric-context{margin:0 0 24px;padding:14px 15px;border:1px solid #c4d9ce;border-radius:14px;background:#e4efe4;color:#315c60;font-size:11px;line-height:1.6}

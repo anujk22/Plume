@@ -21,7 +21,7 @@ export default function AtmosphericMethane({map,enabled,onEnabled,zoom}:{map:Map
    setStatus('loading');failed=false;
    map.addSource('atmospheric-methane',{type:'raster',tiles:[providerColors?`${location.origin}/api/atmosphere/${period}/{z}/{x}/{y}`:`plume-atmosphere://${period}/{z}/{x}/{y}`],scheme:'tms',tileSize:256,maxzoom:manifest.nativeTileZoom,attribution:'<a href="https://maps.s5p-pal.com/ch4/month/">Copernicus Sentinel-5P · S5P-PAL</a>'});
    const before=map.getStyle().layers.find(l=>l.type==='symbol'||['plume-raster','plume-contours','selected-footprint-fill','global-clusters'].includes(l.id))?.id;
-   map.addLayer({id:'atmospheric-methane',type:'raster',source:'atmospheric-methane',maxzoom:9,paint:{'raster-opacity':['interpolate',['linear'],['zoom'],0,.64,7,.64,9,0],'raster-resampling':'linear','raster-fade-duration':250}},before);
+   map.addLayer({id:'atmospheric-methane',type:'raster',source:'atmospheric-methane',maxzoom:9,paint:{'raster-opacity':['interpolate',['linear'],['zoom'],0,.72,7,.72,9,0],'raster-resampling':'linear','raster-fade-duration':250}},before);
   };
   const data=(e:MapSourceDataEvent)=>{if(e.sourceId==='atmospheric-methane'&&e.isSourceLoaded&&!failed)setStatus('ready');};
   const error=(e:ErrorEvent&{sourceId?:string})=>{if(e.sourceId==='atmospheric-methane'){failed=true;setStatus('error');}};
