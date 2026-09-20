@@ -1,4 +1,5 @@
 'use client';
+import GlobalDetections from './global-detections';
 import {useEffect,useRef,useState} from 'react';
 import * as maplibregl from 'maplibre-gl';
 import type {Map as MapInstance,StyleSpecification} from 'maplibre-gl';
@@ -15,6 +16,7 @@ function searchRing(place:Place,radius:number){
  return Array.from({length:73},(_,i)=>{const a=i/72*2*Math.PI,y=Math.asin(Math.sin(lat)*Math.cos(d)+Math.cos(lat)*Math.sin(d)*Math.cos(a));const x=lon+Math.atan2(Math.sin(a)*Math.sin(d)*Math.cos(lat),Math.cos(d)-Math.sin(lat)*Math.sin(y));return [x*180/Math.PI,y*180/Math.PI];});
 }
 export default function PlaceMap(props:Props){
+ const [catalogMap,setCatalogMap]=useState<MapInstance|null>(null);
  const [focused,setFocused]=useState(!!props.selected),[pixels,setPixels]=useState(false);
  const pixelMode=useRef(pixels);
  const mode=useRef(focused);
@@ -40,7 +42,7 @@ export default function PlaceMap(props:Props){
   if(m.getLayer('methane-raster'))m.removeLayer('methane-raster');
   if(m.getSource('methane-image'))m.removeSource('methane-image');
   if(asset&&pixelMode.current){m.addSource('methane-image',{type:'image',url:asset.url,coordinates:asset.coordinates as [[number,number],[number,number],[number,number],[number,number]]});m.addLayer({id:'methane-raster',type:'raster',source:'methane-image',paint:{'raster-opacity':1,'raster-resampling':'nearest','raster-fade-duration':0}},'selected-footprint-edge');}
-  if(asset&&!pixelMode.current){m.addSource('methane-contours',{type:'geojson',data:asset.contoursUrl});m.addLayer({id:'methane-contours',type:'fill',source:'methane-contours',paint:{'fill-color':['get','color'],'fill-opacity':.95}},'selected-footprint-edge');m.addLayer({id:'methane-contour-lines',type:'line',source:'methane-contours',paint:{'line-color':'#ffe2a5','line-width':.5,'line-opacity':.25}},'selected-footprint-edge');}
+  if(asset&&!pixelMode.current){m.addSource('methane-contours',{type:'geojson',tolerance:0,data:asset.contoursUrl});m.addLayer({id:'methane-contours',type:'fill',source:'methane-contours',paint:{'fill-color':['get','color'],'fill-opacity':1,'fill-antialias':false}},'selected-footprint-edge');m.addLayer({id:'methane-contour-lines',type:'line',source:'methane-contours',paint:{'line-color':'#ffe2a5','line-width':.3,'line-opacity':0}},'selected-footprint-edge');}
   m.setPaintProperty('selected-footprint-fill','fill-opacity',asset?0:.22);
   for(const id of ['observations','observation-clusters','observation-counts','cluster-halo','place','search-area'])if(m.getLayer(id))m.setLayoutProperty(id,'visibility',mode.current&&p.selected?'none':'visible');
 
@@ -49,8 +51,8 @@ export default function PlaceMap(props:Props){
   if(!container.current)return;let disposed=false;const controller=new AbortController();let m:MapInstance;
   // Constructor failures need an accessible fallback when WebGL is unavailable.
   // eslint-disable-next-line react-hooks/set-state-in-effect
-  try{m=new maplibregl.Map({container:container.current,center:props.place.location,zoom:10,style:{version:8,sources:{},layers:[{id:'background',type:'background',paint:{'background-color':'#d5e4d8'}}]},attributionControl:{compact:true,customAttribution:'Place: <a href="https://www.geonames.org/">GeoNames</a> · Observations: <a href="https://carbonmapper.org/terms">Carbon Mapper</a>'}});}catch{setError('Interactive map unavailable. The search results and location remain available.');return;}
-  map.current=m;const resize=new ResizeObserver(()=>{m.resize();fit();});resize.observe(container.current);
+  try{m=new maplibregl.Map({container:container.current,center:props.place.location,zoom:10,style:{version:8,sources:{},layers:[{id:'background',type:'background',paint:{'background-color':'#d5e4d8'}}]},attributionControl:{compact:true,customAttribution:'Place: <a href="https://www.geonames.org/">GeoNames</a> · Observations: <a href="https://carbonmapper.org/terms">Carbon Mapper</a> · <a href="https://earth.jpl.nasa.gov/emit/data/data-portal/Greenhouse-Gases/">NASA/JPL EMIT</a>'}});}catch{setError('Interactive map unavailable. The search results and location remain available.');return;}
+  map.current=m;setCatalogMap(m);const resize=new ResizeObserver(()=>{m.resize();fit();});resize.observe(container.current);
   m.addControl(new maplibregl.NavigationControl({showCompass:false}),'top-right');m.addControl(new maplibregl.ScaleControl({unit:'metric'}),'bottom-left');
   m.on('style.load',()=>{
    m.addSource('search-area',{type:'geojson',data:{type:'FeatureCollection',features:[]}});m.addLayer({id:'search-area',type:'line',source:'search-area',paint:{'line-color':'#507e7b','line-width':1,'line-opacity':.4,'line-dasharray':[4,7]}});
@@ -66,7 +68,7 @@ export default function PlaceMap(props:Props){
    m.addSource('selected-origin',{type:'geojson',data:{type:'FeatureCollection',features:[]}});
    m.addLayer({id:'selected-halo',type:'circle',source:'selected-origin',paint:{'circle-radius':18,'circle-color':'#fff5c3','circle-opacity':.13}});
    m.addLayer({id:'selected-origin',type:'circle',source:'selected-origin',paint:{'circle-radius':5,'circle-color':'#fffef0','circle-stroke-color':'#b9d1bd','circle-stroke-width':2}});
-   update();fit();
+   update();
   });
   m.on('click','observation-clusters',async e=>{const feature=e.features?.[0];if(!feature||feature.geometry.type!=='Point')return;const zoom=await (m.getSource('observations') as maplibregl.GeoJSONSource).getClusterExpansionZoom(feature.properties.cluster_id);if(!disposed)m.easeTo({center:feature.geometry.coordinates as [number,number],zoom,duration:window.matchMedia('(prefers-reduced-motion: reduce)').matches?0:500});});
   m.on('click','observations',e=>{const o=current.current.observations.find(o=>o.id===e.features?.[0]?.properties.id);if(o)current.current.onObservation(o);});
@@ -89,8 +91,9 @@ export default function PlaceMap(props:Props){
   <div ref={container} className="place-map-canvas"/>
   {props.selected&&<><div className="map-view-switch" aria-label="Map view"><button aria-pressed={!focused} onClick={()=>setFocused(false)}><MapIcon size={15}/> Area overview</button><button aria-pressed={focused} onClick={()=>setFocused(true)}><Focus size={15}/> Selected plume</button></div>
    {focused&&<div className="plume-map-caption"><span className="eyebrow">{selectedImage?(pixels?'SENSOR PIXELS':'METHANE CONTOUR BANDS'):'PUBLISHED PLUME OUTLINE'}</span><h2>{dateLabel(props.selected.date,true)}</h2><p>{props.selected.instrument} · Source: Carbon Mapper</p></div>}
-   {focused&&selectedImage&&<div className="plume-measurement-legend"><div><strong>Column enhancement</strong><span>ppm·m</span></div><div className="inferno-scale"/><div><span>0</span><span>{selectedImage.scale[1].toLocaleString()}</span></div><p>{pixels?'Original samples · nearest-neighbor display':'500 ppm·m bands · interpolated within measured cells'}</p><button className="plume-render-toggle" aria-pressed={pixels} onClick={()=>setPixels(!pixels)}>{pixels?'Show contour bands':'Inspect sensor pixels'}</button></div>}
+   {focused&&selectedImage&&<div className="plume-measurement-legend"><div><strong>Column enhancement</strong><span>ppm·m</span></div><div className="inferno-scale"/><div><span>0</span><span>{selectedImage.scale[1].toLocaleString()}</span></div><p>{pixels?'Original samples · nearest-neighbor display':'64 color bands · interpolated within measured cells'}</p><button className="plume-render-toggle" aria-pressed={pixels} onClick={()=>setPixels(!pixels)}>{pixels?'Show contour bands':'Inspect sensor pixels'}</button></div>}
    {!focused&&<button className="inspect-plume" onClick={()=>setFocused(true)}><Focus size={16}/> Zoom to detection</button>}</>}
+  <GlobalDetections map={catalogMap}/>
   <button className="recenter" onClick={fit}><Crosshair size={16}/> Recenter</button>{error&&<p role="status" className="map-error"><Info size={14}/>{error}</p>}
  </section>;
 }

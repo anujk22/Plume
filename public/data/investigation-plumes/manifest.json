@@ -4,8 +4,8 @@
     "contoursUrl": "/data/investigation-plumes/emi20240420t101448p07050-A.geojson",
     "previewUrl": "/data/investigation-plumes/emi20240420t101448p07050-A.svg",
     "palette": "inferno",
-    "contoursSha256": "4c6830675d6e06f5f18c301b6df5fe63d4e739610ee5e72e3568945c71c7dd21",
-    "contourMethod": "ContourPy linear interpolation within valid measured triangles; 1100 ppm\u00b7m bands; no spatial smoothing or nodata infilling",
+    "contoursSha256": "806740c4fa406d259f00df8a4321ff556f86fa78de637ddcc5599f45b6017599",
+    "contourMethod": "ContourPy linear interpolation within valid measured triangles; 64 bands on the fixed 0\u20135500 ppm\u00b7m scale; no spatial smoothing or nodata infilling",
     "coordinates": [
       [
         46.02407019284899,
@@ -49,8 +49,8 @@
     "contoursUrl": "/data/investigation-plumes/emi20241023t083741p06026-A.geojson",
     "previewUrl": "/data/investigation-plumes/emi20241023t083741p06026-A.svg",
     "palette": "inferno",
-    "contoursSha256": "03a76203e87d7d6d0918e8b8ef217506322ceac2e82599adb12fe82a82311763",
-    "contourMethod": "ContourPy linear interpolation within valid measured triangles; 1100 ppm\u00b7m bands; no spatial smoothing or nodata infilling",
+    "contoursSha256": "dbc7bb7c1a3041f6f1242a3f55da294a2b4a578c73afbe3e345423cdc0f00c95",
+    "contourMethod": "ContourPy linear interpolation within valid measured triangles; 64 bands on the fixed 0\u20135500 ppm\u00b7m scale; no spatial smoothing or nodata infilling",
     "coordinates": [
       [
         46.026057107287095,
@@ -94,8 +94,8 @@
     "contoursUrl": "/data/investigation-plumes/emi20240803t190415p13004-C.geojson",
     "previewUrl": "/data/investigation-plumes/emi20240803t190415p13004-C.svg",
     "palette": "inferno",
-    "contoursSha256": "f4acb7a62240781ce1ee62cc429061648c4dd681feae7583af77cbd5e147a32d",
-    "contourMethod": "ContourPy linear interpolation within valid measured triangles; 1800 ppm\u00b7m bands; no spatial smoothing or nodata infilling",
+    "contoursSha256": "b4f24d1ddf879133525fac72e919b07ec19d839fc85890ea822a6d7aeb2d47dd",
+    "contourMethod": "ContourPy linear interpolation within valid measured triangles; 64 bands on the fixed 0\u20139000 ppm\u00b7m scale; no spatial smoothing or nodata infilling",
     "coordinates": [
       [
         -121.94056667047657,
@@ -139,8 +139,8 @@
     "contoursUrl": "/data/investigation-plumes/emi20240807t172838p12003-A.geojson",
     "previewUrl": "/data/investigation-plumes/emi20240807t172838p12003-A.svg",
     "palette": "inferno",
-    "contoursSha256": "65b373d52ac0425794bee670da8de446f82d42e806890a2c5fd6a7f1626baf39",
-    "contourMethod": "ContourPy linear interpolation within valid measured triangles; 1800 ppm\u00b7m bands; no spatial smoothing or nodata infilling",
+    "contoursSha256": "7af272c431c0dfdef6e536ff98f3e0aecb910670de5abcb8dbf6934d75262c58",
+    "contourMethod": "ContourPy linear interpolation within valid measured triangles; 64 bands on the fixed 0\u20139000 ppm\u00b7m scale; no spatial smoothing or nodata infilling",
     "coordinates": [
       [
         -121.94468402358615,
@@ -184,8 +184,8 @@
     "contoursUrl": "/data/investigation-plumes/emi20240926t213956p14002-A.geojson",
     "previewUrl": "/data/investigation-plumes/emi20240926t213956p14002-A.svg",
     "palette": "inferno",
-    "contoursSha256": "87106075e86c5bd99bcea211c47ae8e4c83a0d1bd8abe15370b12f9bf5adf1ae",
-    "contourMethod": "ContourPy linear interpolation within valid measured triangles; 1800 ppm\u00b7m bands; no spatial smoothing or nodata infilling",
+    "contoursSha256": "d5a52dc0a1e67d8f7d0cbb9837b6c4df81bf492d99ab9a954d5978f3fcf0de5e",
+    "contourMethod": "ContourPy linear interpolation within valid measured triangles; 64 bands on the fixed 0\u20139000 ppm\u00b7m scale; no spatial smoothing or nodata infilling",
     "coordinates": [
       [
         -121.94390420197387,

@@ -4,6 +4,7 @@ import * as maplibregl from 'maplibre-gl';
 import type {FeatureCollection} from 'geojson';
 import type {Map as MapInstance,StyleSpecification} from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
+import GlobalDetections from './global-detections';
 import {Crosshair, Info, LoaderCircle} from 'lucide-react';
 import plumes from '@/public/data/investigation-plumes/manifest.json';
 import {dateLabel} from '@/lib/plume/evidence';
@@ -14,6 +15,7 @@ maplibregl.setWorkerUrl('/workers/maplibre-gl-worker.mjs');
 const baseStyle:StyleSpecification={version:8,sources:{},layers:[{id:'background',type:'background',paint:{'background-color':'#d5e4d8'}}]};
 export default function EvidenceMap({observation,allObservations,caseData,highlight=false,showFacilities=true,camera,onCamera,showScene=false,immersive=false,showMethane=true,sensorPixels=false}:{observation:Observation;allObservations:Observation[];caseData:Case;highlight?:boolean;showFacilities?:boolean;camera?:Camera;onCamera?:(c:Camera)=>void;showScene?:boolean;immersive?:boolean;showMethane?:boolean;sensorPixels?:boolean}){
  const el=useRef<HTMLDivElement>(null),mapRef=useRef<MapInstance|null>(null),selection=useRef(observation),facilities=useRef(showFacilities),cameraHandler=useRef(onCamera);
+ const [catalogMap,setCatalogMap]=useState<MapInstance|null>(null);
  const [error,setError]=useState(''),[ready,setReady]=useState(false),[webglError,setWebglError]=useState(false);
  const asset=showScene?observation.asset:plumes[observation.id as keyof typeof plumes];
  const contour=plumes[observation.id as keyof typeof plumes];
@@ -27,8 +29,12 @@ export default function EvidenceMap({observation,allObservations,caseData,highli
  const fitRef=useRef(fit);fitRef.current=fit;
  useEffect(()=>{
   if(!el.current)return;let disposed=false;const controller=new AbortController();let map:MapInstance;
-  try{map=new maplibregl.Map({container:el.current,style:baseStyle,center:caseData.location,zoom:12,attributionControl:{compact:true,customAttribution:'Source: <a href="https://carbonmapper.org/terms" target="_blank" rel="noopener">Carbon Mapper</a>'},canvasContextAttributes:{preserveDrawingBuffer:false}});}catch{setWebglError(true);return;}
-  mapRef.current=map;const resize=new ResizeObserver(()=>{map.resize();fitRef.current();});resize.observe(el.current);map.addControl(new maplibregl.NavigationControl({showCompass:false}),'top-right');map.addControl(new maplibregl.ScaleControl({unit:'metric'}),'bottom-left');
+  try{map=new maplibregl.Map({container:el.current,style:baseStyle,center:caseData.location,zoom:12,attributionControl:{compact:true,customAttribution:'Source: <a href="https://carbonmapper.org/terms" target="_blank" rel="noopener">Carbon Mapper</a> · <a href="https://earth.jpl.nasa.gov/emit/data/data-portal/Greenhouse-Gases/">NASA/JPL EMIT</a>'},canvasContextAttributes:{preserveDrawingBuffer:false}});}catch{setWebglError(true);return;}
+  mapRef.current=map;setCatalogMap(map);const resize=new ResizeObserver(()=>{map.resize();fitRef.current();});resize.observe(el.current);map.addControl(new maplibregl.NavigationControl({showCompass:false}),'top-right');map.addControl(new maplibregl.ScaleControl({unit:'metric'}),'bottom-left');
+  let measurementPopup:maplibregl.Popup|undefined;
+  map.on('click','plume-contours',e=>{const band=e.features?.[0]?.properties;if(!band)return;measurementPopup?.remove();const content=document.createElement('div');content.className='measurement-popup';const title=document.createElement('strong');title.textContent='Methane column enhancement';const value=document.createElement('p');value.textContent=`${Number(band.lower).toLocaleString(undefined,{maximumFractionDigits:1})}–${Number(band.upper).toLocaleString(undefined,{maximumFractionDigits:1})} ppm·m`;const caption=document.createElement('small');caption.textContent=`${dateLabel(selection.current.date,true)} · ${selection.current.instrument} · interpolated band`;for(const node of [title,value,caption])content.appendChild(node);measurementPopup=new maplibregl.Popup({maxWidth:'250px'}).setLngLat(e.lngLat).setDOMContent(content).addTo(map);});
+  map.on('movestart',()=>measurementPopup?.remove());
+  map.on('mouseenter','plume-contours',()=>{map.getCanvas().style.cursor='crosshair';});map.on('mouseleave','plume-contours',()=>{map.getCanvas().style.cursor='';});
   map.on('moveend',()=>{const p=map.getCenter();cameraHandler.current?.({center:[p.lng,p.lat],zoom:map.getZoom()});});
   const renderLayers=()=>{
     if(disposed)return;const o=selection.current;
@@ -36,15 +42,15 @@ export default function EvidenceMap({observation,allObservations,caseData,highli
     for(const id of ['plume','contours','outline','origin','facilities'])if(map.getSource(id))map.removeSource(id);
     map.addSource('plume',{type:'image',url:displayAsset.current.url,coordinates:displayAsset.current.coordinates as [[number,number],[number,number],[number,number],[number,number]]});
     map.addLayer({id:'plume-raster',type:'raster',source:'plume',paint:{'raster-opacity':1,'raster-resampling':'nearest','raster-fade-duration':0}});
-    map.addSource('contours',{type:'geojson',data:plumes[o.id as keyof typeof plumes].contoursUrl});
-    map.addLayer({id:'plume-contours',type:'fill',source:'contours',paint:{'fill-color':['get','color'],'fill-opacity':.96}});
-    map.addLayer({id:'plume-contour-lines',type:'line',source:'contours',paint:{'line-color':'#ffe2a5','line-width':.5,'line-opacity':.25}});
+    map.addSource('contours',{type:'geojson',tolerance:0,data:plumes[o.id as keyof typeof plumes].contoursUrl});
+    map.addLayer({id:'plume-contours',type:'fill',source:'contours',paint:{'fill-color':['get','color'],'fill-opacity':1,'fill-antialias':false}});
+    map.addLayer({id:'plume-contour-lines',type:'line',source:'contours',paint:{'line-color':'#ffe2a5','line-width':.3,'line-opacity':0}});
     map.addSource('outline',{type:'geojson',data:o.outline});map.addLayer({id:'plume-outline',type:'line',source:'outline',paint:{'line-color':'#708d78','line-width':1.4,'line-opacity':.35}});
     map.addSource('origin',{type:'geojson',data:{type:'Feature',properties:{},geometry:{type:'Point',coordinates:o.location}}});
     map.addLayer({id:'plume-origin',type:'circle',source:'origin',paint:{'circle-radius':6,'circle-color':'#ffffff','circle-stroke-width':3,'circle-stroke-color':'#0a545a'}});
     if(caseData.facilities?.length){map.addSource('facilities',{type:'geojson',data:{type:'FeatureCollection',features:caseData.facilities.map(f=>({type:'Feature',properties:{name:f.name},geometry:{type:'Point',coordinates:f.location}}))}});map.addLayer({id:'facility-points',type:'circle',source:'facilities',layout:{visibility:facilities.current?'visible':'none'},paint:{'circle-radius':6,'circle-color':'#76627d','circle-stroke-color':'#fff','circle-stroke-width':2}});}
   };
-  map.on('style.load',()=>{renderLayers();for(const id of ['plume-raster','plume-outline','plume-origin'])map.setLayoutProperty(id,'visibility',methaneVisible.current?'visible':'none');map.setLayoutProperty('plume-raster','visibility',methaneVisible.current&&!contourMode.current?'visible':'none');for(const id of ['plume-contours','plume-contour-lines'])map.setLayoutProperty(id,'visibility',methaneVisible.current&&contourMode.current?'visible':'none');});map.on('load',()=>{fitRef.current();setReady(true);});
+  map.on('style.load',()=>{renderLayers();for(const id of ['plume-raster','plume-outline','plume-origin'])map.setLayoutProperty(id,'visibility',methaneVisible.current?'visible':'none');map.setLayoutProperty('plume-raster','visibility',methaneVisible.current&&!contourMode.current?'visible':'none');for(const id of ['plume-contours','plume-contour-lines'])map.setLayoutProperty(id,'visibility',methaneVisible.current&&contourMode.current?'visible':'none');});map.on('load',()=>{setReady(true);});
   map.on('error',()=>{if(!disposed)setError('Some map detail is unavailable. The dated evidence remains accessible.');});
   fetch('https://tiles.openfreemap.org/styles/liberty',{signal:controller.signal}).then(r=>{if(!r.ok)throw new Error();return r.json() as Promise<StyleSpecification>;}).then((style)=>{
     if(disposed)return;
@@ -58,7 +64,7 @@ export default function EvidenceMap({observation,allObservations,caseData,highli
     }
     map.setStyle(style);
   }).catch(e=>{if(e.name!=='AbortError'&&!disposed)setError('Basemap unavailable. Showing the georeferenced observations.');});
-  return()=>{disposed=true;controller.abort();resize.disconnect();map.remove();mapRef.current=null;};
+  return()=>{disposed=true;controller.abort();resize.disconnect();measurementPopup?.remove();map.remove();mapRef.current=null;};
  // The case defines a map instance; each selected acquisition refreshes layers below.
  // eslint-disable-next-line react-hooks/exhaustive-deps
  },[caseData.id]);
@@ -72,6 +78,7 @@ export default function EvidenceMap({observation,allObservations,caseData,highli
   {!ready&&!webglError&&<div className="map-loading"><LoaderCircle className="spin"/> Loading the dated observation…</div>}
   {webglError&&<div className="map-fallback"><img src={useContours?contour.previewUrl:asset.url} alt={`Methane enhancement on ${dateLabel(observation.date)}`}/><p>Interactive map unavailable. The selected dated visualization is shown.</p></div>}
   <div className="map-date"><span className="date-dot"/>{dateLabel(observation.date,true)}<span>{observation.instrument}</span><span>{useContours?'Derived contours':'Sensor pixels'}</span></div>
+  {immersive&&<GlobalDetections map={catalogMap}/>}
   <button className="recenter" onClick={fit}><Crosshair size={16}/> Recenter</button>
   <div className="map-legend"><strong>Methane column enhancement</strong><span>ppm·m</span><div className={showScene?"cividis":"inferno-scale"}/><small>0</small><small>{observation.asset.scale[1].toLocaleString()}</small><p>{useContours?'Interpolated bands within measured cells.':'Original sensor samples.'} Empty areas are not measured zeros.</p></div>
   {error&&<div className="map-error" role="status"><Info size={14}/>{error}</div>}

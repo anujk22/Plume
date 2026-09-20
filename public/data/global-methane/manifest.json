@@ -1,0 +1,16 @@
+{
+  "provider": "NASA/JPL EMIT",
+  "count": 1686,
+  "checkedOn": "2026-09-19",
+  "start": "2022-08-10T06:49:57Z",
+  "end": "2025-09-22T20:49:33Z",
+  "sourceUrl": "https://earth.jpl.nasa.gov/emit-mmgis/Missions/EMIT/Layers/coverage/combined_plume_metadata.json",
+  "sourceSha256": "4f01f0941b83607fade0051b048ee6dc39fb83311c47eaf7765ece748e4d214b",
+  "locationMeaning": "Maximum column-enhancement pixel; not a source-origin estimate.",
+  "selectionRule": "All plume IDs in the saved NASA methane feed. Point and polygon representations counted once.",
+  "limitations": "Historical published detections, not global continuous coverage. Catalog context is separate from Carbon Mapper case evidence; cross-provider records are not added as independent corroboration.",
+  "files": {
+    "points.geojson": "f519e90144490d9c0d06978a3b626d48d8071c514f28c1ba76e705b3c9b0875c",
+    "outlines.geojson": "0f3a1f89b51d2b01af39914b188df48162ab6fd726801cd481771e081f18403e"
+  }
+}

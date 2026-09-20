@@ -33,6 +33,7 @@ jobs:
         run: |
           python -m pip install numpy rasterio Pillow matplotlib contourpy
           python scripts/verify_release.py
+          python scripts/prepare_global_catalog.py --check
           python scripts/prepare_home_plumes.py --check
           python scripts/prepare_santiago_plumes.py --check
           python scripts/prepare_santiago_plumes.py --investigations --check

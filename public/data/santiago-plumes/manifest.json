@@ -4,8 +4,8 @@
     "contoursUrl": "/data/santiago-plumes/tan20260730t161512c43s4001-C.geojson",
     "previewUrl": "/data/santiago-plumes/tan20260730t161512c43s4001-C.svg",
     "palette": "inferno",
-    "contoursSha256": "0adf330739705dfad3a61e70ad34627f07688c42928103dc021ca1cd5341b674",
-    "contourMethod": "ContourPy linear interpolation within fully valid cells; 500 ppm\u00b7m bands; no spatial smoothing or nodata infilling",
+    "contoursSha256": "cbdc228121d9177b5e7e05d5041a900df72358254080758efebe360c1256d9e4",
+    "contourMethod": "ContourPy linear interpolation within fully valid cells; 64 bands on the fixed 0\u20132500 ppm\u00b7m scale; no spatial smoothing or nodata infilling",
     "coordinates": [
       [
         -70.86811774338366,
@@ -49,8 +49,8 @@
     "contoursUrl": "/data/santiago-plumes/tan20260730t161512c43s4001-F.geojson",
     "previewUrl": "/data/santiago-plumes/tan20260730t161512c43s4001-F.svg",
     "palette": "inferno",
-    "contoursSha256": "a7d5ef282af4d8a7d075333767fed49dc4b0207d3e746a4d2068f195cca92acb",
-    "contourMethod": "ContourPy linear interpolation within fully valid cells; 500 ppm\u00b7m bands; no spatial smoothing or nodata infilling",
+    "contoursSha256": "b28c0ee97136231a5497cf330cdb48547ee7cf382dc95c0235a878444483f5d2",
+    "contourMethod": "ContourPy linear interpolation within fully valid cells; 64 bands on the fixed 0\u20132500 ppm\u00b7m scale; no spatial smoothing or nodata infilling",
     "coordinates": [
       [
         -70.87031983895123,
@@ -94,8 +94,8 @@
     "contoursUrl": "/data/santiago-plumes/tan20260820t161353c35s4001-C.geojson",
     "previewUrl": "/data/santiago-plumes/tan20260820t161353c35s4001-C.svg",
     "palette": "inferno",
-    "contoursSha256": "a5ef6c5d19d0dc0e04d410d5ca3e819633ea7f96aa1678f288d6e45922dd65ea",
-    "contourMethod": "ContourPy linear interpolation within fully valid cells; 500 ppm\u00b7m bands; no spatial smoothing or nodata infilling",
+    "contoursSha256": "870ba7794f6d5cbd4e4faf27cdae56854edbab4317606433aff14fa1e30963ef",
+    "contourMethod": "ContourPy linear interpolation within fully valid cells; 64 bands on the fixed 0\u20132500 ppm\u00b7m scale; no spatial smoothing or nodata infilling",
     "coordinates": [
       [
         -70.87953057497461,

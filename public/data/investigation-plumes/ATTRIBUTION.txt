@@ -5,7 +5,7 @@ Manifest records source URLs, source and output hashes, palette and per-case sca
 Reproduce: python scripts/prepare_santiago_plumes.py --investigations
 Verify: add --check.
 
-Default display: five inferno contour bands with linear interpolation. ContourPy
+Default display: 64 inferno contour bands with linear interpolation. ContourPy
 corner_mask=True includes triangles with three valid measured vertices but excludes
 masked vertices. No Gaussian smoothing or extrapolation into unmeasured areas.
 Raw sensor pixels remain available; full scenes and exports are unchanged.

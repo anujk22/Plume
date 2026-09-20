@@ -45,7 +45,7 @@ for path in paths:
   if check:data=(output/(name+'.png')).read_bytes()
   west,south,east,north=transform_bounds('EPSG:3857','EPSG:4326',*rasterio.transform.array_bounds(height,width,transform))
   metadata={'sourceUrl':json.loads((path.parent/(name+'.json')).read_text())['items'][0]['con_tif'].split('?')[0],'recordUrl':observations[name]['sourceUrl']} if investigations else json.loads(path.with_suffix('.json').read_text())
-  levels=np.linspace(0,maximum,6)
+  levels=np.linspace(0,maximum,65)
   generator=contourpy.contour_generator(z=np.ma.masked_invalid(dest),corner_mask=investigations,fill_type='OuterOffset',z_interp='Linear')
   features=[];svg_paths=[]
   for lower,upper in zip(levels[:-1],levels[1:]):
@@ -64,13 +64,13 @@ for path in paths:
     features.append({'type':'Feature','properties':{'lower':float(lower),'upper':float(upper),'color':color},'geometry':{'type':'Polygon','coordinates':rings}})
     svg_paths.append(f'<path fill="{color}" fill-rule="evenodd" d="{" ".join(commands)}"/>')
   contours=json.dumps({'type':'FeatureCollection','features':features},separators=(',',':'))+'\n'
-  svg=f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}">'+''.join(svg_paths)+'</svg>\n'
+  svg=f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" shape-rendering="crispEdges">'+''.join(svg_paths)+'</svg>\n'
   for suffix,body in [('.geojson',contours),('.svg',svg)]:
    target=output/(name+suffix)
    if check:assert target.read_text()==body
    else:output.mkdir(exist_ok=True);target.write_text(body)
 
-  manifest[name]={'url':f'/data/{folder}/{name}.png','contoursUrl':f'/data/{folder}/{name}.geojson','previewUrl':f'/data/{folder}/{name}.svg','palette':'inferno','contoursSha256':hashlib.sha256(contours.encode()).hexdigest(),'contourMethod':f'ContourPy linear interpolation within {"valid measured triangles" if investigations else "fully valid cells"}; {maximum/5:g} ppm·m bands; no spatial smoothing or nodata infilling','coordinates':[[west,north],[east,north],[east,south],[west,south]],'bounds':[west,south,east,north],'scale':[0,maximum],'unit':'ppm·m','quantity':'Methane column enhancement','sourceUrl':metadata['sourceUrl'],'recordUrl':metadata['recordUrl'],'sourceSha256':hashlib.sha256(path.read_bytes()).hexdigest(),'sha256':hashlib.sha256(data).hexdigest(),'resampling':'nearest','mask':'Provider nodata mask; transparent areas are not measured zeros','nativeSamples':int(valid.sum())}
+  manifest[name]={'url':f'/data/{folder}/{name}.png','contoursUrl':f'/data/{folder}/{name}.geojson','previewUrl':f'/data/{folder}/{name}.svg','palette':'inferno','contoursSha256':hashlib.sha256(contours.encode()).hexdigest(),'contourMethod':f'ContourPy linear interpolation within {"valid measured triangles" if investigations else "fully valid cells"}; 64 bands on the fixed 0–{maximum:g} ppm·m scale; no spatial smoothing or nodata infilling','coordinates':[[west,north],[east,north],[east,south],[west,south]],'bounds':[west,south,east,north],'scale':[0,maximum],'unit':'ppm·m','quantity':'Methane column enhancement','sourceUrl':metadata['sourceUrl'],'recordUrl':metadata['recordUrl'],'sourceSha256':hashlib.sha256(path.read_bytes()).hexdigest(),'sha256':hashlib.sha256(data).hexdigest(),'resampling':'nearest','mask':'Provider nodata mask; transparent areas are not measured zeros','nativeSamples':int(valid.sum())}
   if check:np.testing.assert_array_equal(np.asarray(Image.open(output/(name+'.png'))),rgba)
   else:output.mkdir(exist_ok=True);(output/(name+'.png')).write_bytes(data)
 if check:

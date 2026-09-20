@@ -559,3 +559,9 @@ This section resolves data-dependent choices for the first implementation. It do
 - **PDF:** four intentionally structured sections with automatic pagination for longer notes or provenance. Contents and evidence fingerprints are reproducible; file timestamps may differ. Scientific images and the continuous legend are verified against the snapshot hashes before export.
 - **Scope labels:** date filters constrain map/list browsing; the full-case timeline and report selection remain explicit. An empty browse filter does not erase already-selected evidence.
 - **Further history view:** optional multi-layer history remains outside this release; date replay and two-date comparison are included.
+
+### Worldwide exploration and graduated plume rendering
+
+Investigation and place maps include a separately labeled NASA/JPL EMIT context layer containing all 1,686 unique plume IDs in the saved public methane feed (10 August 2022–22 September 2025; checked 19 September 2026). Point/polygon representations are paired and counted once. Clusters count plume records, never emissions or independent acquisitions. Markers represent maximum-enhancement pixels, not source origins. Published footprints appear at local zoom; selectable records disclose date, peak column enhancement, and original source data. This layer includes all catalog dates independently of case filters, does not imply exhaustive worldwide coverage, and is excluded from reviewed case counts and exports.
+
+Prepared numeric plume imagery uses 64 fixed-scale color bands instead of five, preserving the existing valid-cell interpolation and nodata mask. Original sensor samples remain inspectable. No smoothing into unmeasured areas, invented plume shapes, or per-date scale changes are permitted.
